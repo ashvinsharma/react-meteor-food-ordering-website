@@ -1,17 +1,15 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import './imports/startup/accounts-config.js'
-import AccountsUIWrapper from './imports/ui/AccountsUIWrapper'
-import HomeScreen from './imports/ui/homescreen'
+import Login from './components/login'
+import Signup from './components/signup'
 
 class App extends Component {
     render() {
         return (
             <div>
-                <div className="accounts-ui-wrapper">
-                    <AccountsUIWrapper/>
-                </div>
-                <HomeScreen/>
+                <Login />
+                <Signup />
+                hi {Meteor.userId()}
             </div>
         )
     }
