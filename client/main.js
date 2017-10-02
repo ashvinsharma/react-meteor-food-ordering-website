@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import Login from './components/login/login'
 import './imports/startup/accounts-config.js'
 import AccountsUIWrapper from './imports/ui/AccountsUIWrapper'
 
