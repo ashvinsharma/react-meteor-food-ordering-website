@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 body {
-    background-color: steelblue;
+    background-color: #F5F5F5;
 }
 
 h1 {
@@ -10,7 +10,6 @@ h1 {
     border-radius: 4px;
 }
 
-.main {
-    margin-top: 18%;
-    margin-left: 40%;
+.accounts-ui-wrapper {
+    left: 100%;
 }

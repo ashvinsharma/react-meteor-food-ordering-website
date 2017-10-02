@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="301a80cc-da63-436e-b809-f8c50d5f19c4" name="Default" comment="deleted unnecessary files">
+    <list default="true" id="301a80cc-da63-436e-b809-f8c50d5f19c4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/imports/ui/homescreen.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/swe-project.iml" afterPath="$PROJECT_DIR$/.idea/swe-project.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/main.css" afterPath="$PROJECT_DIR$/client/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/main.js" afterPath="$PROJECT_DIR$/client/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/client/imports/ui/AccountsUIWrapper.jsx" afterPath="$PROJECT_DIR$/client/imports/ui/AccountsUIWrapper.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,18 +27,18 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+            <state relative-caret-position="119">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="65" lean-forward="true" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -38,21 +46,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/style/main.css">
+      <file leaf-file-name="AccountsUIWrapper.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/imports/ui/AccountsUIWrapper.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/main.js">
+      <file leaf-file-name="homescreen.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/imports/ui/homescreen.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+                <marker date="1506955509798" expanded="true" signature="240:304" ph="..." />
+                <marker date="1506955509798" expanded="true" signature="386:430" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -64,16 +86,23 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="XSLT Stylesheet" />
+        <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>facebook</find>
+      <find>grid</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="a78f07b461d3f090961bb05f968465f44d21c4d0" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
   </component>
@@ -85,10 +114,11 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/client/style/main.css" />
         <option value="$PROJECT_DIR$/client/components/login/login.js" />
-        <option value="$PROJECT_DIR$/client/main.css" />
-        <option value="$PROJECT_DIR$/client/imports/ui/AccountsUIWrapper.jsx" />
         <option value="$PROJECT_DIR$/client/imports/startup/accounts-config.js" />
+        <option value="$PROJECT_DIR$/client/imports/ui/AccountsUIWrapper.jsx" />
+        <option value="$PROJECT_DIR$/client/main.css" />
         <option value="$PROJECT_DIR$/client/main.js" />
+        <option value="$PROJECT_DIR$/client/imports/ui/homescreen.js" />
       </list>
     </option>
   </component>
@@ -111,10 +141,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="34" />
-    <option name="y" value="553" />
-    <option name="width" value="1928" />
-    <option name="height" value="456" />
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -143,6 +172,26 @@
               <item name="swe-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="swe-project" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="swe-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swe-project" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="swe-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swe-project" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="startup" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="swe-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swe-project" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="swe-project" type="b2602c69:ProjectViewProjectNode" />
@@ -221,10 +270,18 @@
       <workItem from="1505241759822" duration="63000" />
       <workItem from="1506778632346" duration="7099000" />
     </task>
+    <task id="LOCAL-00001" summary="deleted unnecessary files">
+      <created>1506934391827</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1506934391827</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23748000" />
+    <option name="totallyTimeSpent" value="36795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -239,7 +296,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935917" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32935917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -259,6 +316,26 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.99657536" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3133484" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2194606" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -302,32 +379,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="2" lean-forward="false" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -638,13 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/Meteor/lib/Meteor.jar!/tsMeteorStubs/meteor-v1.3.1.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="2899" column="21" lean-forward="false" selection-start-line="2899" selection-start-column="21" selection-end-line="2899" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -652,10 +696,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/client/components/login/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -663,32 +707,15 @@
     <entry file="file://$PROJECT_DIR$/server/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.css">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="65" lean-forward="true" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+        <state relative-caret-position="68">
+          <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -701,24 +728,378 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/imports/ui/AccountsUIWrapper.jsx">
+    <entry file="file://$PROJECT_DIR$/node_modules/react-bootstrap/es/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="132">
+          <caret line="47" column="25" lean-forward="true" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/imports/startup/accounts-config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/components/login/login.js">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/Meteor/lib/Meteor.jar!/tsMeteorStubs/meteor-v1.3.1.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        <state relative-caret-position="1887">
+          <caret line="2856" column="31" lean-forward="false" selection-start-line="2856" selection-start-column="31" selection-end-line="2856" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!doc;n#Accounts#0" expanded="false" />
+            <element signature="n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#addEmail#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#changePassword#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#createUser#0;n#Accounts#0" expanded="false" />
+            <element signature="e#1721#1879#0" expanded="false" />
+            <element signature="e#1927#2032#0" expanded="false" />
+            <element signature="n#!!doc;n#findUserByEmail#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#findUserByUsername#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#forgotPassword#0;n#Accounts#0" expanded="false" />
+            <element signature="e#3204#3263#0" expanded="false" />
+            <element signature="n#!!doc;n#removeEmail#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#resetPassword#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#sendEnrollmentEmail#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#sendResetPasswordEmail#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#sendVerificationEmail#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#setPassword#0;n#Accounts#0" expanded="false" />
+            <element signature="e#6120#6171#0" expanded="false" />
+            <element signature="n#!!doc;n#setUsername#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#verifyEmail#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#config#0;n#Accounts#0" expanded="false" />
+            <element signature="e#7221#7428#0" expanded="false" />
+            <element signature="n#!!doc;n#onCreateUser#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#onEmailVerificationLink#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#onEnrollmentLink#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#onLogin#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#onLoginFailure#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#onResetPasswordLink#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#userId#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#validateLoginAttempt#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#validateNewUser#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!block;n#Iui#0;n#Accounts#0" expanded="false" />
+            <element signature="n#!!doc;n#config#0;n#!!block;n#Iui#0;n#Accounts#0" expanded="false" />
+            <element signature="e#12136#12336#0" expanded="false" />
+            <element signature="n#!!block;n#IApp#0" expanded="false" />
+            <element signature="n#!!doc;n#accessRule#0;n#!!block;n#IApp#0" expanded="false" />
+            <element signature="e#13598#13692#0" expanded="false" />
+            <element signature="n#!!doc;n#configurePlugin#0;n#!!block;n#IApp#0" expanded="false" />
+            <element signature="n#!!doc;n#icons#0;n#!!block;n#IApp#0" expanded="false" />
+            <element signature="n#!!doc;n#info#0;n#!!block;n#IApp#0" expanded="false" />
+            <element signature="e#15315#15529#0" expanded="false" />
+            <element signature="n#!!doc;n#launchScreens#0;n#!!block;n#IApp#0" expanded="false" />
+            <element signature="n#!!doc;n#setPreference#0;n#!!block;n#IApp#0" expanded="false" />
+            <element signature="n#!!block;n#IAssets#0" expanded="false" />
+            <element signature="n#!!doc;n#getBinary#0;n#!!block;n#IAssets#0" expanded="false" />
+            <element signature="n#!!doc;n#getText#0;n#!!block;n#IAssets#0" expanded="false" />
+            <element signature="n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#Each#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#If#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#Let#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#Template#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#Unless#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#View#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#With#0;n#Blaze#0" expanded="false" />
+            <element signature="e#23910#24077#0" expanded="false" />
+            <element signature="n#!!doc;n#getData#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#getView#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#isTemplate#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#remove#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#render#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#renderWithData#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#toHTML#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#toHTMLWithData#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#$#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#autorun#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#data#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#find#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#findAll#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#firstNode#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#lastNode#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#subscribe#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#subscriptionsReady#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!doc;n#view#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
+            <element signature="n#!!block;n#View#1;n#Blaze#0" expanded="false" />
+            <element signature="n#!!block;n#ITemplate#0" expanded="false" />
+            <element signature="n#!!doc;n#body#0;n#!!block;n#ITemplate#0" expanded="false" />
+            <element signature="n#!!doc;n#currentData#0;n#!!block;n#ITemplate#0" expanded="false" />
+            <element signature="n#!!doc;n#deregisterHelper#0;n#!!block;n#ITemplate#0" expanded="false" />
+            <element signature="n#!!doc;n#dynamic#0;n#!!block;n#ITemplate#0" expanded="false" />
+            <element signature="n#!!doc;n#instance#0;n#!!block;n#ITemplate#0" expanded="false" />
+            <element signature="n#!!doc;n#parentData#0;n#!!block;n#ITemplate#0" expanded="false" />
+            <element signature="n#!!doc;n#registerHelper#0;n#!!block;n#ITemplate#0" expanded="false" />
+            <element signature="n#!!block;n#ICordova#0" expanded="false" />
+            <element signature="n#!!doc;n#depends#0;n#!!block;n#ICordova#0" expanded="false" />
+            <element signature="n#!!block;n#IDDP#0" expanded="false" />
+            <element signature="n#!!doc;n#connect#0;n#!!block;n#IDDP#0" expanded="false" />
+            <element signature="n#DDPCommon#0" expanded="false" />
+            <element signature="n#!!doc;n#MethodInvocation#0;n#DDPCommon#0" expanded="false" />
+            <element signature="e#35334#35359#0" expanded="false" />
+            <element signature="n#!!block;n#MethodInvocation#1;n#DDPCommon#0" expanded="false" />
+            <element signature="n#!!doc;n#connection#0;n#!!block;n#MethodInvocation#1;n#DDPCommon#0" expanded="false" />
+            <element signature="n#!!doc;n#isSimulation#0;n#!!block;n#MethodInvocation#1;n#DDPCommon#0" expanded="false" />
+            <element signature="n#!!doc;n#setUserId#0;n#!!block;n#MethodInvocation#1;n#DDPCommon#0" expanded="false" />
+            <element signature="n#!!doc;n#unblock#0;n#!!block;n#MethodInvocation#1;n#DDPCommon#0" expanded="false" />
+            <element signature="n#!!doc;n#userId#0;n#!!block;n#MethodInvocation#1;n#DDPCommon#0" expanded="false" />
+            <element signature="n#!!block;n#IDDPRateLimiter#0" expanded="false" />
+            <element signature="n#!!doc;n#addRule#0;n#!!block;n#IDDPRateLimiter#0" expanded="false" />
+            <element signature="n#!!doc;n#removeRule#0;n#!!block;n#IDDPRateLimiter#0" expanded="false" />
+            <element signature="n#!!doc;n#setErrorMessage#0;n#!!block;n#IDDPRateLimiter#0" expanded="false" />
+            <element signature="n#EJSON#0" expanded="false" />
+            <element signature="n#!!doc;n#addType#0;n#EJSON#0" expanded="false" />
+            <element signature="n#!!doc;n#clone#0;n#EJSON#0" expanded="false" />
+            <element signature="n#!!doc;n#equals#0;n#EJSON#0" expanded="false" />
+            <element signature="e#40396#40452#0" expanded="false" />
+            <element signature="n#!!doc;n#fromJSONValue#0;n#EJSON#0" expanded="false" />
+            <element signature="n#!!doc;n#isBinary#0;n#EJSON#0" expanded="false" />
+            <element signature="e#40968#41079#0" expanded="false" />
+            <element signature="n#!!doc;n#parse#0;n#EJSON#0" expanded="false" />
+            <element signature="n#!!doc;n#stringify#0;n#EJSON#0" expanded="false" />
+            <element signature="e#41746#41831#0" expanded="false" />
+            <element signature="n#!!doc;n#toJSONValue#0;n#EJSON#0" expanded="false" />
+            <element signature="n#!!block;n#CustomType#0;n#EJSON#0" expanded="false" />
+            <element signature="n#!!doc;n#clone#0;n#!!block;n#CustomType#0;n#EJSON#0" expanded="false" />
+            <element signature="n#!!doc;n#equals#0;n#!!block;n#CustomType#0;n#EJSON#0" expanded="false" />
+            <element signature="n#!!doc;n#toJSONValue#0;n#!!block;n#CustomType#0;n#EJSON#0" expanded="false" />
+            <element signature="n#!!doc;n#typeName#0;n#!!block;n#CustomType#0;n#EJSON#0" expanded="false" />
+            <element signature="n#!!block;n#IEmail#0" expanded="false" />
+            <element signature="n#!!doc;n#send#0;n#!!block;n#IEmail#0" expanded="false" />
+            <element signature="e#43841#44147#0" expanded="false" />
+            <element signature="n#!!block;n#IHTTP#0" expanded="false" />
+            <element signature="n#!!doc;n#call#0;n#!!block;n#IHTTP#0" expanded="false" />
+            <element signature="e#44881#45195#0" expanded="false" />
+            <element signature="n#!!doc;n#del#0;n#!!block;n#IHTTP#0" expanded="false" />
+            <element signature="n#!!doc;n#get#0;n#!!block;n#IHTTP#0" expanded="false" />
+            <element signature="n#!!doc;n#patch#0;n#!!block;n#IHTTP#0" expanded="false" />
+            <element signature="n#!!doc;n#post#0;n#!!block;n#IHTTP#0" expanded="false" />
+            <element signature="n#!!doc;n#put#0;n#!!block;n#IHTTP#0" expanded="false" />
+            <element signature="n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="n#!!doc;n#error#0;n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="e#48369#48499#0" expanded="false" />
+            <element signature="n#!!doc;n#getArch#0;n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="n#!!doc;n#getBasename#0;n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="n#!!doc;n#getContentsAsBuffer#0;n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="n#!!doc;n#getContentsAsString#0;n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="n#!!doc;n#getDeclaredExports#0;n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="n#!!doc;n#getDirname#0;n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="n#!!doc;n#getDisplayPath#0;n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="n#!!doc;n#getFileOptions#0;n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="n#!!doc;n#getPackageName#0;n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="n#!!doc;n#getPathInPackage#0;n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="n#!!doc;n#getSourceHash#0;n#!!block;n#IInputFile#0" expanded="false" />
+            <element signature="n#!!block;n#IMatch#0" expanded="false" />
+            <element signature="n#!!doc;n#test#0;n#!!block;n#IMatch#0" expanded="false" />
+            <element signature="n#Meteor#0" expanded="false" />
+            <element signature="e#50594#50631#0" expanded="false" />
+            <element signature="n#!!doc;n#absoluteUrl#0;n#Meteor#0" expanded="false" />
+            <element signature="e#51222#51361#0" expanded="false" />
+            <element signature="n#!!doc;n#apply#0;n#Meteor#0" expanded="false" />
+            <element signature="e#52039#52122#0" expanded="false" />
+            <element signature="n#!!doc;n#call#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#clearInterval#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#clearTimeout#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#disconnect#0;n#Meteor#0" expanded="false" />
+            <element signature="e#53361#53467#0" expanded="false" />
+            <element signature="e#53500#53616#0" expanded="false" />
+            <element signature="e#53650#53761#0" expanded="false" />
+            <element signature="e#53799#53909#0" expanded="false" />
+            <element signature="e#53946#54052#0" expanded="false" />
+            <element signature="n#!!doc;n#loggingIn#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#loginWithPassword#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#logout#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#logoutOtherClients#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#methods#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#onConnection#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#publish#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#reconnect#0;n#Meteor#0" expanded="false" />
+            <element signature="e#57101#57364#0" expanded="false" />
+            <element signature="n#!!doc;n#setInterval#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#setTimeout#0;n#Meteor#0" expanded="false" />
+            <element signature="e#58072#58982#0" expanded="false" />
+            <element signature="n#!!doc;n#startup#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#status#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#subscribe#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#user#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#userId#0;n#Meteor#0" expanded="false" />
+            <element signature="e#60537#60647#0" expanded="false" />
+            <element signature="n#!!doc;n#wrapAsync#0;n#Meteor#0" expanded="false" />
+            <element signature="n#!!doc;n#Error#0;n#Meteor#0" expanded="false" />
+            <element signature="n#Error#0;n#Meteor#0" expanded="false" />
+            <element signature="n#Mongo#0" expanded="false" />
+            <element signature="n#!!doc;n#ObjectID#0;n#Mongo#0" expanded="false" />
+            <element signature="n#Collection#0;n#Mongo#0" expanded="false" />
+            <element signature="n#!!doc;n#constructor#0;n#Collection#0;n#Mongo#0" expanded="false" />
+            <element signature="e#63851#64037#0" expanded="false" />
+            <element signature="n#!!doc;n#allow#0;n#Collection#0;n#Mongo#0" expanded="false" />
+            <element signature="e#64282#64475#0" expanded="false" />
+            <element signature="n#!!doc;n#deny#0;n#Collection#0;n#Mongo#0" expanded="false" />
+            <element signature="e#64647#64834#0" expanded="false" />
+            <element signature="n#!!doc;n#find#0;n#Collection#0;n#Mongo#0" expanded="false" />
+            <element signature="e#65170#65508#0" expanded="false" />
+            <element signature="n#!!doc;n#findOne#0;n#Collection#0;n#Mongo#0" expanded="false" />
+            <element signature="e#65882#66078#0" expanded="false" />
+            <element signature="n#!!doc;n#insert#0;n#Collection#0;n#Mongo#0" expanded="false" />
+            <element signature="n#!!doc;n#rawCollection#0;n#Collection#0;n#Mongo#0" expanded="false" />
+            <element signature="n#!!doc;n#rawDatabase#0;n#Collection#0;n#Mongo#0" expanded="false" />
+            <element signature="n#!!doc;n#remove#0;n#Collection#0;n#Mongo#0" expanded="false" />
+            <element signature="n#!!doc;n#update#0;n#Collection#0;n#Mongo#0" expanded="false" />
+            <element signature="e#68374#68462#0" expanded="false" />
+            <element signature="n#!!doc;n#upsert#0;n#Collection#0;n#Mongo#0" expanded="false" />
+            <element signature="e#69333#69385#0" expanded="false" />
+            <element signature="n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
+            <element signature="n#!!doc;n#count#0;n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
+            <element signature="n#!!doc;n#fetch#0;n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
+            <element signature="n#!!doc;n#forEach#0;n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
+            <element signature="n#!!doc;n#map#0;n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
+            <element signature="n#!!doc;n#observe#0;n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
+            <element signature="n#!!doc;n#observeChanges#0;n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
+            <element signature="n#!!block;n#ObjectID#1;n#Mongo#0" expanded="false" />
+            <element signature="n#!!block;n#INpm#0" expanded="false" />
+            <element signature="n#!!doc;n#depends#0;n#!!block;n#INpm#0" expanded="false" />
+            <element signature="n#!!doc;n#require#0;n#!!block;n#INpm#0" expanded="false" />
+            <element signature="n#!!block;n#IPackage#0" expanded="false" />
+            <element signature="n#!!doc;n#describe#0;n#!!block;n#IPackage#0" expanded="false" />
+            <element signature="e#72988#73281#0" expanded="false" />
+            <element signature="n#!!doc;n#onTest#0;n#!!block;n#IPackage#0" expanded="false" />
+            <element signature="n#!!doc;n#onUse#0;n#!!block;n#IPackage#0" expanded="false" />
+            <element signature="n#!!doc;n#registerBuildPlugin#0;n#!!block;n#IPackage#0" expanded="false" />
+            <element signature="e#74272#74470#0" expanded="false" />
+            <element signature="n#!!block;n#PackageAPIMember#0" expanded="false" />
+            <element signature="n#!!doc;n#addAssets#0;n#!!block;n#PackageAPIMember#0" expanded="false" />
+            <element signature="n#!!doc;n#addFiles#0;n#!!block;n#PackageAPIMember#0" expanded="false" />
+            <element signature="e#76085#76132#0" expanded="false" />
+            <element signature="n#!!doc;n#export#0;n#!!block;n#PackageAPIMember#0" expanded="false" />
+            <element signature="n#!!doc;n#imply#0;n#!!block;n#PackageAPIMember#0" expanded="false" />
+            <element signature="n#!!doc;n#use#0;n#!!block;n#PackageAPIMember#0" expanded="false" />
+            <element signature="e#79969#80038#0" expanded="false" />
+            <element signature="n#!!doc;n#versionsFrom#0;n#!!block;n#PackageAPIMember#0" expanded="false" />
+            <element signature="n#!!block;n#IPlugin#0" expanded="false" />
+            <element signature="n#!!doc;n#registerCompiler#0;n#!!block;n#IPlugin#0" expanded="false" />
+            <element signature="e#81922#82028#0" expanded="false" />
+            <element signature="n#!!doc;n#registerLinter#0;n#!!block;n#IPlugin#0" expanded="false" />
+            <element signature="e#82669#82730#0" expanded="false" />
+            <element signature="n#!!doc;n#registerMinifier#0;n#!!block;n#IPlugin#0" expanded="false" />
+            <element signature="e#83373#83479#0" expanded="false" />
+            <element signature="n#!!doc;n#registerSourceHandler#0;n#!!block;n#IPlugin#0" expanded="false" />
+            <element signature="n#!!block;n#ISession#0" expanded="false" />
+            <element signature="n#!!doc;n#equals#0;n#!!block;n#ISession#0" expanded="false" />
+            <element signature="n#!!doc;n#get#0;n#!!block;n#ISession#0" expanded="false" />
+            <element signature="n#!!doc;n#set#0;n#!!block;n#ISession#0" expanded="false" />
+            <element signature="n#!!doc;n#setDefault#0;n#!!block;n#ISession#0" expanded="false" />
+            <element signature="n#!!block;n#SubscriptionMember#0" expanded="false" />
+            <element signature="n#!!doc;n#added#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
+            <element signature="n#!!doc;n#changed#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
+            <element signature="n#!!doc;n#connection#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
+            <element signature="n#!!doc;n#error#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
+            <element signature="n#!!doc;n#onStop#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
+            <element signature="n#!!doc;n#ready#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
+            <element signature="n#!!doc;n#removed#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
+            <element signature="n#!!doc;n#stop#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
+            <element signature="n#!!doc;n#userId#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
+            <element signature="n#!!block;n#TemplateMember#0" expanded="false" />
+            <element signature="n#!!doc;n#created#0;n#!!block;n#TemplateMember#0" expanded="false" />
+            <element signature="n#!!doc;n#destroyed#0;n#!!block;n#TemplateMember#0" expanded="false" />
+            <element signature="n#!!doc;n#events#0;n#!!block;n#TemplateMember#0" expanded="false" />
+            <element signature="n#!!doc;n#helpers#0;n#!!block;n#TemplateMember#0" expanded="false" />
+            <element signature="n#!!doc;n#onCreated#0;n#!!block;n#TemplateMember#0" expanded="false" />
+            <element signature="n#!!doc;n#onDestroyed#0;n#!!block;n#TemplateMember#0" expanded="false" />
+            <element signature="n#!!doc;n#onRendered#0;n#!!block;n#TemplateMember#0" expanded="false" />
+            <element signature="n#!!doc;n#rendered#0;n#!!block;n#TemplateMember#0" expanded="false" />
+            <element signature="n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#Computation#0;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#Dependency#0;n#Tracker#0" expanded="false" />
+            <element signature="e#91907#92119#0" expanded="false" />
+            <element signature="n#!!doc;n#afterFlush#0;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#autorun#0;n#Tracker#0" expanded="false" />
+            <element signature="e#93065#93114#0" expanded="false" />
+            <element signature="e#93135#93470#0" expanded="false" />
+            <element signature="n#!!doc;n#flush#0;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#nonreactive#0;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#onInvalidate#0;n#Tracker#0" expanded="false" />
+            <element signature="n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#firstRun#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#invalidate#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#invalidated#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#onInvalidate#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#onStop#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#stop#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#stopped#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
+            <element signature="n#!!block;n#Dependency#1;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#changed#0;n#!!block;n#Dependency#1;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#depend#0;n#!!block;n#Dependency#1;n#Tracker#0" expanded="false" />
+            <element signature="n#!!doc;n#hasDependents#0;n#!!block;n#Dependency#1;n#Tracker#0" expanded="false" />
+            <element signature="n#&quot;meteor/meteor&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/accounts-base&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/ddp-rate-limiter&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/check&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/ddp-client&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/mongo&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/session&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/templating&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/blaze&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/tracker&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/reactive-var&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/ejson&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/http&quot;#0" expanded="false" />
+            <element signature="n#&quot;meteor/email&quot;#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/imports/ui/homescreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <marker date="1506955509798" expanded="true" signature="240:304" ph="..." />
+            <marker date="1506955509798" expanded="true" signature="386:430" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react/react.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/imports/ui/AccountsUIWrapper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
           <folding />
         </state>
       </provider>
