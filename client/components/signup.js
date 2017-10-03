@@ -24,7 +24,9 @@ export default class Signup extends Component {
             Accounts.createUser({
                 username: username,
                 password: password,
-                userType: userType
+                profile: {
+                    userType: userType
+                }
             }, (err) => {
                 if (err) {
                     console.log('Error ', err)
