@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="301a80cc-da63-436e-b809-f8c50d5f19c4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_npm.xml" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_npm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/swe-project.iml" afterPath="$PROJECT_DIR$/.idea/swe-project.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/signup.js" afterPath="$PROJECT_DIR$/client/components/signup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/main.js" afterPath="$PROJECT_DIR$/client/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,10 +33,23 @@
       <file leaf-file-name="signup.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/components/signup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="260">
+              <caret line="52" column="40" lean-forward="false" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#144#230#0" expanded="false" />
+                <element signature="e#189#224#0" expanded="false" />
+                <element signature="e#690#1435#0" expanded="false" />
+                <element signature="e#724#895#0" expanded="false" />
+                <element signature="e#823#881#0" expanded="false" />
+                <element signature="e#906#1424#0" expanded="false" />
+                <element signature="e#933#999#0" expanded="false" />
+                <element signature="e#1005#1410#0" expanded="false" />
+                <element signature="e#1146#1391#0" expanded="false" />
+                <element signature="e#1179#1259#0" expanded="false" />
+                <element signature="e#1265#1369#0" expanded="false" />
+                <element signature="e#1441#1538#0" expanded="false" />
+                <element signature="e#1939#2244#0" expanded="false" />
+                <element signature="e#1994#2074#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -46,8 +58,8 @@
       <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/components/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+            <state relative-caret-position="56">
+              <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -58,8 +70,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -105,8 +117,8 @@
         <option value="$PROJECT_DIR$/client/imports/ui/AccountsUIWrapper.jsx" />
         <option value="$PROJECT_DIR$/client/main.css" />
         <option value="$PROJECT_DIR$/client/imports/ui/homescreen.js" />
-        <option value="$PROJECT_DIR$/client/components/login.js" />
         <option value="$PROJECT_DIR$/client/main.js" />
+        <option value="$PROJECT_DIR$/client/components/login.js" />
         <option value="$PROJECT_DIR$/client/components/signup.js" />
       </list>
     </option>
@@ -132,7 +144,29 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="697" />
-    <option name="height" value="735" />
+    <option name="height" value="775" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JSUnresolvedVariable</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -150,6 +184,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -184,7 +219,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -253,7 +287,8 @@
       <workItem from="1505212434137" duration="13794000" />
       <workItem from="1505241759822" duration="63000" />
       <workItem from="1506778632346" duration="7099000" />
-      <workItem from="1507021835276" duration="1300000" />
+      <workItem from="1507021835276" duration="6603000" />
+      <workItem from="1507040830281" duration="761000" />
     </task>
     <task id="LOCAL-00001" summary="deleted unnecessary files">
       <created>1506934391827</created>
@@ -276,11 +311,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506980286703</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="custom entries in the login work now &#10;off to &#10;-creating two screens&#10;-doing css and finishing the sprint">
+      <created>1507024686449</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1507024686449</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46488000" />
+    <option name="totallyTimeSpent" value="52552000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -289,9 +331,9 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21888727" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935917" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24292101" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33830103" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31296572" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -363,7 +405,8 @@
     <MESSAGE value="deleted unnecessary files" />
     <MESSAGE value="random changes" />
     <MESSAGE value="reconfigured login and sign up &#10;adding custom entries on db still TBD" />
-    <option name="LAST_COMMIT_MESSAGE" value="reconfigured login and sign up &#10;adding custom entries on db still TBD" />
+    <MESSAGE value="custom entries in the login work now &#10;off to &#10;-creating two screens&#10;-doing css and finishing the sprint" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom entries in the login work now &#10;off to &#10;-creating two screens&#10;-doing css and finishing the sprint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -680,305 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1887">
           <caret line="2856" column="31" lean-forward="false" selection-start-line="2856" selection-start-column="31" selection-end-line="2856" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc;n#Accounts#0" expanded="false" />
-            <element signature="n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#addEmail#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#changePassword#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#createUser#0;n#Accounts#0" expanded="false" />
-            <element signature="e#1721#1879#0" expanded="false" />
-            <element signature="e#1927#2032#0" expanded="false" />
-            <element signature="n#!!doc;n#findUserByEmail#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#findUserByUsername#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#forgotPassword#0;n#Accounts#0" expanded="false" />
-            <element signature="e#3204#3263#0" expanded="false" />
-            <element signature="n#!!doc;n#removeEmail#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#resetPassword#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#sendEnrollmentEmail#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#sendResetPasswordEmail#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#sendVerificationEmail#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#setPassword#0;n#Accounts#0" expanded="false" />
-            <element signature="e#6120#6171#0" expanded="false" />
-            <element signature="n#!!doc;n#setUsername#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#verifyEmail#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#config#0;n#Accounts#0" expanded="false" />
-            <element signature="e#7221#7428#0" expanded="false" />
-            <element signature="n#!!doc;n#onCreateUser#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#onEmailVerificationLink#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#onEnrollmentLink#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#onLogin#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#onLoginFailure#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#onResetPasswordLink#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#userId#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#validateLoginAttempt#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#validateNewUser#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!block;n#Iui#0;n#Accounts#0" expanded="false" />
-            <element signature="n#!!doc;n#config#0;n#!!block;n#Iui#0;n#Accounts#0" expanded="false" />
-            <element signature="e#12136#12336#0" expanded="false" />
-            <element signature="n#!!block;n#IApp#0" expanded="false" />
-            <element signature="n#!!doc;n#accessRule#0;n#!!block;n#IApp#0" expanded="false" />
-            <element signature="e#13598#13692#0" expanded="false" />
-            <element signature="n#!!doc;n#configurePlugin#0;n#!!block;n#IApp#0" expanded="false" />
-            <element signature="n#!!doc;n#icons#0;n#!!block;n#IApp#0" expanded="false" />
-            <element signature="n#!!doc;n#info#0;n#!!block;n#IApp#0" expanded="false" />
-            <element signature="e#15315#15529#0" expanded="false" />
-            <element signature="n#!!doc;n#launchScreens#0;n#!!block;n#IApp#0" expanded="false" />
-            <element signature="n#!!doc;n#setPreference#0;n#!!block;n#IApp#0" expanded="false" />
-            <element signature="n#!!block;n#IAssets#0" expanded="false" />
-            <element signature="n#!!doc;n#getBinary#0;n#!!block;n#IAssets#0" expanded="false" />
-            <element signature="n#!!doc;n#getText#0;n#!!block;n#IAssets#0" expanded="false" />
-            <element signature="n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#Each#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#If#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#Let#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#Template#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#Unless#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#View#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#With#0;n#Blaze#0" expanded="false" />
-            <element signature="e#23910#24077#0" expanded="false" />
-            <element signature="n#!!doc;n#getData#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#getView#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#isTemplate#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#remove#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#render#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#renderWithData#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#toHTML#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#toHTMLWithData#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#$#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#autorun#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#data#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#find#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#findAll#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#firstNode#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#lastNode#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#subscribe#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#subscriptionsReady#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!doc;n#view#0;n#!!block;n#TemplateInstance#0;n#Blaze#0" expanded="false" />
-            <element signature="n#!!block;n#View#1;n#Blaze#0" expanded="false" />
-            <element signature="n#!!block;n#ITemplate#0" expanded="false" />
-            <element signature="n#!!doc;n#body#0;n#!!block;n#ITemplate#0" expanded="false" />
-            <element signature="n#!!doc;n#currentData#0;n#!!block;n#ITemplate#0" expanded="false" />
-            <element signature="n#!!doc;n#deregisterHelper#0;n#!!block;n#ITemplate#0" expanded="false" />
-            <element signature="n#!!doc;n#dynamic#0;n#!!block;n#ITemplate#0" expanded="false" />
-            <element signature="n#!!doc;n#instance#0;n#!!block;n#ITemplate#0" expanded="false" />
-            <element signature="n#!!doc;n#parentData#0;n#!!block;n#ITemplate#0" expanded="false" />
-            <element signature="n#!!doc;n#registerHelper#0;n#!!block;n#ITemplate#0" expanded="false" />
-            <element signature="n#!!block;n#ICordova#0" expanded="false" />
-            <element signature="n#!!doc;n#depends#0;n#!!block;n#ICordova#0" expanded="false" />
-            <element signature="n#!!block;n#IDDP#0" expanded="false" />
-            <element signature="n#!!doc;n#connect#0;n#!!block;n#IDDP#0" expanded="false" />
-            <element signature="n#DDPCommon#0" expanded="false" />
-            <element signature="n#!!doc;n#MethodInvocation#0;n#DDPCommon#0" expanded="false" />
-            <element signature="e#35334#35359#0" expanded="false" />
-            <element signature="n#!!block;n#MethodInvocation#1;n#DDPCommon#0" expanded="false" />
-            <element signature="n#!!doc;n#connection#0;n#!!block;n#MethodInvocation#1;n#DDPCommon#0" expanded="false" />
-            <element signature="n#!!doc;n#isSimulation#0;n#!!block;n#MethodInvocation#1;n#DDPCommon#0" expanded="false" />
-            <element signature="n#!!doc;n#setUserId#0;n#!!block;n#MethodInvocation#1;n#DDPCommon#0" expanded="false" />
-            <element signature="n#!!doc;n#unblock#0;n#!!block;n#MethodInvocation#1;n#DDPCommon#0" expanded="false" />
-            <element signature="n#!!doc;n#userId#0;n#!!block;n#MethodInvocation#1;n#DDPCommon#0" expanded="false" />
-            <element signature="n#!!block;n#IDDPRateLimiter#0" expanded="false" />
-            <element signature="n#!!doc;n#addRule#0;n#!!block;n#IDDPRateLimiter#0" expanded="false" />
-            <element signature="n#!!doc;n#removeRule#0;n#!!block;n#IDDPRateLimiter#0" expanded="false" />
-            <element signature="n#!!doc;n#setErrorMessage#0;n#!!block;n#IDDPRateLimiter#0" expanded="false" />
-            <element signature="n#EJSON#0" expanded="false" />
-            <element signature="n#!!doc;n#addType#0;n#EJSON#0" expanded="false" />
-            <element signature="n#!!doc;n#clone#0;n#EJSON#0" expanded="false" />
-            <element signature="n#!!doc;n#equals#0;n#EJSON#0" expanded="false" />
-            <element signature="e#40396#40452#0" expanded="false" />
-            <element signature="n#!!doc;n#fromJSONValue#0;n#EJSON#0" expanded="false" />
-            <element signature="n#!!doc;n#isBinary#0;n#EJSON#0" expanded="false" />
-            <element signature="e#40968#41079#0" expanded="false" />
-            <element signature="n#!!doc;n#parse#0;n#EJSON#0" expanded="false" />
-            <element signature="n#!!doc;n#stringify#0;n#EJSON#0" expanded="false" />
-            <element signature="e#41746#41831#0" expanded="false" />
-            <element signature="n#!!doc;n#toJSONValue#0;n#EJSON#0" expanded="false" />
-            <element signature="n#!!block;n#CustomType#0;n#EJSON#0" expanded="false" />
-            <element signature="n#!!doc;n#clone#0;n#!!block;n#CustomType#0;n#EJSON#0" expanded="false" />
-            <element signature="n#!!doc;n#equals#0;n#!!block;n#CustomType#0;n#EJSON#0" expanded="false" />
-            <element signature="n#!!doc;n#toJSONValue#0;n#!!block;n#CustomType#0;n#EJSON#0" expanded="false" />
-            <element signature="n#!!doc;n#typeName#0;n#!!block;n#CustomType#0;n#EJSON#0" expanded="false" />
-            <element signature="n#!!block;n#IEmail#0" expanded="false" />
-            <element signature="n#!!doc;n#send#0;n#!!block;n#IEmail#0" expanded="false" />
-            <element signature="e#43841#44147#0" expanded="false" />
-            <element signature="n#!!block;n#IHTTP#0" expanded="false" />
-            <element signature="n#!!doc;n#call#0;n#!!block;n#IHTTP#0" expanded="false" />
-            <element signature="e#44881#45195#0" expanded="false" />
-            <element signature="n#!!doc;n#del#0;n#!!block;n#IHTTP#0" expanded="false" />
-            <element signature="n#!!doc;n#get#0;n#!!block;n#IHTTP#0" expanded="false" />
-            <element signature="n#!!doc;n#patch#0;n#!!block;n#IHTTP#0" expanded="false" />
-            <element signature="n#!!doc;n#post#0;n#!!block;n#IHTTP#0" expanded="false" />
-            <element signature="n#!!doc;n#put#0;n#!!block;n#IHTTP#0" expanded="false" />
-            <element signature="n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="n#!!doc;n#error#0;n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="e#48369#48499#0" expanded="false" />
-            <element signature="n#!!doc;n#getArch#0;n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="n#!!doc;n#getBasename#0;n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="n#!!doc;n#getContentsAsBuffer#0;n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="n#!!doc;n#getContentsAsString#0;n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="n#!!doc;n#getDeclaredExports#0;n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="n#!!doc;n#getDirname#0;n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="n#!!doc;n#getDisplayPath#0;n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="n#!!doc;n#getFileOptions#0;n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="n#!!doc;n#getPackageName#0;n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="n#!!doc;n#getPathInPackage#0;n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="n#!!doc;n#getSourceHash#0;n#!!block;n#IInputFile#0" expanded="false" />
-            <element signature="n#!!block;n#IMatch#0" expanded="false" />
-            <element signature="n#!!doc;n#test#0;n#!!block;n#IMatch#0" expanded="false" />
-            <element signature="n#Meteor#0" expanded="false" />
-            <element signature="e#50594#50631#0" expanded="false" />
-            <element signature="n#!!doc;n#absoluteUrl#0;n#Meteor#0" expanded="false" />
-            <element signature="e#51222#51361#0" expanded="false" />
-            <element signature="n#!!doc;n#apply#0;n#Meteor#0" expanded="false" />
-            <element signature="e#52039#52122#0" expanded="false" />
-            <element signature="n#!!doc;n#call#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#clearInterval#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#clearTimeout#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#disconnect#0;n#Meteor#0" expanded="false" />
-            <element signature="e#53361#53467#0" expanded="false" />
-            <element signature="e#53500#53616#0" expanded="false" />
-            <element signature="e#53650#53761#0" expanded="false" />
-            <element signature="e#53799#53909#0" expanded="false" />
-            <element signature="e#53946#54052#0" expanded="false" />
-            <element signature="n#!!doc;n#loggingIn#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#loginWithPassword#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#logout#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#logoutOtherClients#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#methods#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#onConnection#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#publish#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#reconnect#0;n#Meteor#0" expanded="false" />
-            <element signature="e#57101#57364#0" expanded="false" />
-            <element signature="n#!!doc;n#setInterval#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#setTimeout#0;n#Meteor#0" expanded="false" />
-            <element signature="e#58072#58982#0" expanded="false" />
-            <element signature="n#!!doc;n#startup#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#status#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#subscribe#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#user#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#userId#0;n#Meteor#0" expanded="false" />
-            <element signature="e#60537#60647#0" expanded="false" />
-            <element signature="n#!!doc;n#wrapAsync#0;n#Meteor#0" expanded="false" />
-            <element signature="n#!!doc;n#Error#0;n#Meteor#0" expanded="false" />
-            <element signature="n#Error#0;n#Meteor#0" expanded="false" />
-            <element signature="n#Mongo#0" expanded="false" />
-            <element signature="n#!!doc;n#ObjectID#0;n#Mongo#0" expanded="false" />
-            <element signature="n#Collection#0;n#Mongo#0" expanded="false" />
-            <element signature="n#!!doc;n#constructor#0;n#Collection#0;n#Mongo#0" expanded="false" />
-            <element signature="e#63851#64037#0" expanded="false" />
-            <element signature="n#!!doc;n#allow#0;n#Collection#0;n#Mongo#0" expanded="false" />
-            <element signature="e#64282#64475#0" expanded="false" />
-            <element signature="n#!!doc;n#deny#0;n#Collection#0;n#Mongo#0" expanded="false" />
-            <element signature="e#64647#64834#0" expanded="false" />
-            <element signature="n#!!doc;n#find#0;n#Collection#0;n#Mongo#0" expanded="false" />
-            <element signature="e#65170#65508#0" expanded="false" />
-            <element signature="n#!!doc;n#findOne#0;n#Collection#0;n#Mongo#0" expanded="false" />
-            <element signature="e#65882#66078#0" expanded="false" />
-            <element signature="n#!!doc;n#insert#0;n#Collection#0;n#Mongo#0" expanded="false" />
-            <element signature="n#!!doc;n#rawCollection#0;n#Collection#0;n#Mongo#0" expanded="false" />
-            <element signature="n#!!doc;n#rawDatabase#0;n#Collection#0;n#Mongo#0" expanded="false" />
-            <element signature="n#!!doc;n#remove#0;n#Collection#0;n#Mongo#0" expanded="false" />
-            <element signature="n#!!doc;n#update#0;n#Collection#0;n#Mongo#0" expanded="false" />
-            <element signature="e#68374#68462#0" expanded="false" />
-            <element signature="n#!!doc;n#upsert#0;n#Collection#0;n#Mongo#0" expanded="false" />
-            <element signature="e#69333#69385#0" expanded="false" />
-            <element signature="n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
-            <element signature="n#!!doc;n#count#0;n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
-            <element signature="n#!!doc;n#fetch#0;n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
-            <element signature="n#!!doc;n#forEach#0;n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
-            <element signature="n#!!doc;n#map#0;n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
-            <element signature="n#!!doc;n#observe#0;n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
-            <element signature="n#!!doc;n#observeChanges#0;n#!!block;n#Cursor#0;n#Mongo#0" expanded="false" />
-            <element signature="n#!!block;n#ObjectID#1;n#Mongo#0" expanded="false" />
-            <element signature="n#!!block;n#INpm#0" expanded="false" />
-            <element signature="n#!!doc;n#depends#0;n#!!block;n#INpm#0" expanded="false" />
-            <element signature="n#!!doc;n#require#0;n#!!block;n#INpm#0" expanded="false" />
-            <element signature="n#!!block;n#IPackage#0" expanded="false" />
-            <element signature="n#!!doc;n#describe#0;n#!!block;n#IPackage#0" expanded="false" />
-            <element signature="e#72988#73281#0" expanded="false" />
-            <element signature="n#!!doc;n#onTest#0;n#!!block;n#IPackage#0" expanded="false" />
-            <element signature="n#!!doc;n#onUse#0;n#!!block;n#IPackage#0" expanded="false" />
-            <element signature="n#!!doc;n#registerBuildPlugin#0;n#!!block;n#IPackage#0" expanded="false" />
-            <element signature="e#74272#74470#0" expanded="false" />
-            <element signature="n#!!block;n#PackageAPIMember#0" expanded="false" />
-            <element signature="n#!!doc;n#addAssets#0;n#!!block;n#PackageAPIMember#0" expanded="false" />
-            <element signature="n#!!doc;n#addFiles#0;n#!!block;n#PackageAPIMember#0" expanded="false" />
-            <element signature="e#76085#76132#0" expanded="false" />
-            <element signature="n#!!doc;n#export#0;n#!!block;n#PackageAPIMember#0" expanded="false" />
-            <element signature="n#!!doc;n#imply#0;n#!!block;n#PackageAPIMember#0" expanded="false" />
-            <element signature="n#!!doc;n#use#0;n#!!block;n#PackageAPIMember#0" expanded="false" />
-            <element signature="e#79969#80038#0" expanded="false" />
-            <element signature="n#!!doc;n#versionsFrom#0;n#!!block;n#PackageAPIMember#0" expanded="false" />
-            <element signature="n#!!block;n#IPlugin#0" expanded="false" />
-            <element signature="n#!!doc;n#registerCompiler#0;n#!!block;n#IPlugin#0" expanded="false" />
-            <element signature="e#81922#82028#0" expanded="false" />
-            <element signature="n#!!doc;n#registerLinter#0;n#!!block;n#IPlugin#0" expanded="false" />
-            <element signature="e#82669#82730#0" expanded="false" />
-            <element signature="n#!!doc;n#registerMinifier#0;n#!!block;n#IPlugin#0" expanded="false" />
-            <element signature="e#83373#83479#0" expanded="false" />
-            <element signature="n#!!doc;n#registerSourceHandler#0;n#!!block;n#IPlugin#0" expanded="false" />
-            <element signature="n#!!block;n#ISession#0" expanded="false" />
-            <element signature="n#!!doc;n#equals#0;n#!!block;n#ISession#0" expanded="false" />
-            <element signature="n#!!doc;n#get#0;n#!!block;n#ISession#0" expanded="false" />
-            <element signature="n#!!doc;n#set#0;n#!!block;n#ISession#0" expanded="false" />
-            <element signature="n#!!doc;n#setDefault#0;n#!!block;n#ISession#0" expanded="false" />
-            <element signature="n#!!block;n#SubscriptionMember#0" expanded="false" />
-            <element signature="n#!!doc;n#added#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
-            <element signature="n#!!doc;n#changed#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
-            <element signature="n#!!doc;n#connection#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
-            <element signature="n#!!doc;n#error#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
-            <element signature="n#!!doc;n#onStop#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
-            <element signature="n#!!doc;n#ready#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
-            <element signature="n#!!doc;n#removed#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
-            <element signature="n#!!doc;n#stop#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
-            <element signature="n#!!doc;n#userId#0;n#!!block;n#SubscriptionMember#0" expanded="false" />
-            <element signature="n#!!block;n#TemplateMember#0" expanded="false" />
-            <element signature="n#!!doc;n#created#0;n#!!block;n#TemplateMember#0" expanded="false" />
-            <element signature="n#!!doc;n#destroyed#0;n#!!block;n#TemplateMember#0" expanded="false" />
-            <element signature="n#!!doc;n#events#0;n#!!block;n#TemplateMember#0" expanded="false" />
-            <element signature="n#!!doc;n#helpers#0;n#!!block;n#TemplateMember#0" expanded="false" />
-            <element signature="n#!!doc;n#onCreated#0;n#!!block;n#TemplateMember#0" expanded="false" />
-            <element signature="n#!!doc;n#onDestroyed#0;n#!!block;n#TemplateMember#0" expanded="false" />
-            <element signature="n#!!doc;n#onRendered#0;n#!!block;n#TemplateMember#0" expanded="false" />
-            <element signature="n#!!doc;n#rendered#0;n#!!block;n#TemplateMember#0" expanded="false" />
-            <element signature="n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#Computation#0;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#Dependency#0;n#Tracker#0" expanded="false" />
-            <element signature="e#91907#92119#0" expanded="false" />
-            <element signature="n#!!doc;n#afterFlush#0;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#autorun#0;n#Tracker#0" expanded="false" />
-            <element signature="e#93065#93114#0" expanded="false" />
-            <element signature="e#93135#93470#0" expanded="false" />
-            <element signature="n#!!doc;n#flush#0;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#nonreactive#0;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#onInvalidate#0;n#Tracker#0" expanded="false" />
-            <element signature="n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#firstRun#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#invalidate#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#invalidated#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#onInvalidate#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#onStop#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#stop#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#stopped#0;n#!!block;n#Computation#1;n#Tracker#0" expanded="false" />
-            <element signature="n#!!block;n#Dependency#1;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#changed#0;n#!!block;n#Dependency#1;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#depend#0;n#!!block;n#Dependency#1;n#Tracker#0" expanded="false" />
-            <element signature="n#!!doc;n#hasDependents#0;n#!!block;n#Dependency#1;n#Tracker#0" expanded="false" />
-            <element signature="n#&quot;meteor/meteor&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/accounts-base&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/ddp-rate-limiter&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/check&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/ddp-client&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/mongo&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/session&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/templating&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/blaze&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/tracker&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/reactive-var&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/ejson&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/http&quot;#0" expanded="false" />
-            <element signature="n#&quot;meteor/email&quot;#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1001,8 +745,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -1011,8 +755,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+        <state relative-caret-position="56">
+          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
@@ -1021,10 +765,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/components/signup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="260">
+          <caret line="52" column="40" lean-forward="false" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#144#230#0" expanded="false" />
+            <element signature="e#189#224#0" expanded="false" />
+            <element signature="e#690#1435#0" expanded="false" />
+            <element signature="e#724#895#0" expanded="false" />
+            <element signature="e#823#881#0" expanded="false" />
+            <element signature="e#906#1424#0" expanded="false" />
+            <element signature="e#933#999#0" expanded="false" />
+            <element signature="e#1005#1410#0" expanded="false" />
+            <element signature="e#1146#1391#0" expanded="false" />
+            <element signature="e#1179#1259#0" expanded="false" />
+            <element signature="e#1265#1369#0" expanded="false" />
+            <element signature="e#1441#1538#0" expanded="false" />
+            <element signature="e#1939#2244#0" expanded="false" />
+            <element signature="e#1994#2074#0" expanded="false" />
           </folding>
         </state>
       </provider>

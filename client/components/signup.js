@@ -6,7 +6,6 @@ export default class Signup extends Component {
         super(props)
 
         this.state = {
-            confirmPassword: '',
             userType: 1
         }
     }
@@ -16,11 +15,11 @@ export default class Signup extends Component {
 
         const username = ReactDOM.findDOMNode(this.refs.username).value.trim()
         const password = ReactDOM.findDOMNode(this.refs.password).value.trim()
-        const confirmPassword = this.state.confirmPassword
+        const confirmPassword = this.refs.confirmPassword.value.trim()
         const userType = this.state.userType
 
         console.log(username, password, confirmPassword, userType)
-        if (password.length > 6 && password === confirmPassword) {
+        if (password.length >= 6 && password === confirmPassword) {
             Accounts.createUser({
                 username: username,
                 password: password,
@@ -52,10 +51,7 @@ export default class Signup extends Component {
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input ref="username" type="text" placeholder="Username"/>
                     <input ref="password" type="password" placeholder="Password"/>
-                    <input onChange={e => this.setState({
-                            confirmPassword: e.target.value.trim()
-                        }
-                    )} type="password" placeholder="Confirm Password"/>
+                    <input ref="confirmPassword" type="password" placeholder="Confirm Password"/>
                     <select name="You're ..." onChange={e => this.setState({
                             userType: e.target.value
                         }

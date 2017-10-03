@@ -5,13 +5,19 @@ import Signup from './components/signup'
 
 class App extends Component {
     render() {
-        return (
-            <div>
-                <Login />
-                <Signup />
-                hi {Meteor.userId()}
-            </div>
-        )
+        if (Meteor.userId()) {
+            return (
+                <div> hi {Meteor.userId()}
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <Login/>
+                    <Signup/>
+                </div>
+            )
+        }
     }
 }
 
