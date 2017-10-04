@@ -3,13 +3,6 @@ body {
     background-color: #F5F5F5;
 }
 
-h1 {
-    margin-top: 0;
-    display: block;
-    background-color: indigo;
-    border-radius: 4px;
-}
-
-.accounts-ui-wrapper {
-    left: 100%;
+.first-column{
+    overflow: hidden;
 }
