@@ -1,18 +1,22 @@
 import React, {Component} from 'react'
-import {Col, Grid, ListGroup, ListGroupItem, Row} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
-import Sell from './sell'
 import Products from './products'
+import Sell from './sell'
 
-class List extends Component{
-
-    render(){
-        if(this.props.match.params.parent === "sell"){
-            return(<Sell/>)
+class List extends Component {
+    condition() {
+        if (this.props.idk === 'sell') {
+            return <Sell/>
         }
-        if(this.props.match.params.parent === "products"){
-            return(<Products/>)
+        if (this.props.idk === 'products') {
+            return (<Products/>)
         }
     }
+
+    render() {
+        return (
+            <div>{this.condition()}</div>
+        )
+    }
 }
+
 export default List
