@@ -14,7 +14,7 @@ const routes = (
             <Switch>
                 <Route path="/signup" component={Signup}/>
                 <Route path="/login" component={Login}/>
-                <Route path="/register" component={Register}/>
+                <Route path="/web-register" component={Register}/>
             </Switch>
         </div>
     </BrowserRouter>
