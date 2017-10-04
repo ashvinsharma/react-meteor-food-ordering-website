@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Button, DropdownButton, Form, FormControl, FormGroup, InputGroup, MenuItem, Modal} from 'react-bootstrap'
-import {Select} from 'react-bootstrap-select'
 import ReactDOM from 'react-dom'
 import {Link} from 'react-router-dom'
 
