@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Col, Grid, ListGroup, ListGroupItem, Row} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
-export default class FirstSidebar extends Component {
+class Sell extends Component {
     render() {
         return (
             <div>
@@ -10,11 +10,11 @@ export default class FirstSidebar extends Component {
                     <Row>
                         <Col md={2}>
                             <ListGroup>
-                                <ListGroupItem>Home</ListGroupItem>
-                                <ListGroupItem>Sell</ListGroupItem>
-                                <ListGroupItem>Sales Ledger</ListGroupItem>
-                                <ListGroupItem>Reporting</ListGroupItem>
-                                <Link to="/list/products"><ListGroupItem>Products</ListGroupItem></Link>
+                                <ListGroupItem>Type</ListGroupItem>
+                                <ListGroupItem>Price</ListGroupItem>
+                                <ListGroupItem>Sales sell </ListGroupItem>
+                                <ListGroupItem>Tags</ListGroupItem>
+                                /<Link to="/products"><ListGroupItem>Products</ListGroupItem></Link>
                                 <ListGroupItem>Customers</ListGroupItem>
                                 <ListGroupItem>ECommerce</ListGroupItem>
                                 <ListGroupItem>Setup</ListGroupItem>
@@ -26,3 +26,5 @@ export default class FirstSidebar extends Component {
         )
     }
 }
+
+export default Sell
