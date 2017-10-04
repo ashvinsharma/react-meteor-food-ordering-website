@@ -3,10 +3,19 @@ body {
     background-color: #F5F5F5;
 }
 
-.container-fluid{
+.container-fluid {
     padding: 0 !important;
 }
 
-.first-column{
+.first-column {
     overflow: hidden;
+}
+
+.navbar {
+    border-radius: 0 !important;
+}
+
+.navbar-inverse {
+    background-image: none !important;
+    background-color: #080808;
 }
