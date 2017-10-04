@@ -21,10 +21,10 @@ export default class Signup extends Component {
         console.log(username, password, confirmPassword, userType)
         if (password.length >= 6 && password === confirmPassword) {
             Accounts.createUser({
-                username: username,
-                password: password,
+                username,
+                password,
                 profile: {
-                    userType: userType
+                    userType
                 }
             }, (err) => {
                 if (err) {

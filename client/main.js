@@ -1,26 +1,23 @@
-import React, {Component} from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-import Login from './components/login'
-import Signup from './components/signup'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
-class App extends Component {
-    render() {
-        if (Meteor.userId()) {
-            return (
-                <div> hi {Meteor.userId()}
-                </div>
-            )
-        } else {
-            return (
-                <div>
-                    <Login/>
-                    <Signup/>
-                </div>
-            )
-        }
-    }
-}
+import login from './components/login'
+import signup from './components/signup'
+import App from './components/app'
+
+const routes = (
+    <BrowserRouter>
+        <div>
+            <Switch>
+                <Route exact path="/signup" component={signup} />
+                <Route path="/login" component={login} />
+            </Switch>
+        </div>
+    </BrowserRouter>
+)
+
 
 Meteor.startup(() => {
-    ReactDOM.render(<App/>, document.querySelector('.container'))
+    ReactDOM.render(routes, document.querySelector('.container'))
 })
