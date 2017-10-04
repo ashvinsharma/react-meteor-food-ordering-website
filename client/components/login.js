@@ -2,6 +2,7 @@ import {Meteor} from 'meteor/meteor'
 import React, {Component} from 'react'
 import {Button, Form, FormControl, FormGroup, InputGroup, Modal} from 'react-bootstrap'
 import ReactDOM from 'react-dom'
+import {Link} from 'react-router-dom'
 
 export default class Login extends Component {
     handleSubmit(e) {
@@ -46,7 +47,7 @@ export default class Login extends Component {
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button>Close</Button>
+                        <Link to={'/'}><Button>Close</Button></Link>
                         <Button bsStyle="primary" onClick={this.handleSubmit.bind(this)}>Login</Button>
                     </Modal.Footer>
                 </Modal.Dialog>

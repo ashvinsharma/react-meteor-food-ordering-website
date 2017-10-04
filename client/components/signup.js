@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Button, DropdownButton, Form, FormControl, FormGroup, InputGroup, MenuItem, Modal} from 'react-bootstrap'
 import {Select} from 'react-bootstrap-select'
 import ReactDOM from 'react-dom'
+import {Link} from 'react-router-dom'
 
 export default class Signup extends Component {
     constructor(props) {
@@ -15,9 +16,11 @@ export default class Signup extends Component {
     handleSubmit(e) {
         e.preventDefault()
 
+        console.log(this.refs)
+
         const username = ReactDOM.findDOMNode(this.refs.username).value.trim()
         const password = ReactDOM.findDOMNode(this.refs.password).value.trim()
-        const confirmPassword = this.refs.confirmPassword.value.trim()
+        const confirmPassword = ReactDOM.findDOMNode(this.refs.confirmPassword).value.trim()
         const userType = this.state.userType
 
         console.log(username, password, confirmPassword, userType)
@@ -48,7 +51,6 @@ export default class Signup extends Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className="signup static-modal">
                 <Modal.Dialog>
@@ -60,26 +62,26 @@ export default class Signup extends Component {
                             <FormGroup>
                                 <InputGroup>
                                     <InputGroup.Addon>Username</InputGroup.Addon>
-                                    <FormControl type="text"/>
+                                    <FormControl ref="username" type="text"/>
                                 </InputGroup>
                             </FormGroup>
                             <FormGroup>
                                 <InputGroup>
                                     <InputGroup.Addon>Password</InputGroup.Addon>
-                                    <FormControl type="password"/>
+                                    <FormControl ref="password" type="password"/>
                                 </InputGroup>
                             </FormGroup>
                             <FormControl.Feedback/>
                             <FormGroup>
                                 <InputGroup>
                                     <InputGroup.Addon>Confirm Password</InputGroup.Addon>
-                                    <FormControl type="password"/>
+                                    <FormControl ref="confirmPassword" type="password"/>
                                 </InputGroup>
                             </FormGroup>
                             <FormGroup>
                                 <InputGroup>
                                     <DropdownButton title="User Type" id="dropdown-basic"
-                                                    onSelect={e => this.setState({userType: e.target.value})}>
+                                                    onSelect={e => this.setState({userType: e})}>
                                         <MenuItem eventKey="1" value="1">Admin</MenuItem>
                                         <MenuItem eventKey="2" value="2">Cashier</MenuItem>
                                     </DropdownButton>
@@ -88,7 +90,7 @@ export default class Signup extends Component {
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button>Close</Button>
+                        <Link to={'/'}><Button>Close</Button></Link>
                         <Button bsStyle="primary" onClick={this.handleSubmit.bind(this)}>SignUp</Button>
                     </Modal.Footer>
                 </Modal.Dialog>
