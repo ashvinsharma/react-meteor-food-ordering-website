@@ -6,8 +6,7 @@ export default class WebRegister extends Component {
     render() {
         return (
             <div>
-                <FirstSidebar/>
-                
+                <FirstSidebar param={this.props.match.params}/>
             </div>
         )
     }
