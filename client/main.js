@@ -1,17 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-
-import login from './components/login'
-import signup from './components/signup'
 import App from './components/app'
+
+import Login from './components/login'
+import Register from './components/web-register'
+import Signup from './components/signup'
 
 const routes = (
     <BrowserRouter>
         <div>
+            <App/>
             <Switch>
-                <Route exact path="/signup" component={signup} />
-                <Route path="/login" component={login} />
+                <Route path="/signup" component={Signup}/>
+                <Route path="/login" component={Login}/>
+                <Route path="/web-register" component={Register}/>
             </Switch>
         </div>
     </BrowserRouter>
@@ -19,5 +22,5 @@ const routes = (
 
 
 Meteor.startup(() => {
-    ReactDOM.render(routes, document.querySelector('.container'))
+    ReactDOM.render(routes, document.querySelector('.container-fluid'))
 })

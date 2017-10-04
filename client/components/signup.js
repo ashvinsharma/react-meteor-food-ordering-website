@@ -30,7 +30,7 @@ export default class Signup extends Component {
                 if (err) {
                     console.log('Error ', err)
                 } else {
-                    console.log('signup successful, login in ...')
+                    console.log('Signup successful, login in ...')
                     Meteor.loginWithPassword(username, password, (e) => {
                         if (e) {
                             console.log('Error ', e)

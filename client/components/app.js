@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
+import Header from './header'
 
 class App extends Component {
     render() {
-        if (Meteor.userId()) {
-            return (
-                <div> hi {Meteor.userId()}
-                </div>
-            )
-        }
+        return (
+            <div>
+                <Header/>
+            </div>
+        )
     }
 }
 
