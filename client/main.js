@@ -19,5 +19,5 @@ const routes = (
 
 
 Meteor.startup(() => {
-    ReactDOM.render(routes, document.querySelector('.container'))
+    ReactDOM.render(routes, document.querySelector('.container-fluid'))
 })
