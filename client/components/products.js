@@ -10,14 +10,15 @@ class Products extends Component {
                 <Row>
                     <Col md={2}>
                         <ListGroup>
-                            <Link to="/web-register/products/food-items"><ListGroupItem>Food
-                                Items</ListGroupItem></Link>
-                            <ListGroupItem>Stock Control</ListGroupItem>
-                            <ListGroupItem>Price Books</ListGroupItem>
-                            <ListGroupItem>Item Types</ListGroupItem>
-                            <ListGroupItem>Suppliers</ListGroupItem>
-                            <ListGroupItem>Brands</ListGroupItem>
-                            <ListGroupItem>Item Tags</ListGroupItem>
+                            <Link to={`${this.props.match.url}/food-items`}>
+                                <ListGroupItem>Food Items</ListGroupItem>
+                            </Link>
+                            <ListGroupItem>Stock Control (TBD)</ListGroupItem>
+                            <ListGroupItem>Price Books (TBD)</ListGroupItem>
+                            <ListGroupItem>Item Types (TBD)</ListGroupItem>
+                            <ListGroupItem>Suppliers (TBD)</ListGroupItem>
+                            <ListGroupItem>Brands (TBD)</ListGroupItem>
+                            <ListGroupItem>Item Tags (TBD)</ListGroupItem>
                         </ListGroup>
                     </Col>
                     <Col md={10}>

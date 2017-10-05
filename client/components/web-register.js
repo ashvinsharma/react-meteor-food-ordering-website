@@ -1,9 +1,11 @@
 import React, {Component} from 'react'
-import {Col, Grid, Row} from 'react-bootstrap'
 import {Route, Switch} from 'react-router-dom'
 import FirstSidebar from './first-sidebar'
 import Products from './products'
 import Sell from './sell'
+import Grid from 'react-bootstrap/es/Grid'
+import Row from 'react-bootstrap/es/Row'
+import Col from 'react-bootstrap/es/Col'
 
 export default class WebRegister extends Component {
     render() {

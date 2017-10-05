@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {ListGroup, ListGroupItem} from 'react-bootstrap'
 import FaSale from 'react-icons/lib/fa/clipboard'
 import FaSet from 'react-icons/lib/fa/cog'
 import FaGrp from 'react-icons/lib/fa/group'
@@ -9,6 +8,8 @@ import FaCom from 'react-icons/lib/fa/money'
 import FaShop from 'react-icons/lib/fa/shopping-cart'
 import FaProd from 'react-icons/lib/fa/tags'
 import {Link} from 'react-router-dom'
+import ListGroup from 'react-bootstrap/es/ListGroup'
+import ListGroupItem from 'react-bootstrap/es/ListGroupItem'
 
 export default class FirstSidebar extends Component {
     render() {
