@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import {Col, Grid, Row} from 'react-bootstrap'
 import {Route, Switch} from 'react-router-dom'
 import FirstSidebar from './first-sidebar'
-import Products from './products'
+import Products from './products/products'
 import Sell from './sell'
-import PrivateRoute from './private-route'
+import PrivateRoute from '../account/private-route'
 
 export default class WebRegister extends Component {
     render() {
