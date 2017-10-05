@@ -7,6 +7,7 @@
   "dependencies": {
     "babel-runtime": "^6.20.0",
     "bcrypt": "^1.0.3",
+    "history": "^4.7.2",
     "meteor-node-stubs": "~0.2.4",
     "react": "^15.6.2",
     "react-addons-pure-render-mixin": "^15.6.2",
@@ -14,8 +15,11 @@
     "react-bootstrap-select": "^0.14.0",
     "react-dom": "^15.6.2",
     "react-fa-icon": "^0.1.4",
+    "react-global-state": "^0.1.2",
     "react-icons": "^2.2.5",
     "react-modal-bootstrap": "^1.1.1",
-    "react-router-dom": "^4.2.2"
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2"
   }
 }

@@ -3,6 +3,27 @@ import {MenuItem, Nav, Navbar, NavDropdown, NavItem} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
 export default class Header extends Component {
+    func() {
+        Meteor.logout()
+    }
+
+    renderUserAction() {
+        if (Meteor.userId() !== null) {
+            return (
+                <Nav pullRight>
+                    <NavItem eventKey={3} onClick={this.func.bind(this)}><Link to="/">Logout</Link></NavItem>
+                </Nav>
+            )
+        } else {
+            return (
+                <Nav pullRight>
+                    <NavItem eventKey={1}><Link to="/login">Login</Link></NavItem>
+                    <NavItem eventKey={2}><Link to="/signup">SignUp</Link></NavItem>
+                </Nav>
+            )
+        }
+    }
+
     render() {
         return (
             <Navbar inverse collapseOnSelect>
@@ -23,10 +44,7 @@ export default class Header extends Component {
                         <MenuItem eventKey={3.4}>Separated link</MenuItem>
                     </NavDropdown>
                 </Nav>
-                <Nav pullRight>
-                    <NavItem eventKey={1}><Link to="/login">Login</Link></NavItem>
-                    <NavItem eventKey={2}><Link to="/signup">SignUp</Link></NavItem>
-                </Nav>
+                {this.renderUserAction()}
             </Navbar>
         )
     }

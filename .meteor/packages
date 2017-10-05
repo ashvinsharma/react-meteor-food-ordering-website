@@ -19,8 +19,9 @@ shell-server@0.2.4            # Server-side component of the `meteor shell` comm
 
 autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
-accounts-ui@1.1.9
-accounts-password@1.4.0
+accounts-ui
+accounts-password
 accounts-facebook@1.2.1
 facebook-config-ui@1.0.0
 react-meteor-data
+accounts-base
