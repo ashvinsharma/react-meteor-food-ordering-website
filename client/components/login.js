@@ -2,21 +2,23 @@ import {Meteor} from 'meteor/meteor'
 import React, {Component} from 'react'
 import {Button, Form, FormControl, FormGroup, InputGroup, Modal} from 'react-bootstrap'
 import ReactDOM from 'react-dom'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
-export default class Login extends Component {
+
+class Login extends Component {
     handleSubmit(e) {
         e.preventDefault()
 
         const email = ReactDOM.findDOMNode(this.refs.username).value.trim()
         const password = ReactDOM.findDOMNode(this.refs.password).value.trim()
 
-        console.log(email, password)
         Meteor.loginWithPassword(email, password, (err) => {
             if (err) {
                 console.log('login unsuccessful ', err)
             } else {
                 console.log('login successful')
+                console.log('userId is: ', Meteor.userId())
+                this.props.history.push('/web-register/default')
             }
         })
     }
@@ -34,14 +36,14 @@ export default class Login extends Component {
                             <FormGroup>
                                 <InputGroup>
                                     <InputGroup.Addon>Username</InputGroup.Addon>
-                                    <FormControl type="text"/>
+                                    <FormControl ref="username" type="text"/>
                                 </InputGroup>
                             </FormGroup>
                             <FormControl.Feedback/>
                             <FormGroup>
                                 <InputGroup>
                                     <InputGroup.Addon>Password</InputGroup.Addon>
-                                    <FormControl type="password"/>
+                                    <FormControl ref="password" type="password"/>
                                 </InputGroup>
                             </FormGroup>
                         </Form>
@@ -56,3 +58,5 @@ export default class Login extends Component {
         )
     }
 }
+
+export default withRouter(Login)

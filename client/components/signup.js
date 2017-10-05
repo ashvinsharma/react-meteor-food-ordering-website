@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import {Button, DropdownButton, Form, FormControl, FormGroup, InputGroup, MenuItem, Modal} from 'react-bootstrap'
 import ReactDOM from 'react-dom'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
-export default class Signup extends Component {
+class Signup extends Component {
     constructor(props) {
-        super(props)
+        super()
 
         this.state = {
             userType: 1
@@ -15,14 +15,11 @@ export default class Signup extends Component {
     handleSubmit(e) {
         e.preventDefault()
 
-        console.log(this.refs)
-
         const username = ReactDOM.findDOMNode(this.refs.username).value.trim()
         const password = ReactDOM.findDOMNode(this.refs.password).value.trim()
         const confirmPassword = ReactDOM.findDOMNode(this.refs.confirmPassword).value.trim()
         const userType = this.state.userType
 
-        console.log(username, password, confirmPassword, userType)
         if (password.length >= 6 && password === confirmPassword) {
             Accounts.createUser({
                 username,
@@ -37,9 +34,10 @@ export default class Signup extends Component {
                     console.log('signup successful, login in ...')
                     Meteor.loginWithPassword(username, password, (e) => {
                         if (e) {
-                            console.log('Error ', e)
+                            console.log('Error', e)
                         } else {
                             console.log('Login after Sign Up is successful')
+                            this.props.history.push('/web-register/default')
                         }
                     })
                 }
@@ -90,10 +88,13 @@ export default class Signup extends Component {
                     </Modal.Body>
                     <Modal.Footer>
                         <Link className="signup-btns" to={'/'}><Button>Close</Button></Link>
-                        <Button className="signup-btns" bsStyle="primary" onClick={this.handleSubmit.bind(this)}>SignUp</Button>
+                        <Button className="signup-btns" bsStyle="primary"
+                                onClick={this.handleSubmit.bind(this)}>SignUp</Button>
                     </Modal.Footer>
                 </Modal.Dialog>
             </div>
         )
     }
 }
+
+export default withRouter(Signup)
