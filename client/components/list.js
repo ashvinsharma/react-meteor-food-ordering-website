@@ -4,10 +4,10 @@ import Sell from './sell'
 
 class List extends Component {
     condition() {
-        if (this.props.idk === 'sell') {
+        if (this.props.secondList === 'sell') {
             return <Sell/>
         }
-        if (this.props.idk === 'products') {
+        if (this.props.secondList === 'products') {
             return (<Products/>)
         }
     }
