@@ -11,7 +11,10 @@
     "react": "^15.6.2",
     "react-addons-pure-render-mixin": "^15.6.2",
     "react-bootstrap": "^0.31.3",
+    "react-bootstrap-select": "^0.14.0",
     "react-dom": "^15.6.2",
+    "react-fa-icon": "^0.1.4",
+    "react-icons": "^2.2.5",
     "react-modal-bootstrap": "^1.1.1",
     "react-router-dom": "^4.2.2"
   }
