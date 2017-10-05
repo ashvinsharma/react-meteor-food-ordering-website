@@ -1,17 +1,19 @@
 import React, {Component} from 'react'
 import {MenuItem, Nav, Navbar, NavDropdown, NavItem} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
-export default class Header extends Component {
-    func() {
+class Header extends Component {
+    clickLogoutButton() {
         Meteor.logout()
+        this.props.history.push('/')
     }
 
     renderUserAction() {
+        console.log('page loadin...')
         if (Meteor.userId() !== null) {
             return (
                 <Nav pullRight>
-                    <NavItem eventKey={3} onClick={this.func.bind(this)}><Link to="/">Logout</Link></NavItem>
+                    <NavItem eventKey={3} onClick={this.clickLogoutButton.bind(this)}>Logout</NavItem>
                 </Nav>
             )
         } else {
@@ -49,4 +51,6 @@ export default class Header extends Component {
         )
     }
 }
+
+export default withRouter(Header)
 

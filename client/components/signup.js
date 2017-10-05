@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
 import {Button, DropdownButton, Form, FormControl, FormGroup, InputGroup, MenuItem, Modal} from 'react-bootstrap'
 import ReactDOM from 'react-dom'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
-export default class Signup extends Component {
+class Signup extends Component {
     constructor(props) {
         super()
 
@@ -37,6 +37,7 @@ export default class Signup extends Component {
                             console.log('Error', e)
                         } else {
                             console.log('Login after Sign Up is successful')
+                            this.props.history.push('/web-register/default')
                         }
                     })
                 }
@@ -95,3 +96,5 @@ export default class Signup extends Component {
         )
     }
 }
+
+export default withRouter(Signup)

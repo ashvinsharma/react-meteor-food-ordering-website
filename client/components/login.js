@@ -2,9 +2,10 @@ import {Meteor} from 'meteor/meteor'
 import React, {Component} from 'react'
 import {Button, Form, FormControl, FormGroup, InputGroup, Modal} from 'react-bootstrap'
 import ReactDOM from 'react-dom'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
-export default class Login extends Component {
+
+class Login extends Component {
     handleSubmit(e) {
         e.preventDefault()
 
@@ -16,8 +17,8 @@ export default class Login extends Component {
                 console.log('login unsuccessful ', err)
             } else {
                 console.log('login successful')
-                console.log('userId is: ',Meteor.userId())
-
+                console.log('userId is: ', Meteor.userId())
+                this.props.history.push('/web-register/default')
             }
         })
     }
@@ -57,3 +58,5 @@ export default class Login extends Component {
         )
     }
 }
+
+export default withRouter(Login)

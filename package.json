@@ -17,6 +17,7 @@
     "react-fa-icon": "^0.1.4",
     "react-icons": "^2.2.5",
     "react-modal-bootstrap": "^1.1.1",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "react-router-dom": "latest"
   }
 }
