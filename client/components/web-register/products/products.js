@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Col, Grid, ListGroup, ListGroupItem, Row} from 'react-bootstrap'
 import {Link, Route, Switch} from 'react-router-dom'
 import FoodItems from './food-items'
-import PrivateRoute from './private-route'
+import PrivateRoute from '../../account/private-route'
 
 class Products extends Component {
     render() {
