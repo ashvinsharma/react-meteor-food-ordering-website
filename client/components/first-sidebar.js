@@ -19,18 +19,18 @@ export default class FirstSidebar extends Component {
                     <Row>
                         <Col md={2}>
                             <ListGroup>
-                                <ListGroupItem><FaHome />  Home</ListGroupItem>
-                                <Link to="/web-register/sell"><ListGroupItem><FaShop/> Sell</ListGroupItem></Link>
-                                <ListGroupItem><FaSale/> Sales Ledger</ListGroupItem>
-                                <ListGroupItem><FaLine/> Reporting</ListGroupItem>
-                                <Link to="/web-register/products"><ListGroupItem><FaProd/> Products</ListGroupItem></Link>
-                                <ListGroupItem><FaGrp/> Customers</ListGroupItem>
-                                <ListGroupItem><FaCom/> ECommerce</ListGroupItem>
-                                <ListGroupItem><FaSet/> Setup</ListGroupItem>
+                                <ListGroupItem><FaHome />Home(TBD)</ListGroupItem>
+  <Link to="/web-register/sell"><ListGroupItem><FaShop/> Sell</ListGroupItem></Link>
+                                <ListGroupItem><FaSale/> Sales Ledger(TBD)</ListGroupItem>
+                                <ListGroupItem><FaLine/> Reporting(TBD)</ListGroupItem>
+<Link to="/web-register/products"><ListGroupItem><FaProd/>Products</ListGroupItem></Link>
+                                <ListGroupItem><FaGrp/> Customers(TBD)</ListGroupItem>
+                                <ListGroupItem><FaCom/> ECommerce(TBD)</ListGroupItem>
+                                <ListGroupItem><FaSet/> Setup(TBD)</ListGroupItem>
                             </ListGroup>
                         </Col>
                         <Col md={2}>
-                            //TODO: change this name
+                            //TODO: change this nam
                             <List idk={this.props.param.param}/>
                         </Col>
                     </Row>

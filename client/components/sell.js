@@ -7,14 +7,12 @@ class Sell extends Component {
         return (
             <div>
                 <ListGroup>
-                    <ListGroupItem>Type</ListGroupItem>
-                    <ListGroupItem>Price</ListGroupItem>
-                    <ListGroupItem>Sales sell </ListGroupItem>
-                    <ListGroupItem>Tags</ListGroupItem>
-                    <Link to="/products"><ListGroupItem>Products</ListGroupItem></Link>
-                    <ListGroupItem>Customers</ListGroupItem>
-                    <ListGroupItem>ECommerce</ListGroupItem>
-                    <ListGroupItem>Setup</ListGroupItem>
+                    <ListGroupItem>Sell</ListGroupItem>
+                    <ListGroupItem>Open/Close</ListGroupItem>
+                    <ListGroupItem>Sale History</ListGroupItem>
+                    <ListGroupItem>Cash Management</ListGroupItem>
+                    <ListGroupItem>Status</ListGroupItem>
+                    <ListGroupItem>Setting</ListGroupItem>
                 </ListGroup>
             </div>
         )
