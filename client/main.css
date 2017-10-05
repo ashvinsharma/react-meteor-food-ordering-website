@@ -22,3 +22,6 @@ body {
 .signup-btns{
     margin-left: 5px;
  }
+.addproduct-buttons{
+    float: left;
+}

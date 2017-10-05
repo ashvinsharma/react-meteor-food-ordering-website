@@ -10,9 +10,11 @@ import FaShop from 'react-icons/lib/fa/shopping-cart'
 import FaProd from 'react-icons/lib/fa/tags'
 import {Link} from 'react-router-dom'
 import List from './list'
+import FoodItems from "./fooditems"
 
 export default class FirstSidebar extends Component {
     render() {
+        console.log(this.props)
         return (
             <div>
                 <Grid bsClass="container-fluid">
@@ -23,15 +25,19 @@ export default class FirstSidebar extends Component {
                                 <Link to="/web-register/sell"><ListGroupItem><FaShop/> Sell</ListGroupItem></Link>
                                 <ListGroupItem><FaSale/> Sales Ledger(TBD)</ListGroupItem>
                                 <ListGroupItem><FaLine/> Reporting(TBD)</ListGroupItem>
-                                <Link
-                                    to="/web-register/products"><ListGroupItem><FaProd/>Products</ListGroupItem></Link>
+                                <Link to="/web-register/products"><ListGroupItem><FaProd/>Products</ListGroupItem></Link>
                                 <ListGroupItem><FaGrp/> Customers(TBD)</ListGroupItem>
                                 <ListGroupItem><FaCom/> ECommerce(TBD)</ListGroupItem>
                                 <ListGroupItem><FaSet/> Setup(TBD)</ListGroupItem>
                             </ListGroup>
                         </Col>
-                        <Col md={2}>
+                        <Col md={10}>
+                            <Col md={2}>
                             <List secondList={this.props.param.param}/>
+                            </Col>
+                            <Col md={8}>
+                                <List thirdList={this.props.param}/>
+                            </Col>
                         </Col>
                     </Row>
                 </Grid>

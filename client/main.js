@@ -8,6 +8,7 @@ import Products from './components/products'
 import Sell from './components/sell'
 import Signup from './components/signup'
 import WebRegister from './components/web-register'
+import FoodItems from "./components/fooditems"
 
 const routes = (
     <BrowserRouter>
@@ -18,6 +19,7 @@ const routes = (
                 <Route path="/login" component={Login}/>
                 <Route path="/web-register/:param" component={WebRegister}/>
                 <Route path="/web-register/products" component={Products}/>
+                <Route path="/web-register/:param/:param" component={Products}/>
                 <Route path="/web-register/sell" component={Sell}/>
             </Switch>
         </div>

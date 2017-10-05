@@ -1,12 +1,14 @@
 import React, {Component} from 'react'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 class Products extends Component {
     render() {
+   // console.log(this.props)
         return (
             <div>
                 <ListGroup>
-                    <ListGroupItem>Food Items</ListGroupItem>
+                    <Link to="/web-register/products/fooditems"><ListGroupItem>Food Items</ListGroupItem></Link>
                     <ListGroupItem>Stock Control</ListGroupItem>
                     <ListGroupItem>Price Books</ListGroupItem>
                     <ListGroupItem>Item Types</ListGroupItem>

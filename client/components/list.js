@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Products from './products'
 import Sell from './sell'
+import FoodItems from "./fooditems"
 
 class List extends Component {
     condition() {
@@ -8,7 +9,11 @@ class List extends Component {
             return <Sell/>
         }
         if (this.props.secondList === 'products') {
-            return (<Products/>)
+            return (<Products />)
+        }
+        if (this.props.thirdList === 'fooditems') {
+            console.log("Test")
+            return <FoodItems/>
         }
     }
 
