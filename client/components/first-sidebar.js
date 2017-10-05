@@ -28,9 +28,12 @@ export default class FirstSidebar extends Component {
                                 <ListGroupItem><FaSet/> Setup</ListGroupItem>
                             </ListGroup>
                         </Col>
+                        <Col md={2}>
+                            <List idk={this.props.param.param}/>
+                        </Col>
                     </Row>
                 </Grid>
             </div>
-        )
+    )
     }
-}
+    }
