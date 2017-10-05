@@ -13,7 +13,7 @@ export default class Header extends Component {
                     <Navbar.Toggle/>
                 </Navbar.Header>
                 <Nav>
-                    <NavItem eventKey={1}><Link to={'/web-register'}>Web-Register</Link></NavItem>
+                    <NavItem eventKey={1}><Link to={'/web-register/default'}>Web-Register</Link></NavItem>
                     <NavItem eventKey={2}>Link</NavItem>
                     <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
                         <MenuItem eventKey={3.1}>Action</MenuItem>
