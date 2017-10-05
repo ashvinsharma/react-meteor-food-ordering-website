@@ -4,7 +4,7 @@ import {Route, Switch} from 'react-router-dom'
 import FirstSidebar from './first-sidebar'
 import Products from './products'
 import Sell from './sell'
-import PrivateRoute from './PrivateRoute'
+import PrivateRoute from './private-route'
 
 export default class WebRegister extends Component {
     render() {

@@ -11,13 +11,12 @@ export default class Login extends Component {
         const email = ReactDOM.findDOMNode(this.refs.username).value.trim()
         const password = ReactDOM.findDOMNode(this.refs.password).value.trim()
 
-        console.log(email, password)
         Meteor.loginWithPassword(email, password, (err) => {
             if (err) {
                 console.log('login unsuccessful ', err)
             } else {
                 console.log('login successful')
-                console.log(Meteor.userId())
+                console.log('userId is: ',Meteor.userId())
 
             }
         })
