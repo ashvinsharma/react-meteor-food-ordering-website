@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter,Router, Route, Switch,PrivateRoute} from 'react-router-dom'
 import App from './components/app'
 
 import Login from './components/login'
@@ -9,6 +9,17 @@ import Sell from './components/sell'
 import Signup from './components/signup'
 import WebRegister from './components/web-register'
 
+function loggedIn() {
+    // ...
+}
+
+function requireAuth(nextState, replace) {
+    if (!loggedIn()) {
+        replace({
+            pathname: '/login'
+        })
+    }
+}
 const routes = (
     <BrowserRouter>
         <div>
@@ -16,9 +27,9 @@ const routes = (
             <Switch>
                 <Route path="/signup" component={Signup}/>
                 <Route path="/login" component={Login}/>
-                <Route path="/web-register/:param" component={WebRegister}/>
-                <Route path="/web-register/products" component={Products}/>
-                <Route path="/web-register/sell" component={Sell}/>
+                <PrivateRoute path="/web-register/:param" onEnter={requireAuth} component={WebRegister}/>
+                <PrivateRoute path="/web-register/products" onEnter={requireAuth} component={Products}/>
+                <PrivateRoute path="/web-register/sell" onEnter={requireAuth} component={Sell}/>
             </Switch>
         </div>
     </BrowserRouter>
