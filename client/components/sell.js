@@ -1,20 +1,23 @@
 import React, {Component} from 'react'
-import {ListGroup, ListGroupItem} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import {Col, Grid, ListGroup, ListGroupItem, Row} from 'react-bootstrap'
 
 class Sell extends Component {
     render() {
         return (
-            <div>
-                <ListGroup>
-                    <ListGroupItem>Sell</ListGroupItem>
-                    <ListGroupItem>Open/Close</ListGroupItem>
-                    <ListGroupItem>Sale History</ListGroupItem>
-                    <ListGroupItem>Cash Management</ListGroupItem>
-                    <ListGroupItem>Status</ListGroupItem>
-                    <ListGroupItem>Setting</ListGroupItem>
-                </ListGroup>
-            </div>
+            <Grid bsClass="container-fluid">
+                <Row>
+                    <Col md={2}>
+                        <ListGroup>
+                            <ListGroupItem>Sell</ListGroupItem>
+                            <ListGroupItem>Open/Close</ListGroupItem>
+                            <ListGroupItem>Sale History</ListGroupItem>
+                            <ListGroupItem>Cash Management</ListGroupItem>
+                            <ListGroupItem>Status</ListGroupItem>
+                            <ListGroupItem>Setting</ListGroupItem>
+                        </ListGroup>
+                    </Col>
+                </Row>
+            </Grid>
         )
     }
 }
