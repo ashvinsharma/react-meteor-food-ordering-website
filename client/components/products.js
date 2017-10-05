@@ -6,13 +6,13 @@ class Products extends Component {
         return (
             <div>
                 <ListGroup>
-                    <ListGroupItem>Type</ListGroupItem>
-                    <ListGroupItem>Price</ListGroupItem>
-                    <ListGroupItem>Sales </ListGroupItem>
-                    <ListGroupItem>Tags</ListGroupItem>
-                    <ListGroupItem>Customers</ListGroupItem>
-                    <ListGroupItem>ECommerce</ListGroupItem>
-                    <ListGroupItem>Setup</ListGroupItem>
+                    <ListGroupItem>Food Items</ListGroupItem>
+                    <ListGroupItem>Stock Control</ListGroupItem>
+                    <ListGroupItem>Price Books</ListGroupItem>
+                    <ListGroupItem>Item Types</ListGroupItem>
+                    <ListGroupItem>Suppliers</ListGroupItem>
+                    <ListGroupItem>Brands</ListGroupItem>
+                    <ListGroupItem>Item Tags</ListGroupItem>
                 </ListGroup>
             </div>
         )
