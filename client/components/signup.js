@@ -37,7 +37,7 @@ export default class Signup extends Component {
                     console.log('signup successful, login in ...')
                     Meteor.loginWithPassword(username, password, (e) => {
                         if (e) {
-                            console.log('Error ', e)
+                            console.log('Error tmklc', e)
                         } else {
                             console.log('Login after Sign Up is successful')
                         }
@@ -90,7 +90,8 @@ export default class Signup extends Component {
                     </Modal.Body>
                     <Modal.Footer>
                         <Link className="signup-btns" to={'/'}><Button>Close</Button></Link>
-                        <Button className="signup-btns" bsStyle="primary" onClick={this.handleSubmit.bind(this)}>SignUp</Button>
+                        <Button className="signup-btns" bsStyle="primary"
+                                onClick={this.handleSubmit.bind(this)}>SignUp</Button>
                     </Modal.Footer>
                 </Modal.Dialog>
             </div>

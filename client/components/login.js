@@ -17,6 +17,8 @@ export default class Login extends Component {
                 console.log('login unsuccessful ', err)
             } else {
                 console.log('login successful')
+                console.log(Meteor.userId())
+
             }
         })
     }
@@ -34,14 +36,14 @@ export default class Login extends Component {
                             <FormGroup>
                                 <InputGroup>
                                     <InputGroup.Addon>Username</InputGroup.Addon>
-                                    <FormControl type="text"/>
+                                    <FormControl ref="username" type="text"/>
                                 </InputGroup>
                             </FormGroup>
                             <FormControl.Feedback/>
                             <FormGroup>
                                 <InputGroup>
                                     <InputGroup.Addon>Password</InputGroup.Addon>
-                                    <FormControl type="password"/>
+                                    <FormControl ref="password" type="password"/>
                                 </InputGroup>
                             </FormGroup>
                         </Form>

@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router-dom'
 import FirstSidebar from './first-sidebar'
 import Products from './products'
 import Sell from './sell'
+import PrivateRoute from './PrivateRoute'
 
 export default class WebRegister extends Component {
     render() {
@@ -16,8 +17,8 @@ export default class WebRegister extends Component {
                         </Col>
                         <Col md={10}>
                             <Switch>
-                                <Route path={`${this.props.match.url}/products`} component={Products}/>
-                                <Route path={`${this.props.match.url}/sell`} component={Sell}/>
+                                <PrivateRoute path={`${this.props.match.url}/products`} component={Products}/>
+                                <PrivateRoute path={`${this.props.match.url}/sell`} component={Sell}/>
                             </Switch>
                         </Col>
                     </Row>
