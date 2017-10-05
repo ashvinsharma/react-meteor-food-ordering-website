@@ -1,7 +1,14 @@
 import React, {Component} from 'react'
 import {Col, Grid, ListGroup, ListGroupItem, Row} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import List from './list'
+import FaHome from 'react-icons/lib/fa/home'
+import FaShop from 'react-icons/lib/fa/shopping-cart'
+import FaSale from 'react-icons/lib/fa/clipboard'
+import FaLine from 'react-icons/lib/fa/line-chart'
+import FaProd from 'react-icons/lib/fa/tags';
+import FaGrp from 'react-icons/lib/fa/group'
+import FaCom from  'react-icons/lib/fa/money'
+import FaSet from 'react-icons/lib/fa/cog'
 
 export default class FirstSidebar extends Component {
     render() {
@@ -11,14 +18,14 @@ export default class FirstSidebar extends Component {
                     <Row>
                         <Col md={2}>
                             <ListGroup>
-                                <ListGroupItem>Home</ListGroupItem>
-                                <Link to="/web-register/sell"><ListGroupItem>Sell</ListGroupItem></Link>
-                                <ListGroupItem>Sales Ledger</ListGroupItem>
-                                <ListGroupItem>Reporting</ListGroupItem>
-                                <Link to="/web-register/products"><ListGroupItem>Products</ListGroupItem></Link>
-                                <ListGroupItem>Customers</ListGroupItem>
-                                <ListGroupItem>ECommerce</ListGroupItem>
-                                <ListGroupItem>Setup</ListGroupItem>
+                                <ListGroupItem><FaHome />  Home</ListGroupItem>
+                                <ListGroupItem><FaShop/> Sell</ListGroupItem>
+                                <ListGroupItem><FaSale/> Sales Ledger</ListGroupItem>
+                                <ListGroupItem><FaLine/> Reporting</ListGroupItem>
+                                <Link to="/products"><ListGroupItem><FaProd/> Products</ListGroupItem></Link>
+                                <ListGroupItem><FaGrp/> Customers</ListGroupItem>
+                                <ListGroupItem><FaCom/> ECommerce</ListGroupItem>
+                                <ListGroupItem><FaSet/> Setup</ListGroupItem>
                             </ListGroup>
                         </Col>
                         <Col md={2}>

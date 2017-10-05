@@ -47,8 +47,8 @@ export default class Login extends Component {
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Link to={'/'}><Button>Close</Button></Link>
-                        <Button bsStyle="primary" onClick={this.handleSubmit.bind(this)}>Login</Button>
+                        <Link className="signup-btns" to={'/'}><Button>Close</Button></Link>
+                        <Button className="signup-btns" bsStyle="primary" onClick={this.handleSubmit.bind(this)}>Login</Button>
                     </Modal.Footer>
                 </Modal.Dialog>
             </div>
