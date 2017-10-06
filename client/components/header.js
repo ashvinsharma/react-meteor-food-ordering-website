@@ -9,7 +9,6 @@ class Header extends Component {
     }
 
     renderUserAction() {
-        console.log('page loadin...')
         if (Meteor.userId() !== null) {
             return (
                 <Nav pullRight>
