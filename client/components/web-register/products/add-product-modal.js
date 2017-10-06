@@ -5,14 +5,16 @@ import {Button, OverlayTrigger, Modal, DropdownButton, Form, FormControl, FormGr
 export default class AddProduct extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
-            show: this.props.show
-        }
-        console.log(this.props.show)
+            show: props.show
+        };
     }
+    componentWillReceiveProps(props){
+        this.setState({show: props.show})
+    }
+
     close() {
-        this.setState({ show: false });
+        this.setState({show:false})
     }
 
     /*close(){
