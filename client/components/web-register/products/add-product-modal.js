@@ -8,10 +8,11 @@ import {
     FormGroup,
     InputGroup,
     MenuItem,
-    Modal
-} from 'react-bootstrap'
+    Modal} from 'react-bootstrap'
 import ReactDOM from 'react-dom'
 
+// noinspection ES6UnusedImports
+import {Products} from '../../../../imports/collections/products'
 
 export default class AddProduct extends Component {
     constructor(props) {
@@ -51,7 +52,7 @@ export default class AddProduct extends Component {
             price: productPrice,
             createdBy: Meteor.userId
         }, (err) => {
-            if(err){
+            if (err) {
                 console.log('Error while inserting the record')
             }
         })
