@@ -8,13 +8,14 @@ import {
     FormGroup,
     InputGroup,
     MenuItem,
-    Modal} from 'react-bootstrap'
+    Modal
+} from 'react-bootstrap'
 import ReactDOM from 'react-dom'
-
+import {withRouter} from 'react-router-dom'
 // noinspection ES6UnusedImports
 import {Products} from '../../../../imports/collections/products'
 
-export default class AddProduct extends Component {
+class AddProduct extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -40,22 +41,26 @@ export default class AddProduct extends Component {
         const productType = this.state.productType
         const productPrice = ReactDOM.findDOMNode(this.refs.price).value
 
-        console.log(productName,
-            productHandle,
-            productDescription,
-            productType)
+        if (productName === '') {
+            console.log(productName,
+                productHandle,
+                productDescription,
+                productType)
 
-        Meteor.call('products.insert', {
-            createdAt: new Date(),
-            productName: productName,
-            description: productDescription,
-            price: productPrice,
-            createdBy: Meteor.userId
-        }, (err) => {
-            if (err) {
-                console.log('Error while inserting the record')
-            }
-        })
+            Meteor.call('products.insert', {
+                createdAt: new Date(),
+                productName: productName,
+                description: productDescription,
+                price: productPrice,
+                createdBy: Meteor.userId
+            }, (err) => {
+                if (err) {
+                    console.log('Error while inserting the record')
+                } else {
+                    this.setState({show: false})
+                }
+            })
+        }
     }
 
     render() {
@@ -100,3 +105,5 @@ export default class AddProduct extends Component {
         )
     }
 }
+
+export default withRouter(AddProduct)

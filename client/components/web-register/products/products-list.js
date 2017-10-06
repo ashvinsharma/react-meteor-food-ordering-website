@@ -17,7 +17,7 @@ class ProductsList extends Component {
     render() {
         return (
             <ul className="list-group">
-                {this.renderList()}
+                {this.renderList.bind(this)}
             </ul>
         )
     }
