@@ -9,7 +9,7 @@ class Products extends Component {
         return (
             <Grid bsClass="container-fluid">
                 <Row>
-                    <Col md={2} xs={12}>
+                    <Col md={2}>
                         <ListGroup>
                             <Link to="/web-register/products/food-items"><ListGroupItem href="#">Food
                                 Items</ListGroupItem></Link>
