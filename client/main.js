@@ -1,13 +1,15 @@
+import createHistory from 'history/createBrowserHistory'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Route, Router, Switch} from 'react-router-dom'
-import App from './components/app'
+// noinspection ES6UnusedImports
+import {Products} from '../imports/collections/products'
 
 import Login from './components/account/login'
 import PrivateRoute from './components/account/private-route'
 import Signup from './components/account/signup'
+import App from './components/app'
 import WebRegister from './components/web-register/web-register'
-import createHistory from 'history/createBrowserHistory'
 
 const history = createHistory()
 

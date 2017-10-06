@@ -15,10 +15,10 @@ export default class FirstSidebar extends Component {
         return (
             <ListGroup>
                 <ListGroupItem><FaHome/>Home(TBD)</ListGroupItem>
-                <Link to="/web-register/sell"><ListGroupItem><FaShop/> Sell</ListGroupItem></Link>
+                <Link to="/web-register/sell"><ListGroupItem href="#"><FaShop/> Sell</ListGroupItem></Link>
                 <ListGroupItem><FaSale/> Sales Ledger(TBD)</ListGroupItem>
                 <ListGroupItem><FaLine/> Reporting(TBD)</ListGroupItem>
-                <Link to="/web-register/products"><ListGroupItem><FaProd/>Products</ListGroupItem></Link>
+                <Link to="/web-register/products"><ListGroupItem href="#"><FaProd/>Products</ListGroupItem></Link>
                 <ListGroupItem><FaGrp/> Customers(TBD)</ListGroupItem>
                 <ListGroupItem><FaCom/> ECommerce(TBD)</ListGroupItem>
                 <ListGroupItem><FaSet/> Setup(TBD)</ListGroupItem>
