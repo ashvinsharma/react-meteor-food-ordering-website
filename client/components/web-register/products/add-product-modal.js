@@ -17,13 +17,8 @@ export default class AddProduct extends Component {
         this.setState({show:false})
     }
 
-    /*close(){
-        this.props.show = false;
-        console.log(this.props.show)
-    }*/
 
     render(){
-        //console.log(this.state.show)
         return(
             <div>
             <Modal show={this.state.show} onHide={this.close.bind(this)}>
