@@ -6,8 +6,17 @@ import {Link, withRouter} from 'react-router-dom'
 
 
 class Login extends Component {
+    constructor() {
+        super()
+
+        this.state = {
+            buttonDisabled: false
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault()
+        this.setState({buttonDisabled: true})
 
         const email = ReactDOM.findDOMNode(this.refs.username).value.trim()
         const password = ReactDOM.findDOMNode(this.refs.password).value.trim()
@@ -15,6 +24,7 @@ class Login extends Component {
         Meteor.loginWithPassword(email, password, (err) => {
             if (err) {
                 console.log('login unsuccessful ', err)
+                this.setState({buttonDisabled: false})
             } else {
                 console.log('login successful')
                 console.log('userId is: ', Meteor.userId())
@@ -31,8 +41,8 @@ class Login extends Component {
                     <Modal.Header>
                         <Modal.Title>Login</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
-                        <Form>
+                    <Form onSubmit={this.handleSubmit.bind(this)}>
+                        <Modal.Body>
                             <FormGroup>
                                 <InputGroup>
                                     <InputGroup.Addon>Username</InputGroup.Addon>
@@ -46,13 +56,13 @@ class Login extends Component {
                                     <FormControl ref="password" type="password"/>
                                 </InputGroup>
                             </FormGroup>
-                        </Form>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Link className="signup-btns" to={'/'}><Button>Close</Button></Link>
-                        <Button className="signup-btns" bsStyle="primary"
-                                onClick={this.handleSubmit.bind(this)}>Login</Button>
-                    </Modal.Footer>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Link className="signup-btns" to={'/'}><Button>Close</Button></Link>
+                            <Button className="signup-btns" bsStyle="primary"
+                                    type="submit" disabled={this.state.buttonDisabled}>Login</Button>
+                        </Modal.Footer>
+                    </Form>
                 </Modal.Dialog>
             </div>
         )

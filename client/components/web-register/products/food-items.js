@@ -14,7 +14,7 @@ export default class FoodItems extends Component {
         }
     }
 
-    open() {
+    handleButtonClick() {
         this.setState({show: true})
     }
 
@@ -22,7 +22,7 @@ export default class FoodItems extends Component {
         return (
             <div className="food-item-add">
                 <h1>Test</h1>
-                <Button className="addproduct-button" onClick={this.open.bind(this)}>Add Product</Button>
+                <Button className="addproduct-button" onClick={this.handleButtonClick.bind(this)}>Add Product</Button>
                 <AddProduct show={this.state.show}/>
                 <ProductsList/>
             </div>
