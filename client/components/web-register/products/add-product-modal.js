@@ -41,7 +41,7 @@ class AddProduct extends Component {
         const productType = this.state.productType
         const productPrice = ReactDOM.findDOMNode(this.refs.price).value
 
-        if (productName === '') {
+        if (productName !== '') {
             console.log(productName,
                 productHandle,
                 productDescription,
