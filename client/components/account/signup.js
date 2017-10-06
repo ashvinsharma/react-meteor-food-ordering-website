@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import {Link, withRouter} from 'react-router-dom'
 
 class Signup extends Component {
-    constructor(props) {
+    constructor() {
         super()
 
         this.state = {

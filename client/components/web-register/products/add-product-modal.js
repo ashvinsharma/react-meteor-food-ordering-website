@@ -1,12 +1,21 @@
 import React, {Component} from 'react'
 import {
-    Button, OverlayTrigger, Modal, DropdownButton, Form, FormControl, FormGroup, InputGroup, MenuItem,
-    ControlLabel
+    Button,
+    ControlLabel,
+    DropdownButton,
+    Form,
+    FormControl,
+    FormGroup,
+    InputGroup,
+    MenuItem,
+    Modal
 } from 'react-bootstrap'
-import * as ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom'
+import {withRouter} from 'react-router-dom'
+// noinspection ES6UnusedImports
+import {Products} from '../../../../imports/collections/products'
 
-
-export default class AddProduct extends Component {
+class AddProduct extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -23,13 +32,36 @@ export default class AddProduct extends Component {
         this.setState({show: false})
     }
 
-    addProduct() {
-        const productName = ReactDOM.findDOMNode(this.refs.name).value.trim()
+    addProduct(event) {
+        event.preventDefault()
+
+        const productName = ReactDOM.findDOMNode(this.refs.productName).value.trim()
         const productHandle = ReactDOM.findDOMNode(this.refs.handle).value.trim()
         const productDescription = ReactDOM.findDOMNode(this.refs.description).value.trim()
         const productType = this.state.productType
-    }
+        const productPrice = ReactDOM.findDOMNode(this.refs.price).value
 
+        if (productName === '') {
+            console.log(productName,
+                productHandle,
+                productDescription,
+                productType)
+
+            Meteor.call('products.insert', {
+                createdAt: new Date(),
+                productName: productName,
+                description: productDescription,
+                price: productPrice,
+                createdBy: Meteor.userId
+            }, (err) => {
+                if (err) {
+                    console.log('Error while inserting the record')
+                } else {
+                    this.setState({show: false})
+                }
+            })
+        }
+    }
 
     render() {
         return (
@@ -41,14 +73,13 @@ export default class AddProduct extends Component {
                     <Modal.Body>
                         <FormGroup controlId="formInlineName">
                             <ControlLabel>Item Name</ControlLabel>
-                            <FormControl ref="name" type="text" placeholder="Sample name"/>
+                            <FormControl ref="productName" type="text" placeholder="Sample name"/>
                             <ControlLabel>Item Handle</ControlLabel>
                             <FormControl ref="handle" type="text" placeholder="Unique handle for the item"/>
                             <FormGroup controlId="formControlsTextarea">
                                 <ControlLabel>Description</ControlLabel>
                                 <FormControl ref="description" componentClass="textarea" placeholder="textarea"/>
                             </FormGroup>
-
                             <Form inline>
                                 <FormGroup controlId="formControlsSelect">
                                     <FormGroup>
@@ -67,10 +98,12 @@ export default class AddProduct extends Component {
                                 </FormGroup>
                             </Form>
                         </FormGroup>
-                        <button onClick={this.addProduct.bind(this)}>Add Product</button>
+                        <Button onClick={this.addProduct.bind(this)} bsStyle="success">Add Product</Button>
                     </Modal.Body>
                 </Modal>
             </div>
         )
     }
 }
+
+export default withRouter(AddProduct)
