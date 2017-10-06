@@ -45,6 +45,7 @@ class Signup extends Component {
         } else {
             console.log('Passwords didn\'t match or character length is less than 6')
         }
+
     }
 
     render() {
