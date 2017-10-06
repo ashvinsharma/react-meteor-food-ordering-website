@@ -1,48 +1,75 @@
 import React, {Component} from 'react'
-import {Button, OverlayTrigger, Modal, DropdownButton, Form, FormControl, FormGroup, InputGroup, MenuItem} from 'react-bootstrap'
+import {
+    Button, OverlayTrigger, Modal, DropdownButton, Form, FormControl, FormGroup, InputGroup, MenuItem,
+    ControlLabel
+} from 'react-bootstrap'
+import * as ReactDOM from 'react-dom'
 
 
 export default class AddProduct extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
-            show: props.show
-        };
+            show: props.show,
+            productType: 1
+        }
     }
-    componentWillReceiveProps(props){
+
+    componentWillReceiveProps(props) {
         this.setState({show: props.show})
     }
 
     close() {
-        this.setState({show:false})
+        this.setState({show: false})
+    }
+
+    addProduct() {
+        const productName = ReactDOM.findDOMNode(this.refs.name).value.trim()
+        const productHandle = ReactDOM.findDOMNode(this.refs.handle).value.trim()
+        const productDescription = ReactDOM.findDOMNode(this.refs.description).value.trim()
+        const productType = this.state.productType
     }
 
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
-            <Modal show={this.state.show} onHide={this.close.bind(this)}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <h4>Text in a modal</h4>
-                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                <Modal show={this.state.show} onHide={this.close.bind(this)}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Add Product</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <FormGroup controlId="formInlineName">
+                            <ControlLabel>Item Name</ControlLabel>
+                            <FormControl ref="name" type="text" placeholder="Sample name"/>
+                            <ControlLabel>Item Handle</ControlLabel>
+                            <FormControl ref="handle" type="text" placeholder="Unique handle for the item"/>
+                            <FormGroup controlId="formControlsTextarea">
+                                <ControlLabel>Description</ControlLabel>
+                                <FormControl ref="description" componentClass="textarea" placeholder="textarea"/>
+                            </FormGroup>
 
-                    <hr />
-
-                    <h4>Overflowing text to show scroll behavior</h4>
-                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                </Modal.Body>
-            </Modal>
+                            <Form inline>
+                                <FormGroup controlId="formControlsSelect">
+                                    <FormGroup>
+                                        <InputGroup>
+                                            <DropdownButton title="Product Type" id="dropdown-basic"
+                                                            onSelect={e => this.setState({productType: e})}>
+                                                <MenuItem eventKey="1" value="1">Item 1</MenuItem>
+                                                <MenuItem eventKey="2" value="2">Item 2</MenuItem>
+                                            </DropdownButton>
+                                        </InputGroup>
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <ControlLabel>Product Price</ControlLabel>
+                                        <FormControl ref="price" placeholder="Product Price"/>
+                                    </FormGroup>
+                                </FormGroup>
+                            </Form>
+                        </FormGroup>
+                        <button onClick={this.addProduct.bind(this)}>Add Product</button>
+                    </Modal.Body>
+                </Modal>
             </div>
         )
     }
