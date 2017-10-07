@@ -37,7 +37,7 @@ class Signup extends Component {
                             console.log('Error', e)
                         } else {
                             console.log('Login after Sign Up is successful')
-                            this.props.history.push('/web-register/default')
+                            this.props.history.push(`/web-register/`)
                         }
                     })
                 }

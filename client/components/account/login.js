@@ -28,7 +28,7 @@ class Login extends Component {
             } else {
                 console.log('login successful')
                 console.log('userId is: ', Meteor.userId())
-                this.props.history.push('/web-register/default')
+                this.props.history.push(`/web-register/`)
             }
         })
     }
