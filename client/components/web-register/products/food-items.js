@@ -21,7 +21,6 @@ export default class FoodItems extends Component {
     render() {
         return (
             <div className="food-item-add">
-                <h1>Test</h1>
                 <Button className="addproduct-button" onClick={this.handleButtonClick.bind(this)}>Add Product</Button>
                 <AddProduct show={this.state.show}/>
                 <ProductsList/>

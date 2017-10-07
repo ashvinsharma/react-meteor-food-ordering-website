@@ -37,7 +37,7 @@ class Login extends Component {
     render() {
         return (
             <div className="login static-modal">
-                <Modal.Dialog>
+                <Modal.Dialog className="modal">
                     <Modal.Header>
                         <Modal.Title>Login</Modal.Title>
                     </Modal.Header>
@@ -58,7 +58,7 @@ class Login extends Component {
                             </FormGroup>
                         </Modal.Body>
                         <Modal.Footer>
-                            <Link className="signup-btns" to={'/'}><Button>Close</Button></Link>
+                            <Link className="links signup-btns" to={'/'}><Button>Close</Button></Link>
                             <Button className="signup-btns" bsStyle="primary"
                                     type="submit" disabled={this.state.buttonDisabled}>Login</Button>
                         </Modal.Footer>

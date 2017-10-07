@@ -51,8 +51,8 @@ class Signup extends Component {
     render() {
         return (
             <div className="signup static-modal">
-                <Modal.Dialog>
-                    <Modal.Header>
+                <Modal.Dialog className="modal">
+                    <Modal.Header className="signup header">
                         <Modal.Title>Signup</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
@@ -87,8 +87,8 @@ class Signup extends Component {
                             </FormGroup>
                         </Form>
                     </Modal.Body>
-                    <Modal.Footer>
-                        <Link className="signup-btns" to={'/'}><Button>Close</Button></Link>
+                    <Modal.Footer className="footer">
+                        <Link className="links signup-btns" to={'/'}><Button>Close</Button></Link>
                         <Button className="signup-btns" bsStyle="primary"
                                 onClick={this.handleSubmit.bind(this)}>SignUp</Button>
                     </Modal.Footer>
