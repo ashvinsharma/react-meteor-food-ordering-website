@@ -1,4 +1,6 @@
 /* CSS declarations go here */
+html, body { overflow-x: hidden; }
+
 body {
     background: url("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/2815532/680/453/m1/fpnw/wm0/1-6031-.jpg?1496845260&s=11ef584534bab88c73849ceddf31fd7a") no-repeat;
     background-size: 100%;
