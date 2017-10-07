@@ -18,8 +18,8 @@ class Header extends Component {
         } else {
             return (
                 <Nav pullRight>
-                    <NavItem eventKey={1}><Link to="/login">Login</Link></NavItem>
-                    <NavItem eventKey={2}><Link to="/signup">SignUp</Link></NavItem>
+                    <NavItem eventKey={1}><Link className="links" to="/login">Login</Link></NavItem>
+                    <NavItem eventKey={2}><Link className="links" to="/signup">SignUp</Link></NavItem>
                 </Nav>
             )
         }
@@ -27,24 +27,17 @@ class Header extends Component {
 
     render() {
         return (
-            <Navbar inverse collapseOnSelect>
+            <Navbar className="navbar" inverse collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <Link to={'/'}>React-Bootstrap</Link>
+                        <Link className="links" to={'/'}>Food Delivery</Link>
                     </Navbar.Brand>
                     <Navbar.Toggle/>
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                        <NavItem eventKey={1}><Link to={'/web-register/default'}>Web-Register</Link></NavItem>
-                        <NavItem eventKey={2}>Link</NavItem>
-                        <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                            <MenuItem eventKey={3.1}>Action</MenuItem>
-                            <MenuItem eventKey={3.2}>Another action</MenuItem>
-                            <MenuItem eventKey={3.3}>Something else here</MenuItem>
-                            <MenuItem divider/>
-                            <MenuItem eventKey={3.4}>Separated link</MenuItem>
-                        </NavDropdown>
+                        <NavItem eventKey={1}><Link className="links"
+                                                    to={'/web-register/default'}>Web-Register</Link></NavItem>
                     </Nav>
                     {this.renderUserAction()}
                 </Navbar.Collapse>
