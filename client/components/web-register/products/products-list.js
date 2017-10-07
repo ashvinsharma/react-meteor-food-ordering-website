@@ -1,3 +1,4 @@
+// noinspection NpmUsedModulesInstalled
 import {createContainer} from 'meteor/react-meteor-data'
 import React, {Component} from 'react'
 import {Accordion, Panel} from 'react-bootstrap'
@@ -8,7 +9,14 @@ import {Products} from '../../../../imports/collections/products'
 class ProductsList extends Component {
     getProducts() {
         return (
-            <BootstrapTable data={this.props.products}>
+            <BootstrapTable data={this.props.products}
+                            selectRow={{
+                                mode: 'checkbox',
+                                hideSelectColumn: true,
+                                clickToSelect: true,
+                                bgColor: 'grey'
+                            }}
+                            pagination>
                 <TableHeaderColumn dataField='_id'
                                    isKey
                                    dataSort={true}
