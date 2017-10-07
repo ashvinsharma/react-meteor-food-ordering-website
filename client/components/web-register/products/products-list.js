@@ -7,15 +7,21 @@ import {Products} from '../../../../imports/collections/products'
 
 class ProductsList extends Component {
     getProducts() {
-        return this.props.products.map((product) => {
-            return (
-                <BootstrapTable data={this.props.products} key={product._id}>
-                    <TableHeaderColumn dataField='_id' isKey>Product ID</TableHeaderColumn>
-                    <TableHeaderColumn dataField='productName'>Product Name</TableHeaderColumn>
-                    <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
-                </BootstrapTable>
-            )
-        })
+        return (
+            <BootstrapTable data={this.props.products}>
+                <TableHeaderColumn dataField='_id'
+                                   isKey
+                                   dataSort={true}
+                                   width='10%'>Product ID</TableHeaderColumn>
+                <TableHeaderColumn dataField='productName'
+                                   filter={{
+                                       type: 'TextFilter',
+                                       delay: 0
+                                   }} dataSort={true}>Product Name</TableHeaderColumn>
+                <TableHeaderColumn dataField='price'
+                                   dataSort={true}>Product Price</TableHeaderColumn>
+            </BootstrapTable>
+        )
     }
 
     render() {
