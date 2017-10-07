@@ -37,7 +37,7 @@ class ProductsList extends Component {
                 <TableHeaderColumn dataField="id" isKey={true}>Product ID</TableHeaderColumn>
                 <TableHeaderColumn dataField="name">Product Name</TableHeaderColumn>
                 <TableHeaderColumn dataField="description">Description</TableHeaderColumn>
-                <TableHeaderColumn dataField="Price">Price</TableHeaderColumn>
+                <TableHeaderColumn dataField="price">Price</TableHeaderColumn>
             </BootstrapTable>
         )
 
