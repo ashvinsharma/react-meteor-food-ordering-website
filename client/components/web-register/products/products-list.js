@@ -22,9 +22,7 @@ class ProductsList extends Component {
     }
 
     handleEditCellDetails(row, cellName, cellValue){
-        Meteor.call('products.update', row, cellName, cellValue, err => {
-            console.log(err)
-        })
+        Meteor.call('products.update', row, cellName, cellValue)
     }
 
     handleDeleteButtonClick() {
