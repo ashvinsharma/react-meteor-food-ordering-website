@@ -24,6 +24,7 @@ class AddProduct extends Component {
             type: 0,
             image: '',
             price: 0,
+            discount: 0
         }
     }
 
@@ -54,14 +55,14 @@ class AddProduct extends Component {
                 description: this.state.description,
                 image: this.state.image,
                 price: this.state.price,
-                discount: 0,
+                discount: this.state.discount,
                 type: this.state.type,
                 createdBy: Meteor.userId
             }, (err) => {
                 if (err) {
                     console.log('Error while inserting the record')
                 } else {
-                    this.setState({show: false})
+                    this.close()
                 }
             })
         }
