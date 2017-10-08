@@ -21,6 +21,12 @@ class ProductsList extends Component {
         this.setState({show: true})
     }
 
+    handleEditCellDetails(row, cellName, cellValue){
+        Meteor.call('products.update', row, cellName, cellValue, err => {
+            console.log(err)
+        })
+    }
+
     handleDeleteButtonClick() {
         Meteor.call('products.remove', this.state.selectedRow)
     }
@@ -53,14 +59,16 @@ class ProductsList extends Component {
                         <BootstrapTable data={this.props.products}
                                         search={true}
                                         selectRow={{
-                                            mode: 'checkbox',
-                                            clickToSelect: true,
+                                            mode: 'radio',
+                                            hideSelectColumn: true,
                                             bgColor: 'grey',
+                                            clickToSelectAndEditCell: true,
                                             onSelect: this.handleRowClick.bind(this)
                                         }}
                                         cellEdit={{
                                             mode: 'dbclick',
-                                            blurToSave: true
+                                            blurToSave: false,
+                                            beforeSaveCell: this.handleEditCellDetails.bind(this)
                                         }}
                                         options={{
                                             toolBar: this.ToolBar.bind(this),

@@ -7,6 +7,12 @@ Meteor.methods({
 
     'products.remove': function (product) {
         return Products.remove(product)
+    },
+
+    'products.update': function (product, key, value) {
+        return Products.update(product._id, {$set: {[key]: value}}, err=> {
+            console.log('insde: ',err)
+        })
     }
 })
 
