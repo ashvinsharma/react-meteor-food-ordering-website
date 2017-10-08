@@ -14,11 +14,6 @@ export default class Home extends Component {
                                 <Button>Place Order</Button>
                             </div>
                         </Col>
-                        <Col md={3}>
-                            <div className="home-buttons-order">
-                                <Button>Button 2</Button>
-                            </div>
-                        </Col>
                     </Row>
                     <Row>
                         <h1>Products List</h1>
