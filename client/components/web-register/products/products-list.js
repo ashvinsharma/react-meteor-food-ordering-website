@@ -53,11 +53,14 @@ class ProductsList extends Component {
                         <BootstrapTable data={this.props.products}
                                         search={true}
                                         selectRow={{
-                                            mode: 'radio',
-                                            hideSelectColumn: true,
+                                            mode: 'checkbox',
                                             clickToSelect: true,
                                             bgColor: 'grey',
                                             onSelect: this.handleRowClick.bind(this)
+                                        }}
+                                        cellEdit={{
+                                            mode: 'dbclick',
+                                            blurToSave: true
                                         }}
                                         options={{
                                             toolBar: this.ToolBar.bind(this),
