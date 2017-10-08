@@ -10,9 +10,7 @@ Meteor.methods({
     },
 
     'products.update': function (product, key, value) {
-        return Products.update(product._id, {$set: {[key]: value}}, err=> {
-            console.log('insde: ',err)
-        })
+        return Products.update(product._id, {$set: {[key]: value}})
     }
 })
 
