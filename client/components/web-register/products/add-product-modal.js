@@ -10,7 +10,6 @@ import {
     MenuItem,
     Modal
 } from 'react-bootstrap'
-import ReactDOM from 'react-dom'
 import {withRouter} from 'react-router-dom'
 // noinspection ES6UnusedImports
 import {Products} from '../../../../imports/collections/products'
@@ -20,7 +19,11 @@ class AddProduct extends Component {
         super(props)
         this.state = {
             show: props.show,
-            productType: 1
+            name: '',
+            description: '',
+            type: 0,
+            image: '',
+            price: 0,
         }
     }
 
@@ -35,23 +38,24 @@ class AddProduct extends Component {
     addProduct(event) {
         event.preventDefault()
 
-        const productName = ReactDOM.findDOMNode(this.refs.productName).value.trim()
-        const productHandle = ReactDOM.findDOMNode(this.refs.handle).value.trim()
-        const productDescription = ReactDOM.findDOMNode(this.refs.description).value.trim()
-        const productType = this.state.productType
-        const productPrice = ReactDOM.findDOMNode(this.refs.price).value
+        if (this.state.name !== '' &&
+            this.state.price !== 0 &&
+            this.state.description !== '' &&
+            this.state.type !== 0) {
 
-        if (productName !== '') {
-            console.log(productName,
-                productHandle,
-                productDescription,
-                productType)
+            console.log(this.state.name,
+                this.state.price,
+                this.state.description,
+                this.state.type)
 
             Meteor.call('products.insert', {
                 createdAt: new Date(),
-                productName: productName,
-                description: productDescription,
-                price: productPrice,
+                name: this.state.name,
+                description: this.state.description,
+                image: this.state.image,
+                price: this.state.price,
+                discount: 0,
+                type: this.state.type,
                 createdBy: Meteor.userId
             }, (err) => {
                 if (err) {
@@ -60,6 +64,9 @@ class AddProduct extends Component {
                     this.setState({show: false})
                 }
             })
+        }
+        else {
+            console.log('empty fields')
         }
     }
 
@@ -72,20 +79,23 @@ class AddProduct extends Component {
                     </Modal.Header>
                     <Modal.Body>
                         <FormGroup controlId="formInlineName">
-                            <ControlLabel>Item Name</ControlLabel>
-                            <FormControl ref="productName" type="text" placeholder="Sample name"/>
-                            <ControlLabel>Item Handle</ControlLabel>
-                            <FormControl ref="handle" type="text" placeholder="Unique handle for the item"/>
+                            <ControlLabel>Name</ControlLabel>
+                            <FormControl ref="productName" type="text" placeholder="Sample name"
+                                         onChange={e => this.setState({name: e.target.value.trim()})}/>
                             <FormGroup controlId="formControlsTextarea">
                                 <ControlLabel>Description</ControlLabel>
-                                <FormControl ref="description" componentClass="textarea" placeholder="textarea"/>
+                                <FormControl ref="description" componentClass="textarea" placeholder="textarea"
+                                             onChange={e => this.setState({description: e.target.value.trim()})}/>
                             </FormGroup>
+                            <ControlLabel>Image URL</ControlLabel>
+                            <FormControl type="text" placeholder="Image URL"
+                                         onChange={e => this.setState({image: e.target.value.trim()})}/>
                             <Form inline>
                                 <FormGroup controlId="formControlsSelect">
                                     <FormGroup>
                                         <InputGroup>
                                             <DropdownButton title="Product Type" id="dropdown-basic"
-                                                            onSelect={e => this.setState({productType: e})}>
+                                                            onSelect={e => this.setState({type: e})}>
                                                 <MenuItem eventKey="1" value="1">Item 1</MenuItem>
                                                 <MenuItem eventKey="2" value="2">Item 2</MenuItem>
                                             </DropdownButton>
@@ -93,10 +103,16 @@ class AddProduct extends Component {
                                     </FormGroup>
                                     <FormGroup>
                                         <ControlLabel>Product Price</ControlLabel>
-                                        <FormControl ref="price" placeholder="Product Price"/>
+                                        <FormControl ref="price" placeholder="Product Price"
+                                                     onChange={e => {
+                                                         this.setState({price: e.target.value.trim()})
+                                                     }}/>
                                     </FormGroup>
                                 </FormGroup>
                             </Form>
+                            <ControlLabel>Starting Discount</ControlLabel>
+                            <FormControl type="text" placeholder="Enter Discount"
+                                         onChange={e => this.setState({discount: e.target.value.trim()})}/>
                         </FormGroup>
                         <Button onClick={this.addProduct.bind(this)} bsStyle="success">Add Product</Button>
                     </Modal.Body>
