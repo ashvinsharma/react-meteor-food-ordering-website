@@ -14,9 +14,11 @@ export default class FirstSidebar extends Component {
     render() {
         return (
             <ListGroup>
-                <ListGroupItem><FaHome/>Home(TBD)</ListGroupItem>
+                <Link className="links" to="/web-register/home"><ListGroupItem
+                    href="#"><FaHome/>Home</ListGroupItem></Link>
                 <Link className="links" to="/web-register/sell"><ListGroupItem href="#"><FaShop/>
                     Sell</ListGroupItem></Link>
+                <Link className="links" to="/web-register/order"><ListGroupItem href="#">Orders</ListGroupItem></Link>
                 <ListGroupItem><FaSale/> Sales Ledger(TBD)</ListGroupItem>
                 <ListGroupItem><FaLine/> Reporting(TBD)</ListGroupItem>
                 <Link className="links" to="/web-register/products"><ListGroupItem

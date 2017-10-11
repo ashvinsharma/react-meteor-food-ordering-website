@@ -21,7 +21,6 @@ body {
 
 .links {
     text-decoration: none;
-    color: whitesmoke;
 }
 
 .links:active {
@@ -50,4 +49,9 @@ body {
 .header {
     background-color: #22252c;
     color: #f5f5f5;
+}
+
+.home-buttons {
+    background-color: white;
+    padding-left: 5%;
 }
