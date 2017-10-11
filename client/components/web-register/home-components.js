@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Accordion, Button, Col, Grid, Panel, Row} from 'react-bootstrap'
+import {Accordion, Button, Checkbox, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {createContainer} from 'meteor/react-meteor-data'
 import {Products} from '../../../imports/collections/products'
 
@@ -21,17 +21,19 @@ class HomeComponents extends Component {
     }
 
     render() {
-        console.log('In getProducts')
-        console.log(this.props)
         const products = this.props.products
         const Images = products.map((product) =>
-            <li key={product._id}><img className="order" src={product.image} alt={'hell'}/>{product.name}</li>
+            <li key={product._id}><Checkbox><img src={product.image} alt={'hell'}/>{product.name}</Checkbox></li>
         )
         //console.log(OrderList)
         return (
             <div>
                 <h1>Product List</h1>
-                <ul>{Images}</ul>
+                <form>
+                    <ul className="order-items">
+                        {Images}
+                    </ul>
+                </form>
             </div>
         )
     }

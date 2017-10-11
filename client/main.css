@@ -51,3 +51,12 @@ body {
     background-color: #22252c;
     color: #f5f5f5;
 }
+
+.order-items li {
+    display: inline-block;
+}
+
+.order-items img {
+    width: 100px !important;
+    height: 100px !important;
+}
