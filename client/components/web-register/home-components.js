@@ -25,15 +25,13 @@ class HomeComponents extends Component {
         console.log(this.props)
         const products = this.props.products
         const Images = products.map((product) =>
-            <li key={product._id}><img src={product.image} alt={'hell'}/>{product.name}</li>
+            <li key={product._id}><img className="order" src={product.image} alt={'hell'}/>{product.name}</li>
         )
-        const OrderList = Images.map((Image) =>
-            <li key={products.id}><img src={Image}/></li>
-        )
-        console.log(OrderList)
+        //console.log(OrderList)
         return (
             <div>
                 <h1>Product List</h1>
+                <ul>{Images}</ul>
             </div>
         )
     }
@@ -41,6 +39,5 @@ class HomeComponents extends Component {
 
 export default createContainer(() => {
     Meteor.subscribe('products')
-
     return {products: Products.find({}).fetch()}
 }, HomeComponents)
