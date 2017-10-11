@@ -7,15 +7,13 @@ class HomeComponents extends Component {
     addOrders() {
         Meteor.call('orders.insert', {
             createdAt: new Date(),
-            user: Meteor.userId(),
-            image: this.state.image,
             price: this.state.price,
             discount: this.state.discount,
             type: this.state.type,
             createdBy: Meteor.userId
         }, (err) => {
             if (err) {
-                console.log('Error while inserting the record')
+                console.log('Order Unsuccessful')
             } else {
                 this.close()
             }
