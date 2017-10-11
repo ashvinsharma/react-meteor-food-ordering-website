@@ -5,6 +5,8 @@ import PrivateRoute from '../account/private-route'
 import FirstSidebar from './first-sidebar'
 import Products from './products/products'
 import Sell from './sell'
+import Home from './home'
+
 
 export default class WebRegister extends Component {
     render() {
@@ -17,6 +19,7 @@ export default class WebRegister extends Component {
                         </Col>
                         <Col md={10}>
                             <Switch>
+                                <PrivateRoute path={`${this.props.match.url}/home`} component={Home}/>
                                 <PrivateRoute path={`${this.props.match.url}/products`} component={Products}/>
                                 <PrivateRoute path={`${this.props.match.url}/sell`} component={Sell}/>
                             </Switch>
