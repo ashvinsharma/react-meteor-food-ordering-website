@@ -4,6 +4,10 @@ import {createContainer} from 'meteor/react-meteor-data'
 import {Products} from '../../../imports/collections/products'
 
 class HomeComponents extends Component {
+    componentWillMount = () => {
+        this.selectedCheckboxes = new Set()
+    }
+
     addOrders() {
         Meteor.call('orders.insert', {
             createdAt: new Date(),
@@ -20,15 +24,31 @@ class HomeComponents extends Component {
         })
     }
 
+    toggleCheckbox = label => {
+        console.log(this.selectedCheckboxes)
+        if (this.selectedCheckboxes.has(label)) {
+            this.selectedCheckboxes.delete(label)
+        } else {
+            this.selectedCheckboxes.add(label)
+        }
+    }
+
+    handleChange = formSubmitEvent => {
+        formSubmitEvent.preventDefault()
+        for (const checkbox of this.selectedCheckboxes) {
+            console.log(checkbox, 'is selected.')
+        }
+    }
     render() {
         const products = this.props.products
         const Images = products.map((product) =>
-            <li key={product._id}><Checkbox><img src={product.image} alt={'hell'}/>{product.name}</Checkbox></li>
+            <li key={product._id}><Checkbox label={product.name} onChange={this.toggleCheckbox(product.name)}><img
+                src={product.image} alt={product.name}/><br/>{product.name}</Checkbox></li>
         )
-        //console.log(OrderList)
         return (
             <div>
                 <h1>Product List</h1>
+                <Button onClick={this.handleChange.bind(this)}>Refs</Button>
                 <form>
                     <ul className="order-items">
                         {Images}
