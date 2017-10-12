@@ -46,7 +46,7 @@ class HomeComponents extends Component {
                 src={product.image} alt={product.name}/><br/>{product.name}</Checkbox></li>
         )
         return (
-            <div>
+            <div className="home">
                 <h1>Product List</h1>
                 <Button onClick={this.handleChange.bind(this)}>Refs</Button>
                 <form>
