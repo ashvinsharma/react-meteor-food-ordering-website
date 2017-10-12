@@ -15,17 +15,17 @@ export default class FirstSidebar extends Component {
         return (
             <ListGroup className>
                 <Link className="links" to="/web-register/home"><ListGroupItem
-                    href="#"><FaHome/>Home</ListGroupItem></Link>
-                <Link className="links" to="/web-register/sell"><ListGroupItem href="#"><FaShop/>
+                    href="#"><div className="icon1"><FaHome size={20}/></div>Home</ListGroupItem></Link>
+                <Link className="links" to="/web-register/sell"><ListGroupItem href="#"><div className="icon2"><FaShop size={20}/></div>
                     Sell</ListGroupItem></Link>
-                <Link className="links" to="/web-register/order"><ListGroupItem href="#"><FaCom/>Orders</ListGroupItem></Link>
-                <ListGroupItem><FaSale/> Sales Ledger(TBD)</ListGroupItem>
-                <ListGroupItem><FaLine/> Reporting(TBD)</ListGroupItem>
+                <Link className="links" to="/web-register/order"><ListGroupItem href="#"><div className="icon3"><FaCom size={20}/></div>Orders</ListGroupItem></Link>
+                <ListGroupItem><div className="icon4"><FaSale size={20}/></div> Sales Ledger(TBD)</ListGroupItem>
+                <ListGroupItem><div className="icon5"><FaLine size={20}/></div> Reporting(TBD)</ListGroupItem>
                 <Link className="links" to="/web-register/products"><ListGroupItem
-                    href="#"><FaProd/>Products</ListGroupItem></Link>
-                <ListGroupItem><FaGrp/> Customers(TBD)</ListGroupItem>
-                <ListGroupItem><FaCom/> ECommerce(TBD)</ListGroupItem>
-                <ListGroupItem><FaSet/> Setup(TBD)</ListGroupItem>
+                    href="#"><div className="icon6"><FaProd size={20}/></div>Products</ListGroupItem></Link>
+                <ListGroupItem><div className="icon7"><FaGrp size={20}/></div>Customers(TBD)</ListGroupItem>
+                <ListGroupItem><div className="icon8"><FaCom size={20}/></div> ECommerce(TBD)</ListGroupItem>
+                <ListGroupItem><div className="icon9"><FaSet size={20}/></div> Setup(TBD)</ListGroupItem>
 
             </ListGroup>
         )

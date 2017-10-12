@@ -40,20 +40,49 @@ body {
 
 }
 .list-group-item{
-    height: 50px;
-    width: auto;
+    height: 65px !important;
+    width: auto !important;
     font-family:"Century Gothic";
     text-align: center !important;
     vertical-align: middle !important;
-    background-color: #fafafa !important;
+    background-color: #F5F5F5!important;
     color: #080808 !important;
     position: relative !important;
     display: block !important;
-
     border-radius: 0% !important;
 
 
 }
+
+.icon1 {
+    color: #EF5350 !important;
+}
+.icon2{
+    color : #9FA8DA !important;
+}
+.icon3{
+    color : #4DB6AC !important;
+}
+.icon4{
+    color : #FF4081!important;
+}
+.icon5{
+    color : #00ACC1 !important;
+}
+
+.icon6{
+    color : #FFB74D !important;
+}
+.icon7{
+    color : #607D8B !important;
+}
+.icon8{
+    color : #CE93D8 !important;
+}
+.icon9{
+    color : red !important;
+}
+
 .home{
     width: 1000px;
     background-color: white;
@@ -66,12 +95,14 @@ body {
 }
 
 
-.links:active {
-text-decoration: none;
+.list-group-item:active {
+    text-decoration: none;
+    background-color: #E0E0E0 !important;
 }
 
-.links:hover {
-text-decoration: none;
+.list-group-item:hover {
+    text-decoration: none;
+    background-color: #E0E0E0 !important;
 }
 
 .navbar-inverse {
