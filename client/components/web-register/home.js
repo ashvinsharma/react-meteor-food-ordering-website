@@ -8,9 +8,9 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
+            <div className="home">
                 <div className="home-buttons">
-                    <Grid bsClass="container-fluid">
+                    <Grid bsClass="container">
                         <Row>
                             <Col md={3}>
                                 <div className="home-buttons-order">

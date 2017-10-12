@@ -13,12 +13,12 @@ import {Link} from 'react-router-dom'
 export default class FirstSidebar extends Component {
     render() {
         return (
-            <ListGroup>
+            <ListGroup className>
                 <Link className="links" to="/web-register/home"><ListGroupItem
                     href="#"><FaHome/>Home</ListGroupItem></Link>
                 <Link className="links" to="/web-register/sell"><ListGroupItem href="#"><FaShop/>
                     Sell</ListGroupItem></Link>
-                <Link className="links" to="/web-register/order"><ListGroupItem href="#">Orders</ListGroupItem></Link>
+                <Link className="links" to="/web-register/order"><ListGroupItem href="#"><FaCom/>Orders</ListGroupItem></Link>
                 <ListGroupItem><FaSale/> Sales Ledger(TBD)</ListGroupItem>
                 <ListGroupItem><FaLine/> Reporting(TBD)</ListGroupItem>
                 <Link className="links" to="/web-register/products"><ListGroupItem
@@ -26,7 +26,7 @@ export default class FirstSidebar extends Component {
                 <ListGroupItem><FaGrp/> Customers(TBD)</ListGroupItem>
                 <ListGroupItem><FaCom/> ECommerce(TBD)</ListGroupItem>
                 <ListGroupItem><FaSet/> Setup(TBD)</ListGroupItem>
-                <Link className="links" to="/web-register/orders"><ListGroupItem href="#">Orders</ListGroupItem></Link>
+
             </ListGroup>
         )
     }
