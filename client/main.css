@@ -19,22 +19,16 @@ body {
     background-color: #22252c !important;
 }
 
-/*.links {*/
+.links {
+    color: #080808;
+    position: relative;
+    text-decoration: none;
+}
 
-    /*color: #080808;*/
-    /*position: relative;*/
-    /*display: block;*/
-    /*padding: 10px 15px;*/
+.links:hover {
+    text-decoration: none;
+}
 
-/*}*/
-
-/*.xyz{*/
-
-    /*position: relative;*/
-    /*display: block;*/
-    /*padding: 10px 15px;*/
-
-/*}*/
 .list-group{
     position:relative !important;
 
@@ -84,14 +78,12 @@ body {
 }
 
 .home{
-    width: 1000px;
-    background-color: white;
-    padding: 0px 0px;
-
+    background-color: #00ACC1;
+    margin-right: 2%;
 }
-.home-buttons{
 
-
+.order-items {
+    margin-right: 2%;
 }
 
 

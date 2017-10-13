@@ -2,9 +2,10 @@ import React, {Component} from 'react'
 import {Accordion, Button, Checkbox, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {createContainer} from 'meteor/react-meteor-data'
 import {Products} from '../../../imports/collections/products'
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 
 class HomeComponents extends Component {
-    componentWillMount = () => {
+    componentWillMount() {
         this.selectedCheckboxes = new Set()
     }
 
@@ -24,36 +25,63 @@ class HomeComponents extends Component {
         })
     }
 
-    toggleCheckbox = label => {
-        console.log(this.selectedCheckboxes)
-        if (this.selectedCheckboxes.has(label)) {
-            this.selectedCheckboxes.delete(label)
-        } else {
-            this.selectedCheckboxes.add(label)
+    addToCart(product) {
+        if (this.selectedCheckboxes.has(product)) {
+            this.selectedCheckboxes.delete(product)
+            console.log(product.name + ' is deleted from the cart')
+        }
+        else {
+            this.selectedCheckboxes.add(product)
+            console.log(product.name + ' is added to the cart')
         }
     }
 
-    handleChange = formSubmitEvent => {
-        formSubmitEvent.preventDefault()
-        for (const checkbox of this.selectedCheckboxes) {
-            console.log(checkbox, 'is selected.')
-        }
+    showCart() {
+        return (
+            <Accordion>
+                <Panel>
+                    <BootstrapTable data={this.selectedCheckboxes}>
+                        <TableHeaderColumn d>Items</TableHeaderColumn>
+                    </BootstrapTable>
+                </Panel>
+            </Accordion>
+        )
     }
+
     render() {
         const products = this.props.products
-        const Images = products.map((product) =>
-            <li key={product._id}><Checkbox label={product.name} onChange={this.toggleCheckbox(product.name)}><img
-                src={product.image} alt={product.name}/><br/>{product.name}</Checkbox></li>
-        )
+        const Images = products.map((product) => {
+            return (
+                <li className="order-items" key={product._id}>
+                    <button className="btn btn-primary" onClick={() => this.addToCart(product)}><img
+                        src={product.image} alt={product.name}/>
+                        <br/>{product.name}
+                        <br/>{product.price}
+                    </button>
+                </li>
+            )
+        })
         return (
             <div className="home">
-                <h1>Product List</h1>
-                <Button onClick={this.handleChange.bind(this)}>Refs</Button>
-                <form>
-                    <ul className="order-items">
-                        {Images}
-                    </ul>
-                </form>
+
+                <Row>
+                    <div className="place-order">
+                        <Col md={11}>
+                            <h1>Product List</h1>
+                            <form>
+                                <ul className="order-items">
+                                    {Images}
+                                </ul>
+                            </form>
+                        </Col>
+                    </div>
+                    <Col md={1}>
+                        <h1>Cart</h1>
+                        <div>
+                            {this.showCart()}
+                        </div>
+                    </Col>
+                </Row>
             </div>
         )
     }
