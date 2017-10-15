@@ -4,8 +4,12 @@ import {Link, withRouter} from 'react-router-dom'
 
 class Header extends Component {
     clickLogoutButton() {
-        Meteor.logout()
-        this.props.history.push('/')
+      Meteor.logout(err => {
+              if (err !== null) {
+                  this.props.history.push('/')
+              }
+          }
+      )
     }
 
     renderUserAction() {
