@@ -21,6 +21,10 @@ class ProductsList extends Component {
         this.setState({show: true})
     }
 
+    handleCloseChild() {
+        this.setState({show: false})
+    }
+
     static handleEditCellDetails(row, cellName, cellValue) {
         Meteor.call('products.update', row, cellName, cellValue)
     }
@@ -37,7 +41,6 @@ class ProductsList extends Component {
         } else {
             this.setState({selectedRow: {}})
         }
-        console.log(this.state.selectedRow)
     }
 
     ToolBar = props => {
@@ -94,7 +97,7 @@ class ProductsList extends Component {
                         </BootstrapTable>
                     </Panel>
                 </Accordion>
-                <AddProduct show={this.state.show}/>
+                <AddProduct show={this.state.show} callback={this.handleCloseChild.bind(this)}/>
             </div>
         )
     }

@@ -34,6 +34,7 @@ class AddProduct extends Component {
 
     close() {
         this.setState({show: false})
+        this.props.callback()
     }
 
     addProduct(event) {
