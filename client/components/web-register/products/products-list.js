@@ -21,17 +21,17 @@ class ProductsList extends Component {
         this.setState({show: true})
     }
 
-    handleEditCellDetails(row, cellName, cellValue) {
+    static handleEditCellDetails(row, cellName, cellValue) {
         Meteor.call('products.update', row, cellName, cellValue)
     }
 
     handleDeleteButtonClick() {
-        if(JSON.stringify(this.state.selectedRow) !== '{}'){
+        if (JSON.stringify(this.state.selectedRow) !== '{}') {
             Meteor.call('products.remove', this.state.selectedRow)
         }
     }
 
-    handleRowClick(row, isSelected, e) {
+    handleRowClick(row, isSelected) {
         if (isSelected) {
             this.setState({selectedRow: row})
         } else {
@@ -72,7 +72,7 @@ class ProductsList extends Component {
                                         cellEdit={{
                                             mode: 'dbclick',
                                             blurToSave: false,
-                                            beforeSaveCell: this.handleEditCellDetails.bind(this)
+                                            beforeSaveCell: ProductsList.handleEditCellDetails.bind(this)
                                         }}
                                         options={{
                                             toolBar: this.ToolBar.bind(this),
