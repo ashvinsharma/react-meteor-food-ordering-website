@@ -13,7 +13,7 @@ class ProductsList extends Component {
 
         this.state = {
             selectedRow: {},
-            show: false
+            show: false,
         }
     }
 
@@ -21,18 +21,23 @@ class ProductsList extends Component {
         this.setState({show: true})
     }
 
-    handleEditCellDetails(row, cellName, cellValue){
+    handleEditCellDetails(row, cellName, cellValue) {
         Meteor.call('products.update', row, cellName, cellValue)
     }
 
     handleDeleteButtonClick() {
-        Meteor.call('products.remove', this.state.selectedRow)
+        if(JSON.stringify(this.state.selectedRow) !== '{}'){
+            Meteor.call('products.remove', this.state.selectedRow)
+        }
     }
 
     handleRowClick(row, isSelected, e) {
         if (isSelected) {
             this.setState({selectedRow: row})
+        } else {
+            this.setState({selectedRow: {}})
         }
+        console.log(this.state.selectedRow)
     }
 
     ToolBar = props => {
@@ -41,7 +46,8 @@ class ProductsList extends Component {
                 <div className='col-xs-8 col-sm-12 col-md-12 col-lg-12'>
                     <ButtonGroup>
                         <Button bsStyle="success" onClick={this.handleAddNewButtonClick.bind(this)}>Add New</Button>
-                        <Button bsStyle="danger" onClick={this.handleDeleteButtonClick.bind(this)}>Delete</Button>
+                        <Button bsStyle="danger"
+                                onClick={this.handleDeleteButtonClick.bind(this)}>Delete</Button>
                     </ButtonGroup>
                     {props.components.searchPanel}
                 </div>
