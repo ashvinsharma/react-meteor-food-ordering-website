@@ -14,7 +14,6 @@ class ProductsList extends Component {
         this.state = {
             selectedRow: {},
             show: false,
-            buttonDisabled: true
         }
     }
 
@@ -27,16 +26,16 @@ class ProductsList extends Component {
     }
 
     handleDeleteButtonClick() {
-        Meteor.call('products.remove', this.state.selectedRow)
+        if(JSON.stringify(this.state.selectedRow) !== '{}'){
+            Meteor.call('products.remove', this.state.selectedRow)
+        }
     }
 
     handleRowClick(row, isSelected, e) {
         if (isSelected) {
-            this.setState({selectedRow: row,
-            buttonDisabled: false})
+            this.setState({selectedRow: row})
         } else {
-            this.setState({selectedRow: {},
-            buttonDisabled: true})
+            this.setState({selectedRow: {}})
         }
         console.log(this.state.selectedRow)
     }
@@ -48,8 +47,7 @@ class ProductsList extends Component {
                     <ButtonGroup>
                         <Button bsStyle="success" onClick={this.handleAddNewButtonClick.bind(this)}>Add New</Button>
                         <Button bsStyle="danger"
-                                onClick={this.handleDeleteButtonClick.bind(this)}
-                                disabled={this.state.buttonDisabled}>Delete</Button>
+                                onClick={this.handleDeleteButtonClick.bind(this)}>Delete</Button>
                     </ButtonGroup>
                     {props.components.searchPanel}
                 </div>
