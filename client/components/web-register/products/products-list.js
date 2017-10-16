@@ -1,7 +1,7 @@
 // noinspection NpmUsedModulesInstalled
 import {createContainer} from 'meteor/react-meteor-data'
 import React, {Component} from 'react'
-import {Accordion, Button, ButtonGroup, Panel} from 'react-bootstrap'
+import {Accordion, Button, ButtonGroup, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 
 import {Products} from '../../../../imports/collections/products'
@@ -46,16 +46,27 @@ class ProductsList extends Component {
     ToolBar = props => {
         return (
             <div style={{margin: '15px'}}>
-                <div className='col-xs-8 col-sm-12 col-md-12 col-lg-12'>
-                    <ButtonGroup>
-                        <Button bsStyle="success" onClick={this.handleAddNewButtonClick.bind(this)}>Add New</Button>
-                        <Button bsStyle="danger"
-                                onClick={this.handleDeleteButtonClick.bind(this)}>Delete</Button>
-                    </ButtonGroup>
-                    {props.components.searchPanel}
-                </div>
+                <Grid>
+                    <Row>
+                        <Col md={12}>
+                            <ButtonGroup>
+                                <Button bsStyle="success" onClick={this.handleAddNewButtonClick.bind(this)}>Add
+                                    New</Button>
+                                <Button bsStyle="danger"
+                                        onClick={this.handleDeleteButtonClick.bind(this)}>Delete</Button>
+                            </ButtonGroup>
+                            {props.components.searchPanel}
+                        </Col>
+                    </Row>
+                </Grid>
             </div>
         )
+    }
+
+    //if turned static images won't load
+    // noinspection JSMethodCanBeStatic
+    imageFormatter(cell, row) {
+        return (<img style={{width: 50}} src={cell}/>)
     }
 
     render() {
@@ -88,6 +99,8 @@ class ProductsList extends Component {
                                                width='10%'
                                                editable={false}
                                                hidden>Product ID</TableHeaderColumn>
+                            <TableHeaderColumn dataField='image'
+                                               dataFormat={this.imageFormatter}>Product Image</TableHeaderColumn>
                             <TableHeaderColumn dataField='name'
                                                dataSort={true}>Product Name</TableHeaderColumn>
                             <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
