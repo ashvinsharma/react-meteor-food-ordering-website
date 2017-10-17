@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import {Route, Router, Switch} from 'react-router-dom'
 // noinspection ES6UnusedImports
 import {Products} from '../imports/collections/products'
+import NotFound from './404'
 
 import Login from './components/account/login'
 import PrivateRoute from './components/account/private-route'
@@ -18,9 +19,10 @@ const routes = (
         <div>
             <App/>
             <Switch>
-                <Route path="/signup" component={Signup}/>
-                <Route path="/login" component={Login}/>
-                <PrivateRoute path="/web-register/" component={WebRegister}/>
+                <Route exact path="/signup" component={Signup}/>
+                <Route exact path="/login" component={Login}/>
+                <PrivateRoute exact path="/web-register/" component={WebRegister}/>
+                <Route component={NotFound}/>
             </Switch>
         </div>
     </Router>
