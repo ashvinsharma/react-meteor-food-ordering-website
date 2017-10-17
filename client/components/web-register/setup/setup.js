@@ -18,7 +18,7 @@ export default class Setup extends Component{
                   </Col>
                   <Col md={10}>
                       <Switch>
-                          <PrivateRoute path={`${this.props.match.url}/accounts`} component={Accounts}/>
+                          <PrivateRoute path={`${this.props.match.url}/accounts`} strict component={Accounts}/>
                       </Switch>
                   </Col>
               </Row>

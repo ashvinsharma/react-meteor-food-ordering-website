@@ -19,10 +19,10 @@ const routes = (
         <div>
             <App/>
             <Switch>
-                <Route exact path="/signup" component={Signup}/>
-                <Route exact path="/login" component={Login}/>
-                <PrivateRoute exact path="/web-register/" component={WebRegister}/>
-                <Route component={NotFound}/>
+                <Route path="/signup" exact component={Signup}/>
+                <Route path="/login" exact component={Login}/>
+                <PrivateRoute path="/web-register" strict component={WebRegister}/>
+                <Route path="/404" component={NotFound}/>
             </Switch>
         </div>
     </Router>
