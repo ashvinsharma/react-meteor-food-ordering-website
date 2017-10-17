@@ -7,6 +7,7 @@ import FirstSidebar from './first-sidebar'
 import Products from './products/products'
 import Sell from './sell'
 import Home from './home'
+import Setup from './setup/setup'
 
 
 export default class WebRegister extends Component {
@@ -23,6 +24,7 @@ export default class WebRegister extends Component {
                                 <PrivateRoute path={`${this.props.match.url}/home`} component={Home}/>
                                 <PrivateRoute path={`${this.props.match.url}/products`} component={Products}/>
                                 <PrivateRoute path={`${this.props.match.url}/sell`} component={Sell}/>
+                                <PrivateRoute path={`${this.props.match.url}/setup`} component={Setup}/>
                             </Switch>
                         </Col>
                     </Row>
