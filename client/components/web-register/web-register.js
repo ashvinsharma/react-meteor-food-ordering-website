@@ -24,7 +24,8 @@ export default class WebRegister extends Component {
                                 <PrivateRoute path={`${this.props.match.url}/products`} strict component={Products}/>
                                 <PrivateRoute path={`${this.props.match.url}/sell`} strict component={Sell}/>
                                 <PrivateRoute path={`${this.props.match.url}/setup`} strict component={Setup}/>
-                                <PrivateRoute path={`${this.props.match.url}/`} strict component={Home}/>
+                                <PrivateRoute path={`${this.props.match.url}/home`} strict component={Home}/>
+                                <PrivateRoute path={`${this.props.match.url}`} exact component={Home}/>
                                 <Redirect to="/404"/>
                             </Switch>
                         </Col>

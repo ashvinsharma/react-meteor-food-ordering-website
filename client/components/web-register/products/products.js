@@ -11,7 +11,7 @@ class Products extends Component {
                 <Row>
                     <Col md={2}>
                         <ListGroup>
-                            <Link className="links" to="/web-register/products/food-items"><ListGroupItem href="#">Food
+                            <Link className="links" to={`${this.props.match.url}/food-items`}><ListGroupItem href="#">Food
                                 Items</ListGroupItem></Link>
                             <ListGroupItem>Stock Control</ListGroupItem>
                             <ListGroupItem>Price Books</ListGroupItem>

@@ -52,7 +52,7 @@ export default class FirstSidebar extends Component {
                     <div className="icon8"><FaCom size={20}/></div>
                     ECommerce(TBD)</ListGroupItem>
 
-                <Link className="links" to="/web-register/setup"><ListGroupItem href="#">
+                <Link className="links" to="/web-register/setup"><ListGroupItem>
                     <div className="icon9"><FaSet size={20}/></div>
                     Setup(In Process)</ListGroupItem>
                 </Link>
