@@ -41,7 +41,7 @@ class Header extends Component {
                 <Navbar.Collapse>
                     <Nav>
                         <NavItem eventKey={1}><Link className="links"
-                                                    to={'/web-register/default'}>Web-Register</Link></NavItem>
+                                                    to={'/web-register'}>Web-Register</Link></NavItem>
                     </Nav>
                     {this.renderUserAction()}
                 </Navbar.Collapse>
