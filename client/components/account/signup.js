@@ -8,7 +8,7 @@ class Signup extends Component {
         super()
 
         this.state = {
-            userType: 1
+            userType: 4 //Customer
         }
     }
 
@@ -74,15 +74,6 @@ class Signup extends Component {
                                 <InputGroup>
                                     <InputGroup.Addon>Confirm Password</InputGroup.Addon>
                                     <FormControl ref="confirmPassword" type="password"/>
-                                </InputGroup>
-                            </FormGroup>
-                            <FormGroup>
-                                <InputGroup>
-                                    <DropdownButton title="User Type" id="dropdown-basic"
-                                                    onSelect={e => this.setState({userType: e})}>
-                                        <MenuItem eventKey="1" value="1">Admin</MenuItem>
-                                        <MenuItem eventKey="2" value="2">Cashier</MenuItem>
-                                    </DropdownButton>
                                 </InputGroup>
                             </FormGroup>
                         </Form>
