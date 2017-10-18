@@ -16,7 +16,8 @@ export default class FirstSidebar extends Component {
             <ListGroup className>
                 <Link className="links" to="/web-register/home"><ListGroupItem
                     href="#"><div className="icon1"><FaHome size={20}/></div>Home</ListGroupItem></Link>
-                <Link className="links" to="/web-register/sell"><ListGroupItem href="#"><div className="icon2"><FaShop size={20}/></div>
+                <Link className="links" to="/web-register/sell-bar"><ListGroupItem href="#">
+                    <div className="icon2"><FaShop size={20}/></div>
                     Sell</ListGroupItem></Link>
                 <Link className="links" to="/web-register/order"><ListGroupItem href="#"><div className="icon3"><FaCom size={20}/></div>Orders</ListGroupItem></Link>
                 <ListGroupItem><div className="icon4"><FaSale size={20}/></div> Sales Ledger(TBD)</ListGroupItem>

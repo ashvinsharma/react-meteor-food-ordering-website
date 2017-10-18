@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {Accordion, Button, Checkbox, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {createContainer} from 'meteor/react-meteor-data'
-import {Products} from '../../../imports/collections/products'
+import {Products} from '../../../../imports/collections/products'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 
-class HomeComponents extends Component {
+class SellComponents extends Component {
     componentDidMount() {
         this.selectedCheckboxes = new Set()
     }
@@ -51,7 +51,6 @@ class HomeComponents extends Component {
         })
         return (
             <div className="home">
-
                 <Row>
                     <div className="place-order">
                         <Col md={11}>
@@ -90,4 +89,4 @@ class HomeComponents extends Component {
 export default createContainer(() => {
     Meteor.subscribe('products')
     return {products: Products.find({}).fetch()}
-}, HomeComponents)
+}, SellComponents)

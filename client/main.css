@@ -19,22 +19,6 @@ body {
     background-color: #22252c !important;
 }
 
-/*.links {*/
-
-    /*color: #080808;*/
-    /*position: relative;*/
-    /*display: block;*/
-    /*padding: 10px 15px;*/
-
-/*}*/
-
-/*.xyz{*/
-
-    /*position: relative;*/
-    /*display: block;*/
-    /*padding: 10px 15px;*/
-
-/*}*/
 .list-group{
     position:relative !important;
 
@@ -50,7 +34,6 @@ body {
     position: relative !important;
     display: block !important;
     border-radius: 0% !important;
-
 
 }
 
@@ -83,13 +66,14 @@ body {
     color : red !important;
 }
 
-.home{
+.sell {
     width: 1000px;
     background-color: white;
     padding: 0px 0px;
 
 }
-.home-buttons{
+
+.sell-buttons {
 
 
 }
