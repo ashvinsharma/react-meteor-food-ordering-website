@@ -65,7 +65,7 @@ class ProductsList extends Component {
 
     //if turned static images won't load
     // noinspection JSMethodCanBeStatic
-    imageFormatter(cell, row) {
+    imageFormatter(cell) {
         return (<img style={{width: 50}} src={cell}/>)
     }
 
@@ -90,7 +90,7 @@ class ProductsList extends Component {
                                         }}
                                         options={{
                                             toolBar: this.ToolBar.bind(this),
-                                            clearSearch: true,
+                                            clearSearch: true
                                         }}
                                         pagination>
                             <TableHeaderColumn dataField='_id'
@@ -118,6 +118,5 @@ class ProductsList extends Component {
 
 export default createContainer(() => {
     Meteor.subscribe('products')
-
     return {products: Products.find({}).fetch()}
 }, ProductsList)

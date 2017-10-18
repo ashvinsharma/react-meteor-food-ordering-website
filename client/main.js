@@ -1,7 +1,8 @@
 import createHistory from 'history/createBrowserHistory'
+import {Meteor} from 'meteor/meteor'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Route, Router, Switch, Redirect} from 'react-router-dom'
+import {Route, Router, Switch} from 'react-router-dom'
 // noinspection ES6UnusedImports
 import {Products} from '../imports/collections/products'
 import NotFound from './404'
