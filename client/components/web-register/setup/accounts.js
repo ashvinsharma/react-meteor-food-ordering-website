@@ -14,6 +14,12 @@ class Accounts extends Component {
     static showType(cell) {
         if (cell.userType === 1) {
             return 'Admin'
+        } else if (cell.userType === 2) {
+            return 'Cook'
+        } else if (cell.userType === 3) {
+            return 'Cashier'
+        } else if (cell.userType === 4) {
+            return 'Customer'
         }
     }
 
