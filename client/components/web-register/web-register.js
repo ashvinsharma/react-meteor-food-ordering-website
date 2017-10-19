@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import {Col, Grid, Row} from 'react-bootstrap'
-import {Switch} from 'react-router-dom'
+import {Switch, Redirect} from 'react-router-dom'
 import PrivateRoute from '../account/private-route'
 import FirstSidebar from './first-sidebar'
+import Home from './home'
 
 import Products from './products/products'
 import SellBar from './Sell/sell-bar'
@@ -20,9 +21,12 @@ export default class WebRegister extends Component {
                         </Col>
                         <Col md={10}>
                             <Switch>
-                                <PrivateRoute path={`${this.props.match.url}/home`} component={Home}/>
-                                <PrivateRoute path={`${this.props.match.url}/products`} component={Products}/>
-                                <PrivateRoute path={`${this.props.match.url}/sell-bar`} component={SellBar}/>
+                                <PrivateRoute path={`${this.props.match.url}/products`} strict component={Products}/>
+                                <PrivateRoute path={`${this.props.match.url}/sell`} strict component={Sell}/>
+                                <PrivateRoute path={`${this.props.match.url}/setup`} strict component={Setup}/>
+                                <PrivateRoute path={`${this.props.match.url}/home`} strict component={Home}/>
+                                <PrivateRoute path={`${this.props.match.url}`} exact component={Home}/>
+                                <Redirect to="/404"/>
                             </Switch>
                         </Col>
                     </Row>

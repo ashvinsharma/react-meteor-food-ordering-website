@@ -4,34 +4,28 @@ import React, {Component} from 'react'
 import {Accordion, Button, ButtonGroup, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 
-import {Products} from '../../../../imports/collections/products'
-import AddProduct from './add-product-modal'
+class Accounts extends Component {
+    constructor() {
+        super()
 
-class ProductsList extends Component {
-    constructor(props) {
-        super(props)
+        this.state = {selectedRow: {}}
+    }
 
-        this.state = {
-            selectedRow: {},
-            show: false,
+    static showType(cell) {
+        if (cell.userType === 1) {
+            return 'Admin'
+        } else if (cell.userType === 2) {
+            return 'Cook'
+        } else if (cell.userType === 3) {
+            return 'Cashier'
+        } else if (cell.userType === 4) {
+            return 'Customer'
         }
-    }
-
-    handleAddNewButtonClick() {
-        this.setState({show: true})
-    }
-
-    handleCloseChild() {
-        this.setState({show: false})
-    }
-
-    static handleEditCellDetails(row, cellName, cellValue) {
-        Meteor.call('products.update', row, cellName, cellValue)
     }
 
     handleDeleteButtonClick() {
         if (JSON.stringify(this.state.selectedRow) !== '{}') {
-            Meteor.call('products.remove', this.state.selectedRow)
+            Meteor.call('customDelete', this.state.selectedRow._id)
         }
     }
 
@@ -50,7 +44,7 @@ class ProductsList extends Component {
                     <Row>
                         <Col md={12}>
                             <ButtonGroup>
-                                <Button bsStyle="success" onClick={this.handleAddNewButtonClick.bind(this)}>Add
+                                <Button bsStyle="success">Add
                                     New</Button>
                                 <Button bsStyle="danger"
                                         onClick={this.handleDeleteButtonClick.bind(this)}>Delete</Button>
@@ -63,18 +57,12 @@ class ProductsList extends Component {
         )
     }
 
-    //if turned static images won't load
-    // noinspection JSMethodCanBeStatic
-    imageFormatter(cell) {
-        return (<img style={{width: 50}} src={cell}/>)
-    }
-
     render() {
         return (
             <div>
                 <Accordion>
                     <Panel>
-                        <BootstrapTable data={this.props.products}
+                        <BootstrapTable data={this.props.users}
                                         search={true}
                                         selectRow={{
                                             mode: 'radio',
@@ -82,11 +70,6 @@ class ProductsList extends Component {
                                             bgColor: 'grey',
                                             clickToSelectAndEditCell: true,
                                             onSelect: this.handleRowClick.bind(this)
-                                        }}
-                                        cellEdit={{
-                                            mode: 'dbclick',
-                                            blurToSave: false,
-                                            beforeSaveCell: ProductsList.handleEditCellDetails.bind(this)
                                         }}
                                         options={{
                                             toolBar: this.ToolBar.bind(this),
@@ -96,27 +79,22 @@ class ProductsList extends Component {
                             <TableHeaderColumn dataField='_id'
                                                isKey
                                                dataSort={true}
-                                               width='10%'
-                                               editable={false}
                                                hidden>Product ID</TableHeaderColumn>
-                            <TableHeaderColumn dataField='image'
-                                               dataFormat={this.imageFormatter}>Product Image</TableHeaderColumn>
-                            <TableHeaderColumn dataField='name'
-                                               dataSort={true}>Product Name</TableHeaderColumn>
-                            <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
-                            <TableHeaderColumn dataField='price'
-                                               dataSort={true}>Product Price</TableHeaderColumn>
-                            <TableHeaderColumn dataField='discount'>Discount</TableHeaderColumn>
+                            <TableHeaderColumn dataField='username'
+                                               width='20%'>Username</TableHeaderColumn>
+                            <TableHeaderColumn dataField='profile'
+                                               width='20%'
+                                               dataFormat={Accounts.showType.bind(this)}>Type</TableHeaderColumn>
+                            <TableHeaderColumn dataField='createdAt'>CreatedAt</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>
-                <AddProduct show={this.state.show} callback={this.handleCloseChild.bind(this)}/>
             </div>
         )
     }
 }
 
 export default createContainer(() => {
-    Meteor.subscribe('products')
-    return {products: Products.find({}).fetch()}
-}, ProductsList)
+    Meteor.subscribe('users')
+    return {users: Meteor.users.find({}).fetch()}
+}, Accounts)

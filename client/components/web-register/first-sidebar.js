@@ -23,10 +23,23 @@ export default class FirstSidebar extends Component {
                 <ListGroupItem><div className="icon4"><FaSale size={20}/></div> Sales Ledger(TBD)</ListGroupItem>
                 <ListGroupItem><div className="icon5"><FaLine size={20}/></div> Reporting(TBD)</ListGroupItem>
                 <Link className="links" to="/web-register/products"><ListGroupItem
-                    href="#"><div className="icon6"><FaProd size={20}/></div>Products</ListGroupItem></Link>
-                <ListGroupItem><div className="icon7"><FaGrp size={20}/></div>Customers(TBD)</ListGroupItem>
-                <ListGroupItem><div className="icon8"><FaCom size={20}/></div> ECommerce(TBD)</ListGroupItem>
-                <ListGroupItem><div className="icon9"><FaSet size={20}/></div> Setup(TBD)</ListGroupItem>
+                    href="#">
+                    <div className="icon6"><FaProd size={20}/></div>
+                    Products</ListGroupItem>
+                </Link>
+
+                <ListGroupItem>
+                    <div className="icon7"><FaGrp size={20}/></div>
+                    Customers(TBD)</ListGroupItem>
+
+                <ListGroupItem>
+                    <div className="icon8"><FaCom size={20}/></div>
+                    ECommerce(TBD)</ListGroupItem>
+
+                <Link className="links" to="/web-register/setup"><ListGroupItem>
+                    <div className="icon9"><FaSet size={20}/></div>
+                    Setup(In Process)</ListGroupItem>
+                </Link>
 
             </ListGroup>
         )
