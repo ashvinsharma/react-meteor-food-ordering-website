@@ -1,20 +1,19 @@
-import React, {Component} from 'react'
-import {Accordion, Button, Checkbox, Col, Grid, Panel, Row} from 'react-bootstrap'
+// noinspection NpmUsedModulesInstalled
 import {createContainer} from 'meteor/react-meteor-data'
-import {Products} from '../../../../imports/collections/products'
-import {Orders} from '../../../../imports/collections/orders'
+import React, {Component} from 'react'
+import {Accordion, Button, Col, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
+import {Products} from '../../../../imports/collections/products'
 
 class SellComponents extends Component {
     constructor(props) {
         super(props)
         this.state = {cart: {}}
-        console.log('State defined ' + this.state.cart)
     }
+
     componentDidMount() {
         this.selectedCheckboxes = new Set()
         this.setState({cart: this.selectedCheckboxes})
-        console.log('Set Defined ' + Array.from(this.state.cart))
     }
 
     addOrders() {
@@ -22,13 +21,6 @@ class SellComponents extends Component {
             createdAt: new Date(),
             items: Array.from(this.state.cart),
             createdBy: Meteor.userId
-        }, (err) => {
-            if (err) {
-                console.log('Order Unsuccessful' + err)
-            } else {
-                console.log('Order Successful')
-                this.close()
-            }
         })
     }
 

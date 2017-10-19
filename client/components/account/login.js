@@ -2,7 +2,8 @@ import {Meteor} from 'meteor/meteor'
 import React, {Component} from 'react'
 import {Button, Form, FormControl, FormGroup, InputGroup, Modal} from 'react-bootstrap'
 import ReactDOM from 'react-dom'
-import {Link, withRouter} from 'react-router-dom'
+import {LinkContainer} from 'react-router-bootstrap'
+import {withRouter} from 'react-router-dom'
 
 
 class Login extends Component {
@@ -58,7 +59,7 @@ class Login extends Component {
                             </FormGroup>
                         </Modal.Body>
                         <Modal.Footer>
-                            <Link className="links signup-btns" to={'/'}><Button>Close</Button></Link>
+                            <LinkContainer className="links signup-btns" to={'/'}><Button>Close</Button></LinkContainer>
                             <Button className="signup-btns" bsStyle="primary"
                                     type="submit" disabled={this.state.buttonDisabled}>Login</Button>
                         </Modal.Footer>

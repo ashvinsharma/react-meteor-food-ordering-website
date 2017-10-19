@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
-import {Button, DropdownButton, Form, FormControl, FormGroup, InputGroup, MenuItem, Modal} from 'react-bootstrap'
+import {Button, Form, FormControl, FormGroup, InputGroup, Modal} from 'react-bootstrap'
 import ReactDOM from 'react-dom'
-import {Link, withRouter} from 'react-router-dom'
+import {LinkContainer} from 'react-router-bootstrap'
+import {withRouter} from 'react-router-dom'
 
 class Signup extends Component {
     constructor() {
@@ -79,7 +80,7 @@ class Signup extends Component {
                         </Form>
                     </Modal.Body>
                     <Modal.Footer className="footer">
-                        <Link className="links signup-btns" to={'/'}><Button>Close</Button></Link>
+                        <LinkContainer className="links signup-btns" to={'/'}><Button>Close</Button></LinkContainer>
                         <Button className="signup-btns" bsStyle="primary"
                                 onClick={this.handleSubmit.bind(this)}>SignUp</Button>
                     </Modal.Footer>
