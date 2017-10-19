@@ -12,8 +12,15 @@ export default class Home extends Component {
                         <Row>
                             <Col md={3}>
                                 <div className="home-buttons-order">
-
+                                    <h1>Hi</h1>
                                 </div>
+                            </Col>
+                            <Col md={3}>
+                                <h1>Hi2</h1>
+                            </Col>
+                            <h1>Hi3</h1>
+                            <Col md={3}>
+
                             </Col>
                         </Row>
                         <Row>

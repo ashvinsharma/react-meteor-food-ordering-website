@@ -2,38 +2,50 @@ import React, {Component} from 'react'
 import {Accordion, Button, Checkbox, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {createContainer} from 'meteor/react-meteor-data'
 import {Products} from '../../../../imports/collections/products'
+import {Orders} from '../../../../imports/collections/orders'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 
 class SellComponents extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {cart: {}}
+        console.log('State defined ' + this.state.cart)
+    }
     componentDidMount() {
         this.selectedCheckboxes = new Set()
+        this.setState({cart: this.selectedCheckboxes})
+        console.log('Set Defined ' + Array.from(this.state.cart))
     }
 
     addOrders() {
         Meteor.call('orders.insert', {
             createdAt: new Date(),
-            price: this.state.price,
-            discount: this.state.discount,
-            type: this.state.type,
+            items: Array.from(this.state.cart),
             createdBy: Meteor.userId
         }, (err) => {
             if (err) {
-                console.log('Order Unsuccessful')
+                console.log('Order Unsuccessful' + err)
             } else {
+                console.log('Order Successful')
                 this.close()
             }
         })
     }
 
     addToCart(product) {
-        if (this.selectedCheckboxes.has(product)) {
-            this.selectedCheckboxes.delete(product)
+        if (this.state.cart.has(product)) {
+            this.state.cart.delete(product)
             console.log(product.name + ' is deleted from the cart')
         }
         else {
-            this.selectedCheckboxes.add(product)
+            this.state.cart.add(product)
             console.log(product.name + ' is added to the cart')
         }
+        console.log(Array.from(this.state.cart))
+    }
+
+    imageFormatter(cell, row) {
+        return (<img style={{width: 50}} src={cell}/>)
     }
 
     render() {
@@ -53,7 +65,7 @@ class SellComponents extends Component {
             <div className="home">
                 <Row>
                     <div className="place-order">
-                        <Col md={11}>
+                        <Col md={7}>
                             <h1>Product List</h1>
                             <form>
                                 <ul className="order-items">
@@ -62,14 +74,11 @@ class SellComponents extends Component {
                             </form>
                         </Col>
                     </div>
-                    <Col md={1}>
+                    <Col md={5}>
                         <h1>Cart</h1>
                         <Accordion>
                             <Panel>
-                                <BootstrapTable data={this.selectedCheckboxes} keyField="image">
-                                    <TableHeaderColumn dataField='image'
-                                                       dataFormat={this.imageFormatter}>Product
-                                        Image</TableHeaderColumn>
+                                <BootstrapTable data={Array.from(this.state.cart)} keyField="name">
                                     <TableHeaderColumn dataField='name'
                                                        dataSort={true}>Product Name</TableHeaderColumn>
                                     <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
@@ -78,6 +87,7 @@ class SellComponents extends Component {
                                     <TableHeaderColumn dataField='discount'>Discount</TableHeaderColumn>
                                 </BootstrapTable>
                             </Panel>
+                            <Button onClick={() => this.addOrders()}>Checkout</Button>
                         </Accordion>
                     </Col>
                 </Row>

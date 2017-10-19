@@ -114,6 +114,10 @@ display: inline-block;
 }
 
 .order-items img {
-width: 100px !important;
-height: 100px !important;
+    width: 75px !important;
+    height: 75px !important;
+}
+
+.order-items .btn {
+    margin-left: 1%;
 }
