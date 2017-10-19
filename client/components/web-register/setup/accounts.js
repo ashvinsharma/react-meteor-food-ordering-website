@@ -3,24 +3,20 @@ import {createContainer} from 'meteor/react-meteor-data'
 import React, {Component} from 'react'
 import {Accordion, Button, ButtonGroup, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
+import AddUser from './add-user'
 
 class Accounts extends Component {
     constructor() {
         super()
 
-        this.state = {selectedRow: {}}
+        this.state = {
+            show: false,
+            selectedRow: {}
+        }
     }
 
     static showType(cell) {
-        if (cell.userType === 1) {
-            return 'Admin'
-        } else if (cell.userType === 2) {
-            return 'Cook'
-        } else if (cell.userType === 3) {
-            return 'Cashier'
-        } else if (cell.userType === 4) {
-            return 'Customer'
-        }
+        return `${cell.userType}`
     }
 
     handleDeleteButtonClick() {
@@ -37,6 +33,10 @@ class Accounts extends Component {
         }
     }
 
+    modalClose() {
+        this.setState({show: false})
+    }
+
     ToolBar = props => {
         return (
             <div style={{margin: '15px'}}>
@@ -44,8 +44,10 @@ class Accounts extends Component {
                     <Row>
                         <Col md={12}>
                             <ButtonGroup>
-                                <Button bsStyle="success">Add
-                                    New</Button>
+                                <Button bsStyle="success"
+                                        onClick={() => {
+                                            this.setState({show: true})
+                                        }}>Add New</Button>
                                 <Button bsStyle="danger"
                                         onClick={this.handleDeleteButtonClick.bind(this)}>Delete</Button>
                             </ButtonGroup>
@@ -89,6 +91,7 @@ class Accounts extends Component {
                         </BootstrapTable>
                     </Panel>
                 </Accordion>
+                <AddUser show={this.state.show} callback={this.modalClose.bind(this)}/>
             </div>
         )
     }
