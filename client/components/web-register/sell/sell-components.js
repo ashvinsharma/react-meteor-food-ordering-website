@@ -79,8 +79,8 @@ class SellComponents extends Component {
                                     <TableHeaderColumn dataField='discount'>Discount</TableHeaderColumn>
                                 </BootstrapTable>
                             </Panel>
-                            <Button onClick={() => this.addOrders()}>Checkout</Button>
                         </Accordion>
+                        <Button onClick={() => this.addOrders()}>Checkout</Button>
                     </Col>
                 </Row>
             </div>
