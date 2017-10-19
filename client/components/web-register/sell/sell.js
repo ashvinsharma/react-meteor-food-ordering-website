@@ -1,6 +1,7 @@
-import React, {Component} from 'react'
-import {Accordion, Button, Col, Grid, Panel, Row} from 'react-bootstrap'
+// noinspection NpmUsedModulesInstalled
 import {createContainer} from 'meteor/react-meteor-data'
+import React, {Component} from 'react'
+import {Col, Grid, Row} from 'react-bootstrap'
 import SellComponents from './sell-components'
 
 export default class Sell extends Component {
@@ -12,7 +13,7 @@ export default class Sell extends Component {
                     <Grid bsClass="container">
                         <Row>
                             <Col md={10}>
-                            <SellComponents/>
+                                <SellComponents/>
                             </Col>
                         </Row>
                     </Grid>

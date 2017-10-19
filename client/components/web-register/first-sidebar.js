@@ -8,38 +8,66 @@ import FaLine from 'react-icons/lib/fa/line-chart'
 import FaCom from 'react-icons/lib/fa/money'
 import FaShop from 'react-icons/lib/fa/shopping-cart'
 import FaProd from 'react-icons/lib/fa/tags'
-import {Link} from 'react-router-dom'
+import {LinkContainer} from 'react-router-bootstrap'
 
 export default class FirstSidebar extends Component {
     render() {
         return (
             <ListGroup className>
-                <Link className="links" to="/web-register/home"><ListGroupItem
-                    href="#"><div className="icon1"><FaHome size={20}/></div>Home</ListGroupItem></Link>
-                <Link className="links" to="/web-register/sell-bar"><ListGroupItem href="#">
-                    <div className="icon2"><FaShop size={20}/></div>
-                    Sell</ListGroupItem></Link>
-                <Link className="links" to="/web-register/order"><ListGroupItem href="#"><div className="icon3"><FaCom size={20}/></div>Orders</ListGroupItem></Link>
-                <ListGroupItem><div className="icon4"><FaSale size={20}/></div> Sales Ledger(TBD)</ListGroupItem>
-                <ListGroupItem><div className="icon5"><FaLine size={20}/></div> Reporting(TBD)</ListGroupItem>
-                <Link className="links" to="/web-register/products"><ListGroupItem
-                    href="#">
-                    <div className="icon6"><FaProd size={20}/></div>
-                    Products</ListGroupItem>
-                </Link>
+                <LinkContainer className="links" to="/web-register/home">
+                    <ListGroupItem href="#">
+                        <div className="icon1"><FaHome size={20}/></div>
+                        Home
+                    </ListGroupItem>
+                </LinkContainer>
+
+                <LinkContainer className="links" to="/web-register/sell-bar">
+                    <ListGroupItem href="#">
+                        <div className="icon2"><FaShop size={20}/></div>
+                        Sell
+                    </ListGroupItem>
+                </LinkContainer>
+
+                <LinkContainer className="links" to="/web-register/order">
+                    <ListGroupItem href="#">
+                        <div className="icon3"><FaCom size={20}/></div>
+                        Orders
+                    </ListGroupItem>
+                </LinkContainer>
+
+                <ListGroupItem>
+                    <div className="icon4"><FaSale size={20}/></div>
+                    Sales Ledger(TBD)
+                </ListGroupItem>
+
+                <ListGroupItem>
+                    <div className="icon5"><FaLine size={20}/></div>
+                    Reporting(TBD)
+                </ListGroupItem>
+
+                <LinkContainer className="links" to="/web-register/products">
+                    <ListGroupItem href="#">
+                        <div className="icon6"><FaProd size={20}/></div>
+                        Products
+                    </ListGroupItem>
+                </LinkContainer>
 
                 <ListGroupItem>
                     <div className="icon7"><FaGrp size={20}/></div>
-                    Customers(TBD)</ListGroupItem>
+                    Customers(TBD)
+                </ListGroupItem>
 
                 <ListGroupItem>
                     <div className="icon8"><FaCom size={20}/></div>
-                    ECommerce(TBD)</ListGroupItem>
+                    ECommerce(TBD)
+                </ListGroupItem>
 
-                <Link className="links" to="/web-register/setup"><ListGroupItem>
-                    <div className="icon9"><FaSet size={20}/></div>
-                    Setup(In Process)</ListGroupItem>
-                </Link>
+                <LinkContainer className="links" to="/web-register/setup">
+                    <ListGroupItem>
+                        <div className="icon9"><FaSet size={20}/></div>
+                        Setup(In Process)
+                    </ListGroupItem>
+                </LinkContainer>
 
             </ListGroup>
         )

@@ -1,15 +1,16 @@
 import React, {Component} from 'react'
-import {MenuItem, Nav, Navbar, NavDropdown, NavItem} from 'react-bootstrap'
+import {Nav, Navbar, NavItem} from 'react-bootstrap'
+import {LinkContainer} from 'react-router-bootstrap'
 import {Link, withRouter} from 'react-router-dom'
 
 class Header extends Component {
     clickLogoutButton() {
-      Meteor.logout(err => {
-              if (err !== null) {
-                  this.props.history.push('/')
-              }
-          }
-      )
+        Meteor.logout(err => {
+                if (err !== null) {
+                    this.props.history.push('/')
+                }
+            }
+        )
     }
 
     renderUserAction() {
@@ -22,8 +23,8 @@ class Header extends Component {
         } else {
             return (
                 <Nav pullRight>
-                    <NavItem eventKey={1}><Link className="links" to="/login">Login</Link></NavItem>
-                    <NavItem eventKey={2}><Link className="links" to="/signup">SignUp</Link></NavItem>
+                    <LinkContainer to="/login"><NavItem eventKey={1}>Login</NavItem></LinkContainer>
+                    <LinkContainer to="/signup"><NavItem eventKey={2}>SignUp</NavItem></LinkContainer>
                 </Nav>
             )
         }
@@ -34,14 +35,13 @@ class Header extends Component {
             <Navbar className="navbar" inverse collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <Link className="links" to={'/'}>Food Delivery</Link>
+                        <Link to={'/'}>Food Delivery</Link>
                     </Navbar.Brand>
                     <Navbar.Toggle/>
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                        <NavItem eventKey={1}><Link className="links"
-                                                    to={'/web-register'}>Web-Register</Link></NavItem>
+                        <LinkContainer to={'/web-register'}><NavItem eventKey={1}>Web-Register</NavItem></LinkContainer>
                     </Nav>
                     {this.renderUserAction()}
                 </Navbar.Collapse>

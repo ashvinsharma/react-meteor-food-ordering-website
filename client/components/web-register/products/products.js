@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import {Col, Grid, ListGroup, ListGroupItem, Row} from 'react-bootstrap'
-import {Link, Switch} from 'react-router-dom'
+import {Switch} from 'react-router-dom'
 import PrivateRoute from '../../account/private-route'
 import FoodItems from './food-items'
+import {LinkContainer} from 'react-router-bootstrap'
 
 class Products extends Component {
     render() {
@@ -11,8 +12,8 @@ class Products extends Component {
                 <Row>
                     <Col md={2}>
                         <ListGroup>
-                            <Link className="links" to={`${this.props.match.url}/food-items`}><ListGroupItem href="#">Food
-                                Items</ListGroupItem></Link>
+                            <LinkContainer className="links" to={`${this.props.match.url}/food-items`}><ListGroupItem href="#">Food
+                                Items</ListGroupItem></LinkContainer>
                             <ListGroupItem>Stock Control</ListGroupItem>
                             <ListGroupItem>Price Books</ListGroupItem>
                             <ListGroupItem>Item Types</ListGroupItem>

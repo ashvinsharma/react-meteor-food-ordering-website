@@ -84,14 +84,17 @@ class AddProduct extends Component {
                             <ControlLabel>Name</ControlLabel>
                             <FormControl ref="productName" type="text" placeholder="Sample name"
                                          onChange={e => this.setState({name: e.target.value.trim()})}/>
+
                             <FormGroup controlId="formControlsTextarea">
                                 <ControlLabel>Description</ControlLabel>
                                 <FormControl ref="description" componentClass="textarea" placeholder="textarea"
                                              onChange={e => this.setState({description: e.target.value.trim()})}/>
                             </FormGroup>
+
                             <ControlLabel>Image URL</ControlLabel>
                             <FormControl type="text" placeholder="Image URL"
                                          onChange={e => this.setState({image: e.target.value.trim()})}/>
+
                             <Form inline>
                                 <FormGroup controlId="formControlsSelect">
                                     <FormGroup>
@@ -103,6 +106,7 @@ class AddProduct extends Component {
                                             </DropdownButton>
                                         </InputGroup>
                                     </FormGroup>
+
                                     <FormGroup>
                                         <ControlLabel>Product Price</ControlLabel>
                                         <FormControl ref="price" placeholder="Product Price"
@@ -112,11 +116,14 @@ class AddProduct extends Component {
                                     </FormGroup>
                                 </FormGroup>
                             </Form>
+
                             <ControlLabel>Starting Discount</ControlLabel>
                             <FormControl type="text" placeholder="Enter Discount"
                                          onChange={e => this.setState({discount: e.target.value.trim()})}/>
                         </FormGroup>
+
                         <Button onClick={this.addProduct.bind(this)} bsStyle="success">Add Product</Button>
+
                     </Modal.Body>
                 </Modal>
             </div>

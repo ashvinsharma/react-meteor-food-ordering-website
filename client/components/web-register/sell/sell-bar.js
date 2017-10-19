@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import {Col, Grid, ListGroup, ListGroupItem, Row} from 'react-bootstrap'
-import {Link, Switch} from 'react-router-dom'
-import Sell from './sell'
+import {LinkContainer} from 'react-router-bootstrap'
+import {Switch} from 'react-router-dom'
 import PrivateRoute from '../../account/private-route'
+import Sell from './sell'
 
 class SellBar extends Component {
     render() {
@@ -11,7 +12,8 @@ class SellBar extends Component {
                 <Row>
                     <Col md={2}>
                         <ListGroup>
-                            <Link className="links" to="/web-register/sell-bar/sell"><ListGroupItem>Sell</ListGroupItem></Link>
+                            <LinkContainer className="links"
+                                           to="/web-register/sell-bar/sell"><ListGroupItem>Sell</ListGroupItem></LinkContainer>
                             <ListGroupItem>Open/Close</ListGroupItem>
                             <ListGroupItem>Sale History</ListGroupItem>
                             <ListGroupItem>Cash Management</ListGroupItem>

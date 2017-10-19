@@ -4,9 +4,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Route, Router, Switch} from 'react-router-dom'
 // noinspection ES6UnusedImports
+import {Orders} from '../imports/collections/orders'
+// noinspection ES6UnusedImports
 import {Products} from '../imports/collections/products'
 import NotFound from './404'
-
 import Login from './components/account/login'
 import PrivateRoute from './components/account/private-route'
 import Signup from './components/account/signup'

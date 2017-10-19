@@ -1,6 +1,8 @@
 import {Meteor} from 'meteor/meteor'
 // noinspection ES6UnusedImports
 import {Products} from '../imports/collections/products'
+// noinspection ES6UnusedImports
+import {Orders} from '../imports/collections/orders'
 
 Meteor.startup(() => {
     Meteor.publish('users', function () {
