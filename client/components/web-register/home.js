@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
 import {Accordion, Button, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {createContainer} from 'meteor/react-meteor-data'
-import {Products} from '../../../imports/collections/products'
-import HomeComponents from './home-components'
 
-class Home extends Component {
+export default class Home extends Component {
 
     render() {
         return (
@@ -14,13 +12,18 @@ class Home extends Component {
                         <Row>
                             <Col md={3}>
                                 <div className="home-buttons-order">
-                                    <h3>Place Your Orders Here</h3>
-                                    <Button>Place Order</Button>
+                                    <h1>Hi</h1>
                                 </div>
+                            </Col>
+                            <Col md={3}>
+                                <h1>Hi2</h1>
+                            </Col>
+                            <h1>Hi3</h1>
+                            <Col md={3}>
+
                             </Col>
                         </Row>
                         <Row>
-                            <HomeComponents/>
                         </Row>
                     </Grid>
                 </div>
@@ -30,9 +33,3 @@ class Home extends Component {
     }
 
 }
-
-export default createContainer(() => {
-    Meteor.subscribe('products')
-
-    return {products: Products.find({}).fetch()}
-}, Home)

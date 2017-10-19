@@ -6,8 +6,8 @@ import FirstSidebar from './first-sidebar'
 import Home from './home'
 
 import Products from './products/products'
-import Sell from './sell'
-import Setup from './setup/setup'
+import SellBar from './Sell/sell-bar'
+import Home from './home'
 
 
 export default class WebRegister extends Component {
