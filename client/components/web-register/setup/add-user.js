@@ -39,15 +39,8 @@ export default class AddUser extends Component {
                 if (err) {
                     console.log('Error ', err)
                 } else {
-                    console.log('signup successful, login in ...')
-                    Meteor.loginWithPassword(username, password, (e) => {
-                        if (e) {
-                            console.log('Error', e)
-                        } else {
-                            console.log('Login after Sign Up is successful')
-                            this.close()
-                        }
-                    })
+                    console.log('user added successful')
+                    this.close('add-user:success')
                 }
             })
         } else {
@@ -55,9 +48,9 @@ export default class AddUser extends Component {
         }
     }
 
-    close() {
+    close(status) {
         this.setState({show: false})
-        this.props.callback()
+        this.props.callback(status)
     }
 
     radioChange(event) {

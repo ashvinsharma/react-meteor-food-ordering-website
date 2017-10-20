@@ -15,6 +15,8 @@ class Accounts extends Component {
             changePasswordShowModal: false,
             disablePasswordButton: true,
             changePasswordAlert: false,
+            addUserAlert: false,
+            rmUserAlert: false,
             selectedRow: {}
         }
     }
@@ -26,6 +28,7 @@ class Accounts extends Component {
     deleteAccount() {
         if (JSON.stringify(this.state.selectedRow) !== '{}') {
             Meteor.call('deleteAccount', this.state.selectedRow._id)
+            this.setState({rmUserAlert: true})
         }
     }
 
@@ -44,8 +47,11 @@ class Accounts extends Component {
     }
 
     modalClose(status) {
-        if(status === 'pwd:success'){
+        if (status === 'pwd:success') {
             this.setState({changePasswordAlert: true})
+        }
+        if (status === 'add-user:success') {
+            this.setState({addUserAlert: true})
         }
         this.setState({
             addModalShow: false,
@@ -55,13 +61,26 @@ class Accounts extends Component {
     }
 
     handleAlertDismiss() {
-        this.setState({changePasswordAlert: false})
+        this.setState({
+            changePasswordAlert: false,
+            addUserAlert: false
+        })
     }
 
     showAlert() {
-        if(this.state.changePasswordAlert){
-            return(
-                <Alert bsStyle={'success'} onDismiss={this.handleAlertDismiss.bind(this)}>Password Changed!</Alert>
+        if (this.state.changePasswordAlert) {
+            return (
+                <Alert bsStyle={'success'} onDismiss={this.handleAlertDismiss.bind(this)}>Password changed!</Alert>
+            )
+        }
+        if (this.state.addUserAlert) {
+            return (
+                <Alert bsStyle={'success'} onDismiss={this.handleAlertDismiss.bind(this)}>User account created!</Alert>
+            )
+        }
+        if (this.state.rmUserAlert) {
+            return (
+                <Alert bsStyle={'danger'} onDismiss={this.handleAlertDismiss.bind(this)}>User account deleted!</Alert>
             )
         }
     }
