@@ -1,8 +1,8 @@
 import {Meteor} from 'meteor/meteor'
 // noinspection ES6UnusedImports
-import {Products} from '../imports/collections/products'
-// noinspection ES6UnusedImports
 import {Orders} from '../imports/collections/orders'
+// noinspection ES6UnusedImports
+import {Products} from '../imports/collections/products'
 
 Meteor.startup(() => {
     Meteor.publish('users', function () {
@@ -10,16 +10,29 @@ Meteor.startup(() => {
     })
 
     Meteor.methods({
-        customDelete(_id) {
-            if (!Meteor.isServer) return
+            deleteAccount(_id) {
+                if (Meteor.isServer) {
+                    try {
+                        Meteor.users.remove({_id})
+                    } catch (e) {
+                        throw new Meteor.Error('self-delete', 'Failed to remove yourself')
+                    }
+                }
+            },
 
-            try {
-                Meteor.users.remove({_id})
-            } catch (e) {
-                // handle this however you want
-                throw new Meteor.Error('self-delete', 'Failed to remove yourself')
+            setPassword(id, newPassword) {
+                if (Meteor.isServer) {
+                    Accounts.setPassword(id, newPassword, e => {
+                        if (!e) {
+                            console.log('done!')
+                        } else {
+                            console.log(e)
+                        }
+                        this.close.bind(this)
+                    })
+                }
             }
         }
-    })
+    )
     // code to run on server at startup
 })
