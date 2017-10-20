@@ -15,6 +15,7 @@ class Accounts extends Component {
             changePasswordShowModal: false,
             disablePasswordButton: true,
             changePasswordAlert: false,
+            addUserAlert: false,
             selectedRow: {}
         }
     }
@@ -44,8 +45,11 @@ class Accounts extends Component {
     }
 
     modalClose(status) {
-        if(status === 'pwd:success'){
+        if (status === 'pwd:success') {
             this.setState({changePasswordAlert: true})
+        }
+        if (status === 'add-user:success') {
+            this.setState({addUserAlert: true})
         }
         this.setState({
             addModalShow: false,
@@ -55,13 +59,21 @@ class Accounts extends Component {
     }
 
     handleAlertDismiss() {
-        this.setState({changePasswordAlert: false})
+        this.setState({
+            changePasswordAlert: false,
+            addUserAlert: false
+        })
     }
 
     showAlert() {
-        if(this.state.changePasswordAlert){
-            return(
+        if (this.state.changePasswordAlert) {
+            return (
                 <Alert bsStyle={'success'} onDismiss={this.handleAlertDismiss.bind(this)}>Password Changed!</Alert>
+            )
+        }
+        if (this.state.addUserAlert) {
+            return (
+                <Alert bsStyle={'success'} onDismiss={this.handleAlertDismiss.bind(this)}>User created</Alert>
             )
         }
     }
