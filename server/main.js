@@ -10,7 +10,7 @@ Meteor.startup(() => {
     })
 
     Meteor.methods({
-            deleteAccount(_id) {
+            'account.delete': function (_id) {
                 if (Meteor.isServer) {
                     try {
                         Meteor.users.remove({_id})
@@ -20,7 +20,7 @@ Meteor.startup(() => {
                 }
             },
 
-            setPassword(id, newPassword) {
+            'account.setPassword': function (id, newPassword) {
                 if (Meteor.isServer) {
                     Accounts.setPassword(id, newPassword, e => {
                         if (!e) {

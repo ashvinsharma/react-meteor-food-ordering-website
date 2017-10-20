@@ -106,9 +106,11 @@ class ProductsList extends Component {
                                                dataSort={true}
                                                width='10%'
                                                editable={false}
+                                               searchable={false}
                                                hidden>Product ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='image'
-                                               dataFormat={this.imageFormatter}>Product Image</TableHeaderColumn>
+                                               dataFormat={this.imageFormatter}
+                                               searchable={false}>Product Image</TableHeaderColumn>
                             <TableHeaderColumn dataField='name'
                                                dataSort={true}>Product Name</TableHeaderColumn>
                             <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>

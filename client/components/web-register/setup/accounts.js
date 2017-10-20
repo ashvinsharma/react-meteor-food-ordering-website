@@ -25,9 +25,13 @@ class Accounts extends Component {
         return `${cell.userType}`
     }
 
+    static handleEditCellDetails(row, cellName, cellValue) {
+        Meteor.call('products.update', row, cellName, cellValue)
+    }
+
     deleteAccount() {
         if (JSON.stringify(this.state.selectedRow) !== '{}') {
-            Meteor.call('deleteAccount', this.state.selectedRow._id)
+            Meteor.call('account.delete', this.state.selectedRow._id)
             this.setState({rmUserAlert: true})
         }
     }
@@ -128,6 +132,11 @@ class Accounts extends Component {
                                             clickToSelectAndEditCell: true,
                                             onSelect: this.handleRowClick.bind(this)
                                         }}
+                                        cellEdit={{
+                                            mode: 'dbclick',
+                                            blurToSave: false,
+                                            beforeSaveCell: Accounts.handleEditCellDetails.bind(this)
+                                        }}
                                         options={{
                                             toolBar: this.ToolBar.bind(this),
                                             clearSearch: true
@@ -136,14 +145,19 @@ class Accounts extends Component {
                             <TableHeaderColumn dataField='_id'
                                                isKey
                                                dataSort={true}
-                                               hidden>Product ID</TableHeaderColumn>
+                                               searchable={false}
+                                               hidden>ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='username'
                                                width='20%'
+                                               dataSort={true}
                                                editable={true}>Username</TableHeaderColumn>
                             <TableHeaderColumn dataField='profile'
                                                width='20%'
+                                               editable={false}
                                                dataFormat={Accounts.showType.bind(this)}>Type</TableHeaderColumn>
-                            <TableHeaderColumn dataField='createdAt'>CreatedAt</TableHeaderColumn>
+                            <TableHeaderColumn dataField='createdAt'
+                                               searchable={false}
+                                               editable={false}>CreatedAt</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>

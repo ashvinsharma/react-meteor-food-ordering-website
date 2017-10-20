@@ -28,7 +28,7 @@ export default class ChangePassword extends Component {
         const password = ReactDOM.findDOMNode(this.refs.password).value.trim()
         const confirmPassword = ReactDOM.findDOMNode(this.refs.confirmPassword).value.trim()
         if (password === confirmPassword && password.length >= 6) {
-            Meteor.call('setPassword', this.props.row._id, password)
+            Meteor.call('account.setPassword', this.props.row._id, password)
             this.close('pwd:success')
         }
     }
