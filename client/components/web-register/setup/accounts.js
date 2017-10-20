@@ -146,9 +146,10 @@ class Accounts extends Component {
                                                isKey
                                                dataSort={true}
                                                searchable={false}
-                                               hidden>Product ID</TableHeaderColumn>
+                                               hidden>ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='username'
                                                width='20%'
+                                               dataSort={true}
                                                editable={true}>Username</TableHeaderColumn>
                             <TableHeaderColumn dataField='profile'
                                                width='20%'
