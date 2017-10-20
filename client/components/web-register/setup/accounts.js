@@ -1,16 +1,20 @@
 // noinspection NpmUsedModulesInstalled
 import {createContainer} from 'meteor/react-meteor-data'
 import React, {Component} from 'react'
-import {Accordion, Button, ButtonGroup, Col, Grid, Panel, Row} from 'react-bootstrap'
+import {Accordion, Alert, Button, ButtonGroup, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 import AddUser from './add-user'
+import ChangePassword from './change-password'
 
 class Accounts extends Component {
     constructor() {
         super()
 
         this.state = {
-            show: false,
+            addModalShow: false,
+            changePasswordShowModal: false,
+            disablePasswordButton: true,
+            changePasswordAlert: false,
             selectedRow: {}
         }
     }
@@ -19,22 +23,47 @@ class Accounts extends Component {
         return `${cell.userType}`
     }
 
-    handleDeleteButtonClick() {
+    deleteAccount() {
         if (JSON.stringify(this.state.selectedRow) !== '{}') {
-            Meteor.call('customDelete', this.state.selectedRow._id)
+            Meteor.call('deleteAccount', this.state.selectedRow._id)
         }
     }
 
     handleRowClick(row, isSelected) {
         if (isSelected) {
-            this.setState({selectedRow: row})
+            this.setState({
+                selectedRow: row,
+                disablePasswordButton: false
+            })
         } else {
-            this.setState({selectedRow: {}})
+            this.setState({
+                selectedRow: {},
+                disablePasswordButton: true
+            })
         }
     }
 
-    modalClose() {
-        this.setState({show: false})
+    modalClose(status) {
+        if(status === 'pwd:success'){
+            this.setState({changePasswordAlert: true})
+        }
+        this.setState({
+            addModalShow: false,
+            changePasswordShowModal: false
+        })
+        this.refs.table.cleanSelected()
+    }
+
+    handleAlertDismiss() {
+        this.setState({changePasswordAlert: false})
+    }
+
+    showAlert() {
+        if(this.state.changePasswordAlert){
+            return(
+                <Alert bsStyle={'success'} onDismiss={this.handleAlertDismiss.bind(this)}>Password Changed!</Alert>
+            )
+        }
     }
 
     ToolBar = props => {
@@ -46,10 +75,15 @@ class Accounts extends Component {
                             <ButtonGroup>
                                 <Button bsStyle="success"
                                         onClick={() => {
-                                            this.setState({show: true})
+                                            this.setState({addModalShow: true})
                                         }}>Add New</Button>
+                                <Button bsStyle="warning"
+                                        disabled={this.state.disablePasswordButton}
+                                        onClick={() => {
+                                            this.setState({changePasswordShowModal: true})
+                                        }}>Change Password</Button>
                                 <Button bsStyle="danger"
-                                        onClick={this.handleDeleteButtonClick.bind(this)}>Delete</Button>
+                                        onClick={this.deleteAccount.bind(this)}>Delete</Button>
                             </ButtonGroup>
                             {props.components.searchPanel}
                         </Col>
@@ -64,7 +98,9 @@ class Accounts extends Component {
             <div>
                 <Accordion>
                     <Panel>
+                        {this.showAlert()}
                         <BootstrapTable data={this.props.users}
+                                        ref={'table'}
                                         search={true}
                                         selectRow={{
                                             mode: 'radio',
@@ -83,7 +119,8 @@ class Accounts extends Component {
                                                dataSort={true}
                                                hidden>Product ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='username'
-                                               width='20%'>Username</TableHeaderColumn>
+                                               width='20%'
+                                               editable={true}>Username</TableHeaderColumn>
                             <TableHeaderColumn dataField='profile'
                                                width='20%'
                                                dataFormat={Accounts.showType.bind(this)}>Type</TableHeaderColumn>
@@ -91,7 +128,9 @@ class Accounts extends Component {
                         </BootstrapTable>
                     </Panel>
                 </Accordion>
-                <AddUser show={this.state.show} callback={this.modalClose.bind(this)}/>
+                <AddUser show={this.state.addModalShow} callback={this.modalClose.bind(this)}/>
+                <ChangePassword row={this.state.selectedRow} show={this.state.changePasswordShowModal}
+                                callback={this.modalClose.bind(this)}/>
             </div>
         )
     }

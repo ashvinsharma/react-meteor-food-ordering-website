@@ -13,7 +13,6 @@ export default class AddUser extends Component {
             confirmPassword: '',
             userType: ''
         }
-
     }
 
     componentWillReceiveProps(props) {
