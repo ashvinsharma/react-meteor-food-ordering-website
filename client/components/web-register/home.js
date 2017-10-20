@@ -12,15 +12,21 @@ export default class Home extends Component {
                         <Row>
                             <Col md={3}>
                                 <div className="home-buttons-order">
-                                    <h1>Hi</h1>
+                                    <h2>Make a Sale</h2>
+                                    <Button>Sell</Button>
                                 </div>
                             </Col>
                             <Col md={3}>
-                                <h1>Hi2</h1>
+                                <div className="home-buttons-order">
+                                    <h2>Add a Product</h2>
+                                    <Button>Add Product</Button>
+                                </div>
                             </Col>
-                            <h1>Hi3</h1>
                             <Col md={3}>
-
+                                <div className="home-buttons-order">
+                                    <h2>Add a Customer</h2>
+                                    <Button>Add Customer</Button>
+                                </div>
                             </Col>
                         </Row>
                         <Row>

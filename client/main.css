@@ -121,3 +121,10 @@ display: inline-block;
 .order-items .btn {
     margin-left: 1%;
 }
+
+.home-buttons-order {
+    margin-top: 50% !important;
+    margin-right: 5%;
+    padding: 2% 4% 4% 4%;
+    background-color: #F5F5F5 !important;
+}

@@ -8,6 +8,7 @@ import Products from './products/products'
 import SellBar from './sell/sell-bar'
 import Home from './home'
 import Setup from './setup/setup'
+import OrderList from './orders'
 
 
 export default class WebRegister extends Component {
@@ -26,6 +27,7 @@ export default class WebRegister extends Component {
                                 <PrivateRoute path={`${this.props.match.url}/setup`} strict component={Setup}/>
                                 <PrivateRoute path={`${this.props.match.url}/home`} strict component={Home}/>
                                 <PrivateRoute path={`${this.props.match.url}`} exact component={Home}/>
+                                <PrivateRoute parth={`${this.props.match.url}/orders`} strict component={OrderList}/>
                                 <Redirect to="/404"/>
                             </Switch>
                         </Col>
