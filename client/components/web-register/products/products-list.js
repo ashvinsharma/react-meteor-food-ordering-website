@@ -43,6 +43,14 @@ class ProductsList extends Component {
         }
     }
 
+    numericSortFunc(a, b, order) {
+        if (order === 'desc') {
+            return Number(a.price) - Number(b.price);
+        } else {
+            return Number(b.price) - Number(a.price);
+        }
+    }
+
     ToolBar = props => {
         return (
             <div style={{margin: '15px'}}>
@@ -105,7 +113,7 @@ class ProductsList extends Component {
                                                dataSort={true}>Product Name</TableHeaderColumn>
                             <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
                             <TableHeaderColumn dataField='price'
-                                               dataSort={true}>Product Price</TableHeaderColumn>
+                                               dataSort sortFunc={this.numericSortFunc.bind(this)}>Product Price</TableHeaderColumn>
                             <TableHeaderColumn dataField='discount'>Discount</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
