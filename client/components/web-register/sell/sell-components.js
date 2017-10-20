@@ -4,6 +4,7 @@ import React, {Component} from 'react'
 import {Accordion, Button, Col, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 import {Products} from '../../../../imports/collections/products'
+import Cart from './cart'
 
 class SellComponents extends Component {
     constructor(props) {
@@ -16,28 +17,19 @@ class SellComponents extends Component {
         this.setState({cart: this.selectedCheckboxes})
     }
 
-    addOrders() {
-        Meteor.call('orders.insert', {
-            createdAt: new Date(),
-            items: Array.from(this.state.cart),
-            createdBy: Meteor.userId
-        })
-    }
 
     addToCart(product) {
         if (this.state.cart.has(product)) {
-            this.state.cart.delete(product)
-            console.log(product.name + ' is deleted from the cart')
+            this.setState(() => {
+                this.state.cart.delete(product)
+            })
+
         }
         else {
-            this.state.cart.add(product)
-            console.log(product.name + ' is added to the cart')
+            this.setState(() => {
+                this.state.cart.add(product)
+            })
         }
-        console.log(Array.from(this.state.cart))
-    }
-
-    imageFormatter(cell, row) {
-        return (<img style={{width: 50}} src={cell}/>)
     }
 
     render() {
@@ -67,20 +59,7 @@ class SellComponents extends Component {
                         </Col>
                     </div>
                     <Col md={5}>
-                        <h1>Cart</h1>
-                        <Accordion>
-                            <Panel>
-                                <BootstrapTable data={Array.from(this.state.cart)} keyField="name">
-                                    <TableHeaderColumn dataField='name'
-                                                       dataSort={true}>Product Name</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='price'
-                                                       dataSort={true}>Product Price</TableHeaderColumn>
-                                    <TableHeaderColumn dataField='discount'>Discount</TableHeaderColumn>
-                                </BootstrapTable>
-                            </Panel>
-                        </Accordion>
-                        <Button onClick={() => this.addOrders()}>Checkout</Button>
+                        <Cart cart={Array.from(this.state.cart)}/>
                     </Col>
                 </Row>
             </div>
