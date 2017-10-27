@@ -43,6 +43,9 @@ class Header extends Component {
                     <Nav>
                         <LinkContainer to={'/web-register'}><NavItem eventKey={1}>Web-Register</NavItem></LinkContainer>
                     </Nav>
+                    <Nav>
+                        <LinkContainer to={'/cookDashboard'}><NavItem eventKey={4}>Cook</NavItem></LinkContainer>
+                    </Nav>
                     {this.renderUserAction()}
                 </Navbar.Collapse>
             </Navbar>

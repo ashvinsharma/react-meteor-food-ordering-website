@@ -13,6 +13,7 @@ import PrivateRoute from './components/account/private-route'
 import Signup from './components/account/signup'
 import App from './components/app'
 import WebRegister from './components/web-register/web-register'
+import CookDashboard from './components/web-register/cook/cook-dashboard'
 
 const history = createHistory()
 
@@ -24,6 +25,7 @@ const routes = (
                 <Route path="/signup" exact component={Signup}/>
                 <Route path="/login" exact component={Login}/>
                 <PrivateRoute path="/web-register" strict component={WebRegister}/>
+                <PrivateRoute path='/cookDashboard' strict component={CookDashboard}/>
                 <Route path="/404" component={NotFound}/>
             </Switch>
         </div>
