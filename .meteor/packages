@@ -22,3 +22,4 @@ accounts-password@1.4.0
 accounts-facebook@1.2.1
 facebook-config-ui@1.0.0
 react-meteor-data
+autopublish

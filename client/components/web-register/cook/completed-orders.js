@@ -8,7 +8,6 @@ class CompletedOrders extends Component {
 
 
     render() {
-        console.log(this.props.orders)
         return (
             <div className="orders">
                 <h1>Completed Orders</h1>

@@ -37,7 +37,6 @@ class MyOrders extends Component {
     }
 
     render() {
-        console.log(this.props.orders)
         return (
             <div className="orders">
                 <h1>My Orders</h1>

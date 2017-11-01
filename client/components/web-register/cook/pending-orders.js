@@ -5,6 +5,18 @@ import {Accordion, Button, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, ButtonGroup, TableHeaderColumn} from 'react-bootstrap-table'
 
 class PendingOrders extends Component {
+    componentDidMount() {
+        this.state = {selectedRow: null}
+    }
+
+    static showType(cell) {
+        const items = cell.map((item) =>
+            <li key={item._id}>{item.name}</li>
+        )
+        return (<ul>{items}</ul>)
+    }
+
+
     handleRowClick(row, isSelected) {
         if (isSelected) {
             this.setState({selectedRow: row})
@@ -15,8 +27,9 @@ class PendingOrders extends Component {
 
     handleAddButtonClick() {
         console.log('This is the selected row' + this.state.selectedRow)
-        Meteor.call('orders.update', this.props.selectedRow._id, {$set: {assignedTo: Meteor.userId()}})
-        Meteor.call('orders.update', this.props.selectedRow._id, {$set: {status: 'assigned'}})
+        Meteor.call('orders.update', this.state.selectedRow._id, {$set: {assignedTo: Meteor.userId()}})
+        Meteor.call('orders.update', this.state.selectedRow._id, {$set: {status: 'assigned'}})
+        console.log(this.state.selectedRow)
     }
 
     ToolBar = props => {
@@ -37,7 +50,6 @@ class PendingOrders extends Component {
     }
 
     render() {
-        console.log(this.props.orders)
         return (
             <div className="orders">
                 <h1>Pending Orders</h1>
@@ -55,8 +67,10 @@ class PendingOrders extends Component {
                                             toolBar: this.ToolBar.bind(this),
                                         }}>
                             <TableHeaderColumn dataField='items'
-                                               dataSort={true}>Items</TableHeaderColumn>
-                            <TableHeaderColumn dataField='status'>status</TableHeaderColumn>
+                                               editable={false}
+                                               dataFormat={PendingOrders.showType}>Items</TableHeaderColumn>
+                            <TableHeaderColumn dataField='status'
+                                               dataFormat={PendingOrders.showStatus}>status</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>
