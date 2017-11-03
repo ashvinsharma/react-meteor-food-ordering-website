@@ -5,15 +5,18 @@ import {Accordion, Button, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, ButtonGroup, TableHeaderColumn} from 'react-bootstrap-table'
 
 class PendingOrders extends Component {
-    componentDidMount() {
-        this.state = {selectedRow: null}
+    constructor(props) {
+        super(props)
+        this.state = {
+            selectedRow: null,
+        }
     }
 
     static showType(cell) {
         const items = cell.map((item) =>
             <li key={item._id}>{item.name}</li>
         )
-        return (<ul>{items}</ul>)
+        return (<ol>{items}</ol>)
     }
 
 
@@ -23,12 +26,21 @@ class PendingOrders extends Component {
         } else {
             this.setState({selectedRow: {}})
         }
+        console.log(this.state.selectedRow)
     }
 
-    handleAddButtonClick() {
-        console.log('This is the selected row' + this.state.selectedRow)
-        Meteor.call('orders.update', this.state.selectedRow._id, {$set: {assignedTo: Meteor.userId()}})
-        Meteor.call('orders.update', this.state.selectedRow._id, {$set: {status: 'assigned'}})
+    handleAddButtonClick(row) {
+        const assign = 'assignedTo'
+        const status = 'Status'
+        console.log(this.state.selectedRow)
+        const rowUp = this.state.selectedRow
+        rowUp.assignedTo = Meteor.userId()
+        rowUp.Status = 'assigned'
+        this.setState({
+            selectedRow: rowUp
+        })
+        Meteor.call('orders.update', this.state.selectedRow, status, 'assigned')
+        Meteor.call('orders.update', this.state.selectedRow, assign, Meteor.userId())
         console.log(this.state.selectedRow)
     }
 
@@ -55,7 +67,7 @@ class PendingOrders extends Component {
                 <h1>Pending Orders</h1>
                 <Accordion>
                     <Panel>
-                        <BootstrapTable data={this.props.orders} keyField="name"
+                        <BootstrapTable data={this.props.orders} keyField="items"
                                         selectRow={{
                                             mode: 'radio',
                                             hideSelectColumn: true,
@@ -69,8 +81,8 @@ class PendingOrders extends Component {
                             <TableHeaderColumn dataField='items'
                                                editable={false}
                                                dataFormat={PendingOrders.showType}>Items</TableHeaderColumn>
-                            <TableHeaderColumn dataField='status'
-                                               dataFormat={PendingOrders.showStatus}>status</TableHeaderColumn>
+                            <TableHeaderColumn dataField='assignedTo'>Assigned To</TableHeaderColumn>
+                            <TableHeaderColumn dataField='bill'>bill</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>

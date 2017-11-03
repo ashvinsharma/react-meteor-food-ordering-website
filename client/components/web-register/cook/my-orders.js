@@ -6,6 +6,12 @@ import {BootstrapTable, ButtonGroup, TableHeaderColumn} from 'react-bootstrap-ta
 
 
 class MyOrders extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            selectedRow: null,
+        }
+    }
     handleRowClick(row, isSelected) {
         if (isSelected) {
             this.setState({selectedRow: row})
@@ -14,9 +20,24 @@ class MyOrders extends Component {
         }
     }
 
-    handleAddButtonClick() {
-        console.log('This is the selected row' + this.state.selectedRow)
-        Meteor.call('orders.update', this.props.selectedRow._id, {$set: {status: 'completed'}})
+    static showType(cell) {
+        const items = cell.map((item) =>
+            <li key={item._id}>{item.name}</li>
+        )
+        return (<ol>{items}</ol>)
+    }
+
+
+    handleAddButtonClick(row) {
+        const status = 'Status'
+        console.log(this.state.selectedRow)
+        const rowUp = this.state.selectedRow
+        rowUp.assignedTo = Meteor.userId()
+        rowUp.Status = 'completed'
+        this.setState({
+            selectedRow: rowUp
+        })
+        Meteor.call('orders.update', this.state.selectedRow, status, 'completed')
     }
 
     ToolBar = props => {
@@ -42,7 +63,7 @@ class MyOrders extends Component {
                 <h1>My Orders</h1>
                 <Accordion>
                     <Panel>
-                        <BootstrapTable data={this.props.orders} keyField="name"
+                        <BootstrapTable data={this.props.orders} keyField="items"
                                         selectRow={{
                                             mode: 'radio',
                                             hideSelectColumn: true,
@@ -54,8 +75,10 @@ class MyOrders extends Component {
                                             toolBar: this.ToolBar.bind(this),
                                         }}>
                             <TableHeaderColumn dataField='items'
-                                               dataSort={true}>Items</TableHeaderColumn>
-                            <TableHeaderColumn dataField='status'>status</TableHeaderColumn>
+                                               dataFormat={MyOrders.showType}>Items</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Status'>status</TableHeaderColumn>
+                            <TableHeaderColumn dataField='assignedTo'>Assigned To</TableHeaderColumn>
+                            <TableHeaderColumn dataField='bill'>bill</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>

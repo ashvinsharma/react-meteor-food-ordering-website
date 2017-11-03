@@ -6,6 +6,12 @@ import {BootstrapTable, ButtonGroup, TableHeaderColumn} from 'react-bootstrap-ta
 
 class CompletedOrders extends Component {
 
+    static showType(cell) {
+        const items = cell.map((item) =>
+            <li key={item._id}>{item.name}</li>
+        )
+        return (<ol>{items}</ol>)
+    }
 
     render() {
         return (
@@ -13,11 +19,12 @@ class CompletedOrders extends Component {
                 <h1>Completed Orders</h1>
                 <Accordion>
                     <Panel>
-                        <BootstrapTable data={this.props.orders} keyField="name"
-                        >
+                        <BootstrapTable data={this.props.orders} keyField="items">
                             <TableHeaderColumn dataField='items'
-                                               dataSort={true}>Items</TableHeaderColumn>
-                            <TableHeaderColumn dataField='status'>status</TableHeaderColumn>
+                                               dataSort={true}
+                                               dataFormat={CompletedOrders.showType}>Items</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Status'>status</TableHeaderColumn>
+                            <TableHeaderColumn dataField='assignedTo'>Completed By</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>
@@ -28,5 +35,5 @@ class CompletedOrders extends Component {
 
 export default createContainer(() => {
     Meteor.subscribe('orders')
-    return {orders: Orders.find({status: 'completed'}).fetch()}
+    return {orders: Orders.find({Status: 'completed'}).fetch()}
 }, CompletedOrders)
