@@ -117,6 +117,7 @@ class Accounts extends Component {
     }
 
     render() {
+        console.log(this.props.users)
         return (
             <div>
                 <Accordion>
@@ -154,7 +155,7 @@ class Accounts extends Component {
                             <TableHeaderColumn dataField='profile'
                                                width='20%'
                                                editable={false}
-                                               dataFormat={Accounts.showType.bind(this)}>Type</TableHeaderColumn>
+                                               dataFormat={Accounts.showType}>Type</TableHeaderColumn>
                             <TableHeaderColumn dataField='createdAt'
                                                searchable={false}
                                                editable={false}>CreatedAt</TableHeaderColumn>

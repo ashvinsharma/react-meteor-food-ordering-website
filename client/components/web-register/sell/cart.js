@@ -29,6 +29,7 @@ export default class Cart extends Component {
             items: this.props.cart,
             bill: this.state.billPrice,
             Status: 'pending',
+            assignedTo: 'none',
             createdBy: Meteor.user().username
         }, (err) => {
             if (err) {
@@ -41,7 +42,6 @@ export default class Cart extends Component {
     }
 
     render() {
-
         return (
             <div>
                 <h1>Cart</h1>

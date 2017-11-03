@@ -122,6 +122,10 @@ display: inline-block;
     margin-left: 1%;
 }
 
+.orders {
+    background-color: whitesmoke;
+}
+
 .home-buttons-order {
     margin-top: 50% !important;
     margin-right: 5%;

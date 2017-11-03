@@ -17,9 +17,9 @@ es5-shim@4.6.15                # ECMAScript 5 compatibility for older browsers
 ecmascript@0.8.3              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.2.4            # Server-side component of the `meteor shell` command
 
-autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 accounts-ui@1.1.9
 accounts-password@1.4.0
 accounts-facebook@1.2.1
 facebook-config-ui@1.0.0
 react-meteor-data
+autopublish
