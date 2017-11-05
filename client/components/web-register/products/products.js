@@ -22,7 +22,7 @@ class Products extends Component {
                             <ListGroupItem>Item Tags</ListGroupItem>
                         </ListGroup>
                     </Col>
-                    <Col md={10}>
+                    <Col md={9}>
                         <Switch>
                             <PrivateRoute path={`${this.props.match.url}/food-items`} strict component={FoodItems}/>
                         </Switch>

@@ -2,12 +2,14 @@
 html, body { overflow-x: hidden; }
 
 body {
-    background: url("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/2815532/680/453/m1/fpnw/wm0/1-6031-.jpg?1496845260&s=11ef584534bab88c73849ceddf31fd7a") no-repeat;
+    background: url("http://www.healthgateways.com/wp-content/uploads/2017/03/farmtable-2.jpg") no-repeat;
     background-size: 100%;
+
 }
 
 .container-fluid {
-    padding: 0 !important;
+    padding: 0% !important;
+
 }
 
 .first-column {
@@ -25,7 +27,7 @@ body {
 }
 .list-group-item{
     height: 65px !important;
-    width: auto !important;
+    width:auto !important;
     font-family:"Century Gothic";
     text-align: center !important;
     vertical-align: middle !important;
@@ -36,6 +38,7 @@ body {
     border-radius: 0% !important;
 
 }
+
 
 .icon1 {
     color: #EF5350 !important;
@@ -67,9 +70,14 @@ body {
 }
 
 .sell {
-    width: 1000px;
-    background-color: white;
-    padding: 0px 0px;
+
+    width: auto;
+    height: 100%;
+    margin-right: 5%;
+    background-color: #F5F5F5;
+    font-family:"Century Gothic";
+    padding: 0px 10px 15px 10px;
+
 
 }
 
@@ -96,7 +104,9 @@ background-color: #080808;
 
 .modal {
 margin-top: 10%;
+
 }
+
 .signup-btns{
 margin-left: 5px;
 }
@@ -120,15 +130,46 @@ display: inline-block;
 
 .order-items .btn {
     margin-left: 1%;
+
 }
 
-.orders {
-    background-color: whitesmoke;
+
+
+.orders h1 {
+    text-align: center;
+    font-family:"Century Gothic";
+    background-color: #F5F5F5!important;
+    padding: 5% 5% 5% 5%;
+    border-radius: 5px 5px 5px 5px !important;
 }
+.orders{
+    padding: 5px 10px!important;
+}
+
+
+
+
+
 
 .home-buttons-order {
-    margin-top: 50% !important;
+    text-align: center;
+
+    wdth:auto !important;
+    font-family:"Century Gothic";
+    position: relative !important;
+    border-radius: 3% !important;
+    vertical-align: middle !important;
+    margin-top: 60% !important;
     margin-right: 5%;
-    padding: 2% 4% 4% 4%;
+    padding: 5% 5% 5% 5%;
     background-color: #F5F5F5 !important;
 }
+
+
+
+.home-buttons-order h2{
+    color:#263238!important
+
+}
+
+

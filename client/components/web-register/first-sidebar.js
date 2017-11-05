@@ -13,7 +13,9 @@ import {LinkContainer} from 'react-router-bootstrap'
 export default class FirstSidebar extends Component {
     render() {
         return (
-            <ListGroup className>
+
+
+            <ListGroup >
                 <LinkContainer className="links" to="/web-register/home">
                     <ListGroupItem href="#">
                         <div className="icon1"><FaHome size={20}/></div>

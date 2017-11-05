@@ -42,7 +42,7 @@ class MyOrders extends Component {
 
     ToolBar = props => {
         return (
-            <div style={{margin: '15px'}}>
+            <div className="orders">
                 <Grid>
                     <Row>
                         <Col md={12}>

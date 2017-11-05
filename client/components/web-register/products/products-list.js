@@ -56,7 +56,7 @@ class ProductsList extends Component {
             <div style={{margin: '15px'}}>
                 <Grid>
                     <Row>
-                        <Col md={12}>
+                        <Col md={8}>
                             <ButtonGroup>
                                 <Button bsStyle="success" onClick={this.handleAddNewButtonClick.bind(this)}>Add
                                     New</Button>
@@ -79,7 +79,7 @@ class ProductsList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="add_food">
                 <Accordion>
                     <Panel>
                         <BootstrapTable data={this.props.products}
