@@ -7,10 +7,6 @@ import {withRouter} from 'react-router-dom'
 class Signup extends Component {
     constructor() {
         super()
-
-        this.state = {
-            userType: 4 //Customer
-        }
     }
 
     handleSubmit(e) {
@@ -19,19 +15,16 @@ class Signup extends Component {
         const username = ReactDOM.findDOMNode(this.refs.username).value.trim()
         const password = ReactDOM.findDOMNode(this.refs.password).value.trim()
         const confirmPassword = ReactDOM.findDOMNode(this.refs.confirmPassword).value.trim()
-        const userType = this.state.userType
 
         if (password.length >= 6 && password === confirmPassword) {
             Accounts.createUser({
                 username,
                 password,
-                profile: {
-                    userType
-                }
             }, (err) => {
                 if (err) {
                     console.log('Error ', err)
                 } else {
+                    Meteor.call('account.addRole', Meteor.userId(), 'customer')
                     console.log('signup successful, login in ...')
                     Meteor.loginWithPassword(username, password, (e) => {
                         if (e) {

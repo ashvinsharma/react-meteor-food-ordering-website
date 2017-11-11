@@ -1,3 +1,5 @@
+// noinspection NpmUsedModulesInstalled
+import {createContainer} from 'meteor/react-meteor-data'
 import React, {Component} from 'react'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
 import FaSale from 'react-icons/lib/fa/clipboard'
@@ -10,8 +12,11 @@ import FaShop from 'react-icons/lib/fa/shopping-cart'
 import FaProd from 'react-icons/lib/fa/tags'
 import {LinkContainer} from 'react-router-bootstrap'
 
-export default class FirstSidebar extends Component {
-    render() {
+class FirstSidebar extends Component {
+    constructor(props){
+        super(props)
+    }
+    renderList() {
         return (
             <ListGroup className>
                 <LinkContainer className="links" to="/web-register/home">
@@ -21,7 +26,7 @@ export default class FirstSidebar extends Component {
                     </ListGroupItem>
                 </LinkContainer>
 
-                <LinkContainer className="links" to="/web-register/sell-bar">
+                <LinkContainer className="links" to="/web-register/sell">
                     <ListGroupItem href="#">
                         <div className="icon2"><FaShop size={20}/></div>
                         Sell
@@ -45,12 +50,13 @@ export default class FirstSidebar extends Component {
                     Reporting(TBD)
                 </ListGroupItem>
 
-                <LinkContainer className="links" to="/web-register/products">
-                    <ListGroupItem href="#">
-                        <div className="icon6"><FaProd size={20}/></div>
-                        Products
-                    </ListGroupItem>
-                </LinkContainer>
+                {this.props.user[0].roles[1] === 'admin' ? (
+                    <LinkContainer className="links" to="/web-register/products">
+                        <ListGroupItem href="#">
+                            <div className="icon6"><FaProd size={20}/></div>
+                            Products
+                        </ListGroupItem>
+                    </LinkContainer>) : <div/>}
 
                 <ListGroupItem>
                     <div className="icon7"><FaGrp size={20}/></div>
@@ -62,14 +68,26 @@ export default class FirstSidebar extends Component {
                     ECommerce(TBD)
                 </ListGroupItem>
 
-                <LinkContainer className="links" to="/web-register/setup">
-                    <ListGroupItem>
-                        <div className="icon9"><FaSet size={20}/></div>
-                        Setup(In Process)
-                    </ListGroupItem>
-                </LinkContainer>
+                {this.props.user[0].roles[1] === 'admin' ? (
+                    <LinkContainer className="links" to="/web-register/accounts">
+                        <ListGroupItem>
+                            <div className="icon9"><FaSet size={20}/></div>
+                            Setup
+                        </ListGroupItem>
+                    </LinkContainer>) : <div/>}
 
             </ListGroup>
         )
     }
+
+    render() {
+        if (this.props.user.length !== 0 && typeof this.props.user[0].roles !== 'undefined')
+            if (this.props.user[0].roles[0] === 'staff')
+                return <div>{this.renderList()}</div>
+            else
+                return <div/>
+        else return <div/>
+    }
 }
+
+export default FirstSidebar

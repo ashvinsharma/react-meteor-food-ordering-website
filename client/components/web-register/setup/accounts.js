@@ -9,7 +9,6 @@ import ChangePassword from './change-password'
 class Accounts extends Component {
     constructor() {
         super()
-
         this.state = {
             addModalShow: false,
             changePasswordShowModal: false,
@@ -22,7 +21,9 @@ class Accounts extends Component {
     }
 
     static showType(cell) {
-        return `${cell.userType}`
+        if (typeof  cell !== 'undefined') {
+            return `${cell[0].charAt(0).toUpperCase() + cell[0].slice(1)}`
+        }
     }
 
     static handleEditCellDetails(row, cellName, cellValue) {
@@ -117,7 +118,6 @@ class Accounts extends Component {
     }
 
     render() {
-        console.log(this.props.users)
         return (
             <div>
                 <Accordion>
@@ -152,7 +152,7 @@ class Accounts extends Component {
                                                width='20%'
                                                dataSort={true}
                                                editable={true}>Username</TableHeaderColumn>
-                            <TableHeaderColumn dataField='profile'
+                            <TableHeaderColumn dataField='roles'
                                                width='20%'
                                                editable={false}
                                                dataFormat={Accounts.showType}>Type</TableHeaderColumn>

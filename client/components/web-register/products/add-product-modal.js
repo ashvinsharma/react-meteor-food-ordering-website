@@ -68,7 +68,7 @@ class AddProduct extends Component {
             })
         }
         else {
-            console.log('empty fields')
+            console.error('empty fields')
         }
     }
 

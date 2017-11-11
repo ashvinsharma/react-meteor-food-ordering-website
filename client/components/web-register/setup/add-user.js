@@ -11,7 +11,7 @@ export default class AddUser extends Component {
             username: '',
             password: '',
             confirmPassword: '',
-            userType: ''
+            role: ''
         }
     }
 
@@ -26,19 +26,17 @@ export default class AddUser extends Component {
         const password = ReactDOM.findDOMNode(this.refs.password).value.trim()
         // noinspection JSCheckFunctionSignatures
         const confirmPassword = ReactDOM.findDOMNode(this.refs.confirmPassword).value.trim()
-        const userType = this.state.userType
+        const role = this.state.role
 
         if (password.length >= 6 && password === confirmPassword) {
             Accounts.createUser({
                 username,
                 password,
-                profile: {
-                    userType
-                }
             }, (err) => {
                 if (err) {
                     console.log('Error ', err)
                 } else {
+                    Meteor.call('account.addRole', Meteor.userId(), role)
                     console.log('user added successful')
                     this.close('add-user:success')
                 }
@@ -54,7 +52,7 @@ export default class AddUser extends Component {
     }
 
     radioChange(event) {
-        this.setState({userType: event.target.value})
+        this.setState({role: event.target.value})
     }
 
     render() {
