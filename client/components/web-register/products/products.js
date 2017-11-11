@@ -90,7 +90,7 @@ class ProductsList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="food-item-add">
                 <Accordion>
                     <Panel>
                         <BootstrapTable data={this.props.products}

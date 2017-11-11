@@ -9,7 +9,6 @@ import ChangePassword from './change-password'
 class Accounts extends Component {
     constructor() {
         super()
-
         this.state = {
             addModalShow: false,
             changePasswordShowModal: false,
@@ -22,7 +21,7 @@ class Accounts extends Component {
     }
 
     static showType(cell) {
-        if(typeof  cell !== 'undefined'){
+        if (typeof  cell !== 'undefined') {
             return `${cell[0].charAt(0).toUpperCase() + cell[0].slice(1)}`
         }
     }
