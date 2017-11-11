@@ -17,16 +17,28 @@ class ProductsList extends Component {
         }
     }
 
+    static addCurrency(cell) {
+        if (typeof cell !== 'undefined') {
+            return `₹ ${cell}`
+        }
+    }
+
+    static addDiscountPercent(cell) {
+        if (typeof cell !== 'undefined') {
+            return `${cell} %`
+        }
+    }
+
+    static handleEditCellDetails(row, cellName, cellValue) {
+        Meteor.call('products.update', row, cellName, cellValue)
+    }
+
     handleAddNewButtonClick() {
         this.setState({show: true})
     }
 
     handleCloseChild() {
         this.setState({show: false})
-    }
-
-    static handleEditCellDetails(row, cellName, cellValue) {
-        Meteor.call('products.update', row, cellName, cellValue)
     }
 
     handleDeleteButtonClick() {
@@ -43,11 +55,11 @@ class ProductsList extends Component {
         }
     }
 
-    numericSortFunc(a, b, order) {
+    static numericSortFunc(a, b, order) {
         if (order === 'desc') {
-            return Number(a.price) - Number(b.price);
+            return Number(a.price) - Number(b.price)
         } else {
-            return Number(b.price) - Number(a.price);
+            return Number(b.price) - Number(a.price)
         }
     }
 
@@ -115,8 +127,11 @@ class ProductsList extends Component {
                                                dataSort={true}>Product Name</TableHeaderColumn>
                             <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
                             <TableHeaderColumn dataField='price'
-                                               dataSort sortFunc={this.numericSortFunc.bind(this)}>Product Price</TableHeaderColumn>
-                            <TableHeaderColumn dataField='discount'>Discount</TableHeaderColumn>
+                                               dataFormat={ProductsList.addCurrency.bind(this)}
+                                               dataSort sortFunc={ProductsList.numericSortFunc.bind(this)}>Product
+                                Price</TableHeaderColumn>
+                            <TableHeaderColumn dataField='discount'
+                                               dataFormat={ProductsList.addDiscountPercent.bind(this)}>Discount</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>
