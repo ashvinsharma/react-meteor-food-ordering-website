@@ -39,7 +39,6 @@ class OrderList extends Component {
     }
 
     render() {
-        console.log(this.props.orders)
         const orders = this.props.orders
         const productNames = orders.map((order) => {
             return (

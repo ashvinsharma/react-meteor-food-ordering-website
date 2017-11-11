@@ -21,7 +21,7 @@ export default class FirstSidebar extends Component {
                     </ListGroupItem>
                 </LinkContainer>
 
-                <LinkContainer className="links" to="/web-register/sell-bar">
+                <LinkContainer className="links" to="/web-register/sell">
                     <ListGroupItem href="#">
                         <div className="icon2"><FaShop size={20}/></div>
                         Sell
@@ -62,7 +62,7 @@ export default class FirstSidebar extends Component {
                     ECommerce(TBD)
                 </ListGroupItem>
 
-                <LinkContainer className="links" to="/web-register/setup">
+                <LinkContainer className="links" to="/web-register/accounts">
                     <ListGroupItem>
                         <div className="icon9"><FaSet size={20}/></div>
                         Setup(In Process)

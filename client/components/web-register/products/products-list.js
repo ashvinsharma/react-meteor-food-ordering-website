@@ -10,7 +10,6 @@ import AddProduct from './add-product-modal'
 class ProductsList extends Component {
     constructor(props) {
         super(props)
-        console.log(this.props.products)
         this.state = {
             selectedRow: {},
             show: false,
