@@ -13,6 +13,9 @@ import FaProd from 'react-icons/lib/fa/tags'
 import {LinkContainer} from 'react-router-bootstrap'
 
 class FirstSidebar extends Component {
+    constructor(props){
+        super(props)
+    }
     renderList() {
         return (
             <ListGroup className>
@@ -47,12 +50,13 @@ class FirstSidebar extends Component {
                     Reporting(TBD)
                 </ListGroupItem>
 
-                {this.props.user[0].roles[1] === 'admin' ? (<LinkContainer className="links" to="/web-register/products">
-                    <ListGroupItem href="#">
-                        <div className="icon6"><FaProd size={20}/></div>
-                        Products
-                    </ListGroupItem>
-                </LinkContainer>) : <div/>}
+                {this.props.user[0].roles[1] === 'admin' ? (
+                    <LinkContainer className="links" to="/web-register/products">
+                        <ListGroupItem href="#">
+                            <div className="icon6"><FaProd size={20}/></div>
+                            Products
+                        </ListGroupItem>
+                    </LinkContainer>) : <div/>}
 
                 <ListGroupItem>
                     <div className="icon7"><FaGrp size={20}/></div>
@@ -64,27 +68,26 @@ class FirstSidebar extends Component {
                     ECommerce(TBD)
                 </ListGroupItem>
 
-                {this.props.user[0].roles[1] === 'admin' ? (<LinkContainer className="links" to="/web-register/accounts">
-                    <ListGroupItem>
-                        <div className="icon9"><FaSet size={20}/></div>
-                        Setup
-                    </ListGroupItem>
-                </LinkContainer>) : <div/>}
+                {this.props.user[0].roles[1] === 'admin' ? (
+                    <LinkContainer className="links" to="/web-register/accounts">
+                        <ListGroupItem>
+                            <div className="icon9"><FaSet size={20}/></div>
+                            Setup
+                        </ListGroupItem>
+                    </LinkContainer>) : <div/>}
 
             </ListGroup>
         )
     }
 
     render() {
-        if (this.props.user.length !== 0)
-            if(this.props.user[0].role === 'staff')
-            return <div>{this.renderList()}</div>
-        else
-            return <div/>
+        if (this.props.user.length !== 0 && typeof this.props.user[0].roles !== 'undefined')
+            if (this.props.user[0].roles[0] === 'staff')
+                return <div>{this.renderList()}</div>
+            else
+                return <div/>
+        else return <div/>
     }
 }
 
-export default createContainer(() => {
-    Meteor.subscribe('user')
-    return {user: Meteor.users.find({_id: Meteor.userId()}).fetch()}
-}, FirstSidebar)
+export default FirstSidebar

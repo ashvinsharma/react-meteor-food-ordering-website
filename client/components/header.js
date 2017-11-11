@@ -1,3 +1,5 @@
+// noinspection NpmUsedModulesInstalled
+import {createContainer} from 'meteor/react-meteor-data'
 import React, {Component} from 'react'
 import {Nav, Navbar, NavItem} from 'react-bootstrap'
 import {LinkContainer} from 'react-router-bootstrap'
@@ -30,6 +32,21 @@ class Header extends Component {
         }
     }
 
+    renderDashboard() {
+        return (
+            <div>
+                {this.props.user[0].roles[1] === 'cashier' || this.props.user[0].roles[1] === 'admin' ?
+                    (<Nav><LinkContainer to={'/web-register'}><NavItem
+                        eventKey={1}>Web-Register</NavItem></LinkContainer></Nav>) : <div/>}
+                {this.props.user[0].roles[1] === 'cook' || this.props.user[0].roles[1] === 'admin' ?
+                    (<Nav>
+                        <LinkContainer to={'/cookDashboard'}><NavItem
+                            eventKey={4}>Cook</NavItem></LinkContainer>
+                    </Nav>) : <div/>}
+            </div>
+        )
+    }
+
     render() {
         return (
             <Navbar className="navbar" inverse collapseOnSelect>
@@ -40,12 +57,10 @@ class Header extends Component {
                     <Navbar.Toggle/>
                 </Navbar.Header>
                 <Navbar.Collapse>
-                    <Nav>
-                        <LinkContainer to={'/web-register'}><NavItem eventKey={1}>Web-Register</NavItem></LinkContainer>
-                    </Nav>
-                    <Nav>
-                        <LinkContainer to={'/cookDashboard'}><NavItem eventKey={4}>Cook</NavItem></LinkContainer>
-                    </Nav>
+                    {typeof this.props.user[0] !== 'undefined' &&
+                    typeof this.props.user[0].roles !== 'undefined' ?
+                        (this.props.user[0].roles[0] === 'staff' ? this.renderDashboard() : <div/>)
+                        : <div/>}
                     {this.renderUserAction()}
                 </Navbar.Collapse>
             </Navbar>
@@ -53,4 +68,7 @@ class Header extends Component {
     }
 }
 
-export default withRouter(Header)
+export default createContainer(() => {
+    Meteor.subscribe('user')
+    return {user: Meteor.users.find({_id: Meteor.userId()}).fetch()}
+}, withRouter(Header))

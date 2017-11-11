@@ -15,33 +15,36 @@ import Accounts from './setup/accounts'
 
 class WebRegister extends Component {
     render() {
-        return (
-            <div>
-                <Grid bsClass="container-fluid">
-                    <Row>
-                        <Col md={2}>
-                            <FirstSidebar param={this.props.match.params.param}/>
-                        </Col>
-                        <Col md={10}>
-                            <Switch>
-                                <PrivateRoute path={`${this.props.match.url}/products`} strict
-                                              component={ProductsList}/>
-                                <PrivateRoute path={`${this.props.match.url}/sell`} component={Sell}/>
-                                <PrivateRoute path={`${this.props.match.url}/accounts`} strict component={Accounts}/>
-                                <PrivateRoute path={`${this.props.match.url}/home`} strict component={Home}/>
-                                <PrivateRoute path={`${this.props.match.url}`} exact component={Home}/>
-                                <PrivateRoute parth={`${this.props.match.url}/orders`} strict component={OrderList}/>
-                                <Redirect to="/404"/>
-                            </Switch>
-                        </Col>
-                    </Row>
-                </Grid>
-            </div>
-        )
+        if (typeof this.props.user !== 'undefined')
+            return (
+                <div>
+                    <Grid bsClass="container-fluid">
+                        <Row>
+                            <Col md={2}>
+                                <FirstSidebar param={this.props.match.params.param} user={this.props.user}/>
+                            </Col>
+                            <Col md={10}>
+                                <Switch>
+                                    <PrivateRoute path={`${this.props.match.url}/products`} strict
+                                                  component={ProductsList}/>
+                                    <PrivateRoute path={`${this.props.match.url}/sell`} component={Sell}/>
+                                    <PrivateRoute path={`${this.props.match.url}/accounts`} strict
+                                                  component={Accounts}/>
+                                    <PrivateRoute path={`${this.props.match.url}/home`} strict component={Home}/>
+                                    <PrivateRoute path={`${this.props.match.url}`} exact component={Home}/>
+                                    <PrivateRoute parth={`${this.props.match.url}/orders`} strict
+                                                  component={OrderList}/>
+                                    <Redirect to="/404"/>
+                                </Switch>
+                            </Col>
+                        </Row>
+                    </Grid>
+                </div>
+            )
     }
 }
 
 export default createContainer(() => {
     Meteor.subscribe('users')
-    return {users: Meteor.users.find({}).fetch()}
+    return {user: Meteor.users.find({_id: Meteor.userId()}).fetch()}
 }, WebRegister)
