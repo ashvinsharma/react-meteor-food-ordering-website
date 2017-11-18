@@ -6,7 +6,10 @@ import {Orders} from '../../../../imports/collections/orders'
 export default class Cart extends Component {
     constructor(props) {
         super(props)
-        this.state = {billPrice: 0}
+        this.state = {
+            billPrice: 0,
+            selectedRow: null
+        }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -20,15 +23,24 @@ export default class Cart extends Component {
         }
     }
 
+    handleRowClick(row, isSelected) {
+        if (isSelected) {
+            this.setState({selectedRow: row})
+        } else {
+            this.setState({selectedRow: {}})
+        }
+        console.log(this.state.selectedRow)
+    }
 
     addOrders(event) {
         event.preventDefault()
-
+        const quantity = this.state.selectedRow.quantity
         Meteor.call('orders.insert', {
             createdAt: new Date(),
             items: this.props.cart,
             bill: this.state.billPrice,
             Status: 'pending',
+            quantity: quantity,
             assignedTo: 'none',
             createdBy: Meteor.user().username
         }, (err) => {
@@ -47,12 +59,25 @@ export default class Cart extends Component {
                 <h1>Cart</h1>
                 <Accordion>
                     <Panel>
-                        <BootstrapTable data={this.props.cart} keyField="name">
+                        <BootstrapTable data={this.props.cart} keyField="name"
+                                        selectRow={{
+                                            mode: 'radio',
+                                            hideSelectColumn: true,
+                                            bgColor: 'grey',
+                                            clickToSelectAndEditCell: true,
+                                            onSelect: this.handleRowClick.bind(this)
+                                        }}
+                                        cellEdit={{
+                                            mode: 'dbclick',
+                                            blurToSave: true,
+                                        }}
+                                        pagination>
                             <TableHeaderColumn dataField='name'
                                                dataSort={true}>Product Name</TableHeaderColumn>
                             <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
                             <TableHeaderColumn dataField='price'
                                                dataSort={true}>Product Price</TableHeaderColumn>
+                            <TableHeaderColumn dataField="quantity">quantity</TableHeaderColumn>
                             <TableHeaderColumn dataField='discount'>Discount</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
