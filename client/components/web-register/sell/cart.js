@@ -39,6 +39,10 @@ export default class Cart extends Component {
                 this.close()
             }
         })
+        this.setState({billPrice: 0})
+        this.props.emptyCart()
+
+
     }
 
     render() {
@@ -53,6 +57,8 @@ export default class Cart extends Component {
                             <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
                             <TableHeaderColumn dataField='price'
                                                dataSort={true}>Product Price</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Quantity'
+                                               dataSort={true}>Quantity</TableHeaderColumn>
                             <TableHeaderColumn dataField='discount'>Discount</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>

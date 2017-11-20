@@ -24,7 +24,7 @@ class CompletedOrders extends Component {
                                                dataSort={true}
                                                dataFormat={CompletedOrders.showType}>Items</TableHeaderColumn>
                             <TableHeaderColumn dataField='Status'>status</TableHeaderColumn>
-                            <TableHeaderColumn dataField='assignedTo'>Completed By</TableHeaderColumn>
+                            <TableHeaderColumn dataField='assignedToName'>Completed By</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>

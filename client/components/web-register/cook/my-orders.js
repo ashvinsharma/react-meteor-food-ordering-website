@@ -27,12 +27,16 @@ class MyOrders extends Component {
         return (<ol>{items}</ol>)
     }
 
+    static showName(cell) {
+        const name = Meteor.user().username
+        return name
+    }
 
     handleAddButtonClick(row) {
         const status = 'Status'
-        console.log(this.state.selectedRow)
         const rowUp = this.state.selectedRow
         rowUp.assignedTo = Meteor.userId()
+        rowUp.assignedToName = Meteor.user().username
         rowUp.Status = 'completed'
         this.setState({
             selectedRow: rowUp
@@ -77,7 +81,7 @@ class MyOrders extends Component {
                             <TableHeaderColumn dataField='items'
                                                dataFormat={MyOrders.showType}>Items</TableHeaderColumn>
                             <TableHeaderColumn dataField='Status'>status</TableHeaderColumn>
-                            <TableHeaderColumn dataField='assignedTo'>Assigned To</TableHeaderColumn>
+                            <TableHeaderColumn dataField='assignedToName'>Assigned To</TableHeaderColumn>
                             <TableHeaderColumn dataField='bill'>bill</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>

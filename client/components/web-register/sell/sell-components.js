@@ -32,6 +32,7 @@ class SellComponents extends Component {
         }
     }
 
+
     render() {
         const products = this.props.products
         const Images = products.map((product) => {
@@ -59,7 +60,7 @@ class SellComponents extends Component {
                         </Col>
                     </div>
                     <Col md={5}>
-                        <Cart cart={Array.from(this.state.cart)}/>
+                        <Cart cart={Array.from(this.state.cart)} emptyCart={() => this.setState({cart: {}})}/>
                     </Col>
                 </Row>
             </div>
