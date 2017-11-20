@@ -26,22 +26,23 @@ class PendingOrders extends Component {
         } else {
             this.setState({selectedRow: {}})
         }
-        console.log(this.state.selectedRow)
     }
 
     handleAddButtonClick(row) {
         const assign = 'assignedTo'
         const status = 'Status'
-        console.log(this.state.selectedRow)
+        const assignName = 'assignedToName'
         const rowUp = this.state.selectedRow
         rowUp.assignedTo = Meteor.userId()
+        rowUp.assignedToName = Meteor.user().username
         rowUp.Status = 'assigned'
         this.setState({
             selectedRow: rowUp
         })
         Meteor.call('orders.update', this.state.selectedRow, status, 'assigned')
         Meteor.call('orders.update', this.state.selectedRow, assign, Meteor.userId())
-        console.log(this.state.selectedRow)
+        Meteor.call('orders.update', this.state.selectedRow, assignName, Meteor.user().username)
+
     }
 
     ToolBar = props => {
