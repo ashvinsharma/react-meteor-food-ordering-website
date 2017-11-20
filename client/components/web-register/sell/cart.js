@@ -1,12 +1,15 @@
 import React, {Component} from 'react'
-import {Accordion, Button, Col, Panel, Row} from 'react-bootstrap'
+import {Accordion, Alert, Button, Col, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 import {Orders} from '../../../../imports/collections/orders'
 
 export default class Cart extends Component {
     constructor(props) {
         super(props)
-        this.state = {billPrice: 0}
+        this.state = {
+            billPrice: 0,
+            orderPlace: false
+        }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -39,10 +42,23 @@ export default class Cart extends Component {
                 this.close()
             }
         })
-        this.setState({billPrice: 0})
+        this.setState({billPrice: 0, orderPlace: true})
         this.props.emptyCart()
+    }
 
+    handleAlertDismiss() {
+        this.setState({
+            billPrice: 0,
+            orderPlace: false
+        })
+    }
 
+    showAlert() {
+        if (this.state.orderPlace) {
+            return (
+                <Alert bsStyle={'success'} onDismiss={this.handleAlertDismiss.bind(this)}>Order Placed!</Alert>
+            )
+        }
     }
 
     render() {
@@ -51,6 +67,7 @@ export default class Cart extends Component {
                 <h1>Cart</h1>
                 <Accordion>
                     <Panel>
+                        {this.showAlert()}
                         <BootstrapTable data={this.props.cart} keyField="name">
                             <TableHeaderColumn dataField='name'
                                                dataSort={true}>Product Name</TableHeaderColumn>

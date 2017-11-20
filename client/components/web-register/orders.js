@@ -80,6 +80,7 @@ class OrderList extends Component {
                             >Order ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='createdBy'>User</TableHeaderColumn>
                             <TableHeaderColumn dataField='bill'>Amount</TableHeaderColumn>
+                            <TableHeaderColumn dataField='createdAt'>Date</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>
