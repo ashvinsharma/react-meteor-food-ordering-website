@@ -2,9 +2,7 @@
 import {createContainer} from 'meteor/react-meteor-data'
 import React, {Component} from 'react'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
-import FaSale from 'react-icons/lib/fa/clipboard'
 import FaSet from 'react-icons/lib/fa/cog'
-import FaGrp from 'react-icons/lib/fa/group'
 import FaHome from 'react-icons/lib/fa/home'
 import FaLine from 'react-icons/lib/fa/line-chart'
 import FaCom from 'react-icons/lib/fa/money'
@@ -13,9 +11,10 @@ import FaProd from 'react-icons/lib/fa/tags'
 import {LinkContainer} from 'react-router-bootstrap'
 
 class FirstSidebar extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
     }
+
     renderList() {
         return (
             <ListGroup className>
@@ -41,11 +40,6 @@ class FirstSidebar extends Component {
                 </LinkContainer>
 
                 <ListGroupItem>
-                    <div className="icon4"><FaSale size={20}/></div>
-                    Sales Ledger(TBD)
-                </ListGroupItem>
-
-                <ListGroupItem>
                     <div className="icon5"><FaLine size={20}/></div>
                     Reporting(TBD)
                 </ListGroupItem>
@@ -58,16 +52,6 @@ class FirstSidebar extends Component {
                         </ListGroupItem>
                     </LinkContainer>) : <div/>}
 
-                <ListGroupItem>
-                    <div className="icon7"><FaGrp size={20}/></div>
-                    Customers(TBD)
-                </ListGroupItem>
-
-                <ListGroupItem>
-                    <div className="icon8"><FaCom size={20}/></div>
-                    ECommerce(TBD)
-                </ListGroupItem>
-
                 {this.props.user[0].roles[1] === 'admin' ? (
                     <LinkContainer className="links" to="/web-register/accounts">
                         <ListGroupItem>
@@ -75,7 +59,6 @@ class FirstSidebar extends Component {
                             Setup
                         </ListGroupItem>
                     </LinkContainer>) : <div/>}
-
             </ListGroup>
         )
     }

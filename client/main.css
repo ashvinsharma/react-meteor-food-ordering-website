@@ -1,9 +1,13 @@
 /* CSS declarations go here */
-html, body { overflow-x: hidden; }
+html, body {
+    overflow-x: hidden;
+}
 
+/*noinspection CssOptimizeSimilarProperties*/
 body {
     background: url("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/2815532/680/453/m1/fpnw/wm0/1-6031-.jpg?1496845260&s=11ef584534bab88c73849ceddf31fd7a") no-repeat;
     background-size: 100%;
+    background-attachment: fixed;
 }
 
 .container-fluid {
@@ -19,17 +23,18 @@ body {
     background-color: #22252c !important;
 }
 
-.list-group{
-    position:relative !important;
+.list-group {
+    position: relative !important;
 
 }
-.list-group-item{
+
+.list-group-item {
     height: 65px !important;
     width: auto !important;
-    font-family:"Century Gothic";
+    font-family: "Century Gothic";
     text-align: center !important;
     vertical-align: middle !important;
-    background-color: #F5F5F5!important;
+    background-color: #F5F5F5 !important;
     color: #080808 !important;
     position: relative !important;
     display: block !important;
@@ -40,30 +45,37 @@ body {
 .icon1 {
     color: #EF5350 !important;
 }
-.icon2{
-    color : #9FA8DA !important;
-}
-.icon3{
-    color : #4DB6AC !important;
-}
-.icon4{
-    color : #FF4081!important;
-}
-.icon5{
-    color : #00ACC1 !important;
+
+.icon2 {
+    color: #9FA8DA !important;
 }
 
-.icon6{
-    color : #FFB74D !important;
+.icon3 {
+    color: #4DB6AC !important;
 }
-.icon7{
-    color : #607D8B !important;
+
+.icon4 {
+    color: #FF4081 !important;
 }
-.icon8{
-    color : #CE93D8 !important;
+
+.icon5 {
+    color: #00ACC1 !important;
 }
-.icon9{
-    color : red !important;
+
+.icon6 {
+    color: #FFB74D !important;
+}
+
+.icon7 {
+    color: #607D8B !important;
+}
+
+.icon8 {
+    color: #CE93D8 !important;
+}
+
+.icon9 {
+    color: red !important;
 }
 
 .sell {
@@ -75,9 +87,7 @@ body {
 
 .sell-buttons {
 
-
 }
-
 
 .list-group-item:active {
     text-decoration: none;
@@ -90,27 +100,29 @@ body {
 }
 
 .navbar-inverse {
-background-image: none !important;
-background-color: #080808;
+    background-image: none !important;
+    background-color: #080808;
 }
 
 .modal {
-margin-top: 10%;
+    margin-top: 10%;
 }
-.signup-btns{
-margin-left: 5px;
+
+.signup-btns {
+    margin-left: 5px;
 }
-.addproduct-buttons{
-float: left;
+
+.addproduct-buttons {
+    float: left;
 }
 
 .header {
-background-color: #22252c;
-color: #f5f5f5;
+    background-color: #22252c;
+    color: #f5f5f5;
 }
 
 .order-items li {
-display: inline-block;
+    display: inline-block;
 }
 
 .order-items img {

@@ -85,7 +85,7 @@ class ProductsList extends Component {
     //if turned static images won't load
     // noinspection JSMethodCanBeStatic
     imageFormatter(cell) {
-        return (<img style={{width: 50}} src={cell}/>)
+        return (<img style={{width: 72}} src={cell}/>)
     }
 
     render() {
@@ -115,22 +115,28 @@ class ProductsList extends Component {
                             <TableHeaderColumn dataField='_id'
                                                isKey
                                                dataSort={true}
-                                               width='10%'
                                                editable={false}
                                                searchable={false}
                                                hidden>Product ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='image'
                                                dataFormat={this.imageFormatter}
-                                               searchable={false}>Product Image</TableHeaderColumn>
+                                               searchable={false}
+                                               width={'10%'}
+                            >Product Image</TableHeaderColumn>
                             <TableHeaderColumn dataField='name'
-                                               dataSort={true}>Product Name</TableHeaderColumn>
+                                               dataSort={true}
+                                               width={'20%'}
+                            >Product Name</TableHeaderColumn>
                             <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
                             <TableHeaderColumn dataField='price'
                                                dataFormat={ProductsList.addCurrency.bind(this)}
-                                               dataSort sortFunc={ProductsList.numericSortFunc.bind(this)}>Product
-                                Price</TableHeaderColumn>
+                                               dataSort sortFunc={ProductsList.numericSortFunc.bind(this)}
+                                               width={'10%'}
+                            >Product Price</TableHeaderColumn>
                             <TableHeaderColumn dataField='discount'
-                                               dataFormat={ProductsList.addDiscountPercent.bind(this)}>Discount</TableHeaderColumn>
+                                               dataFormat={ProductsList.addDiscountPercent.bind(this)}
+                                               width={'10%'}
+                            >Discount</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>
