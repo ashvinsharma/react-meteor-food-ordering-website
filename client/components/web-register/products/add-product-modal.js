@@ -56,6 +56,7 @@ class AddProduct extends Component {
                 description: this.state.description,
                 image: this.state.image,
                 price: this.state.price,
+                quantity: 1,
                 discount: this.state.discount,
                 type: this.state.type,
                 createdBy: Meteor.userId

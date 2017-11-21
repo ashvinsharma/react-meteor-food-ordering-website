@@ -14,6 +14,7 @@ import Signup from './components/account/signup'
 import App from './components/app'
 import WebRegister from './components/web-register/web-register'
 import CookDashboard from './components/web-register/cook/cook-dashboard'
+import CustomerDashboard from './components/web-register/customer/customer-dashboard'
 
 const history = createHistory()
 
@@ -26,6 +27,7 @@ const routes = (
                 <Route path="/login" exact component={Login}/>
                 <PrivateRoute path="/web-register" strict component={WebRegister}/>
                 <PrivateRoute path='/cookDashboard' strict component={CookDashboard}/>
+                <PrivateRoute path='/customerDashboard' strict component={CustomerDashboard}/>
                 <Route path="/404" component={NotFound}/>
             </Switch>
         </div>

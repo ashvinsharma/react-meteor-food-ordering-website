@@ -32,20 +32,31 @@ class SellComponents extends Component {
         }
     }
 
-
     render() {
         const products = this.props.products
-        const Images = products.map((product) => {
+        const Images = products.map(function (product) {
             return (
                 <li className="order-items" key={product._id}>
-                    <Button className="btn btn-primary" onClick={() => this.addToCart(product)}>
                         <img src={product.image} alt={product.name}/>
                         <br/>{product.name}
                         <br/>{product.price}
-                    </Button>
+                    <br/>
+                    <span>
+                        <Button onClick={() => {
+                            if (product.quantity > 1) {
+                                product.quantity--
+                            }
+                        }}>-</Button>
+                        <div>{product.quantity}</div>
+                        <Button onClick={() => {
+                            product.quantity++
+                        }}>+</Button>
+                    </span>
+                    <br/><Button className="btn btn-primary" onClick={() => this.addToCart(product)}>Add to
+                    Cart</Button>
                 </li>
             )
-        })
+        }, this)
         return (
             <div className="home">
                 <Row>

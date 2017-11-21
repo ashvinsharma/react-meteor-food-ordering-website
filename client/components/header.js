@@ -43,6 +43,12 @@ class Header extends Component {
                         <LinkContainer to={'/cookDashboard'}><NavItem
                             eventKey={4}>Cook</NavItem></LinkContainer>
                     </Nav>) : <div/>}
+                {this.props.user[0].roles[0] === 'customer' || this.props.user[0].roles[1] === 'admin' ?
+                    (<Nav>
+                        <LinkContainer to={'/customerDashboard'}><NavItem
+                            eventKey={5}>My DashBoard
+                        </NavItem></LinkContainer>
+                    </Nav>) : <div/>}
             </div>
         )
     }
@@ -59,7 +65,7 @@ class Header extends Component {
                 <Navbar.Collapse>
                     {typeof this.props.user[0] !== 'undefined' &&
                     typeof this.props.user[0].roles !== 'undefined' ?
-                        (this.props.user[0].roles[0] === 'staff' ? this.renderDashboard() : <div/>)
+                        (this.renderDashboard())
                         : <div/>}
                     {this.renderUserAction()}
                 </Navbar.Collapse>

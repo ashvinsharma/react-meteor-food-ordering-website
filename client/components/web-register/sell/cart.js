@@ -17,7 +17,7 @@ export default class Cart extends Component {
             var price = 0
             const items = nextProps.cart
             items.map((item) => {
-                price = price + Number.parseInt(item.price)
+                price = price + item.quantity * Number.parseInt(item.price)
             })
             this.setState({billPrice: price})
         }
@@ -74,7 +74,7 @@ export default class Cart extends Component {
                             <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
                             <TableHeaderColumn dataField='price'
                                                dataSort={true}>Product Price</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Quantity'
+                            <TableHeaderColumn dataField='quantity'
                                                dataSort={true}>Quantity</TableHeaderColumn>
                             <TableHeaderColumn dataField='discount'>Discount</TableHeaderColumn>
                         </BootstrapTable>
