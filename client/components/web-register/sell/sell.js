@@ -36,7 +36,8 @@ class Sell extends Component {
         const Images = products.map((product) => {
             return (
                 <li className="order-items" key={product._id}>
-                    <Button className="btn btn-primary" onClick={() => this.addToCart(product)}>
+                    <Button className="btn btn-default"
+                            onClick={() => this.addToCart(product)}>
                         <img src={product.image} alt={product.name}/>
                         <br/>{product.name}
                         <br/>{product.price}
