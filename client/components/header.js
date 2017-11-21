@@ -40,7 +40,7 @@ class Header extends Component {
                         eventKey={1}>Web-Register</NavItem></LinkContainer></Nav>) : <div/>}
                 {this.props.user[0].roles[1] === 'cook' || this.props.user[0].roles[1] === 'admin' ?
                     (<Nav>
-                        <LinkContainer to={'/cookDashboard'}><NavItem
+                        <LinkContainer to={'/cook-dashboard'}><NavItem
                             eventKey={4}>Cook</NavItem></LinkContainer>
                     </Nav>) : <div/>}
             </div>

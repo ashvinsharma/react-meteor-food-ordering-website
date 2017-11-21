@@ -29,7 +29,10 @@ class Login extends Component {
             } else {
                 console.log('login successful')
                 console.log('userId is: ', Meteor.userId())
-                this.props.history.push(`/web-register`)
+                if(Meteor.user().roles[1] === 'cook')
+                    this.props.history.push(`/cook-dashboard`)
+                else
+                    this.props.history.push(`/web-register`)
             }
         })
     }

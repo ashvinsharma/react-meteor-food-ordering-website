@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
 import {createContainer} from 'meteor/react-meteor-data'
-import {Orders} from '../../../../imports/collections/orders'
+import React, {Component} from 'react'
 import {Accordion, Button, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, ButtonGroup, TableHeaderColumn} from 'react-bootstrap-table'
+import {Orders} from '../../../../imports/collections/orders'
 
 
 class MyOrders extends Component {
@@ -12,6 +12,7 @@ class MyOrders extends Component {
             selectedRow: null,
         }
     }
+
     handleRowClick(row, isSelected) {
         if (isSelected) {
             this.setState({selectedRow: row})
@@ -27,24 +28,28 @@ class MyOrders extends Component {
         return (<ol>{items}</ol>)
     }
 
-    static showName(cell) {
-        const name = Meteor.user().username
-        return name
+    static showAssignee(cell) {
+        return cell[1].charAt(0).toUpperCase() + cell[1].slice(1)
     }
 
-    handleAddButtonClick(row) {
-        const status = 'Status'
+    static formatStatus(cell){
+        return cell.charAt(0).toUpperCase() + cell.slice(1)
+    }
+
+    static formatMoney(cell){
+        return `₹ ${cell}`
+    }
+
+    handleAddButtonClick() {
         const rowUp = this.state.selectedRow
-        rowUp.assignedTo = Meteor.userId()
-        rowUp.assignedToName = Meteor.user().username
-        rowUp.Status = 'completed'
+        rowUp.status = 'completed'
         this.setState({
             selectedRow: rowUp
         })
-        Meteor.call('orders.update', this.state.selectedRow, status, 'completed')
+        Meteor.call('orders.update', this.state.selectedRow, 'status', 'completed')
     }
 
-    ToolBar = props => {
+    ToolBar = () => {
         return (
             <div style={{margin: '15px'}}>
                 <Grid>
@@ -79,10 +84,16 @@ class MyOrders extends Component {
                                             toolBar: this.ToolBar.bind(this),
                                         }}>
                             <TableHeaderColumn dataField='items'
-                                               dataFormat={MyOrders.showType}>Items</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Status'>status</TableHeaderColumn>
-                            <TableHeaderColumn dataField='assignedToName'>Assigned To</TableHeaderColumn>
-                            <TableHeaderColumn dataField='bill'>bill</TableHeaderColumn>
+                                               dataFormat={MyOrders.showType}
+                                               width={'50%'}
+                            >Items</TableHeaderColumn>
+                            <TableHeaderColumn dataField='status'
+                                               dataFormat={MyOrders.formatStatus}>Status</TableHeaderColumn>
+                            <TableHeaderColumn dataField='assignedTo'
+                                               dataFormat={MyOrders.showAssignee}
+                            >Assigned To</TableHeaderColumn>
+                            <TableHeaderColumn dataField='bill'
+                                               dataFormat={MyOrders.formatMoney}>Cost</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>
@@ -93,5 +104,5 @@ class MyOrders extends Component {
 
 export default createContainer(() => {
     Meteor.subscribe('orders')
-    return {orders: Orders.find({assignedTo: Meteor.userId()}).fetch()}
+    return {orders: Orders.find({assignedTo: Meteor.userId(), status: 'assigned'}).fetch()}
 }, MyOrders)
