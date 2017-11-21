@@ -1,16 +1,23 @@
-import React, {Component} from 'react'
 import {createContainer} from 'meteor/react-meteor-data'
+import React, {Component} from 'react'
+import {Accordion, Panel} from 'react-bootstrap'
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 import {Orders} from '../../../../imports/collections/orders'
-import {Accordion, Button, Col, Grid, Panel, Row} from 'react-bootstrap'
-import {BootstrapTable, ButtonGroup, TableHeaderColumn} from 'react-bootstrap-table'
 
 class CompletedOrders extends Component {
+    static showAssignee(cell) {
+        return cell[1].charAt(0).toUpperCase() + cell[1].slice(1)
+    }
 
     static showType(cell) {
         const items = cell.map((item) =>
             <li key={item._id}>{item.name}</li>
         )
         return (<ol>{items}</ol>)
+    }
+
+    static showStatus(cell) {
+        return cell.charAt(0).toUpperCase() + cell.slice(1)
     }
 
     render() {
@@ -21,10 +28,15 @@ class CompletedOrders extends Component {
                     <Panel>
                         <BootstrapTable data={this.props.orders} keyField="items">
                             <TableHeaderColumn dataField='items'
-                                               dataSort={true}
-                                               dataFormat={CompletedOrders.showType}>Items</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Status'>status</TableHeaderColumn>
-                            <TableHeaderColumn dataField='assignedToName'>Completed By</TableHeaderColumn>
+                                               dataFormat={CompletedOrders.showType}
+                                               width={'50%'}
+                            >Items</TableHeaderColumn>
+                            <TableHeaderColumn dataField='status'
+                                               dataFormat={CompletedOrders.showStatus}
+                            >Status</TableHeaderColumn>
+                            <TableHeaderColumn dataField='assignedTo'
+                                               dataFormat={CompletedOrders.showAssignee}
+                            >Completed By</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>
@@ -35,5 +47,5 @@ class CompletedOrders extends Component {
 
 export default createContainer(() => {
     Meteor.subscribe('orders')
-    return {orders: Orders.find({Status: 'completed'}).fetch()}
+    return {orders: Orders.find({status: 'completed'}).fetch()}
 }, CompletedOrders)

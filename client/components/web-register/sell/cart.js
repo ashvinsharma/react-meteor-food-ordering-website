@@ -28,7 +28,7 @@ export default class Cart extends Component {
             createdAt: new Date(),
             items: this.props.cart,
             bill: this.state.billPrice,
-            Status: 'pending',
+            status: 'pending',
             assignedTo: 'none',
             createdBy: Meteor.user().username
         }, (err) => {

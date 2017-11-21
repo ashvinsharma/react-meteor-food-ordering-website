@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
 import {createContainer} from 'meteor/react-meteor-data'
-import {Orders} from '../../../../imports/collections/orders'
+import React, {Component} from 'react'
 import {Accordion, Button, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, ButtonGroup, TableHeaderColumn} from 'react-bootstrap-table'
+import {Orders} from '../../../../imports/collections/orders'
 
 class PendingOrders extends Component {
     constructor(props) {
@@ -19,6 +19,9 @@ class PendingOrders extends Component {
         return (<ol>{items}</ol>)
     }
 
+    static formatMoney(cell) {
+        return `₹ ${cell}`
+    }
 
     handleRowClick(row, isSelected) {
         if (isSelected) {
@@ -28,24 +31,19 @@ class PendingOrders extends Component {
         }
     }
 
-    handleAddButtonClick(row) {
-        const assign = 'assignedTo'
-        const status = 'Status'
-        const assignName = 'assignedToName'
+    handleAddButtonClick() {
         const rowUp = this.state.selectedRow
         rowUp.assignedTo = Meteor.userId()
         rowUp.assignedToName = Meteor.user().username
-        rowUp.Status = 'assigned'
+        rowUp.status = 'assigned'
         this.setState({
             selectedRow: rowUp
         })
-        Meteor.call('orders.update', this.state.selectedRow, status, 'assigned')
-        Meteor.call('orders.update', this.state.selectedRow, assign, Meteor.userId())
-        Meteor.call('orders.update', this.state.selectedRow, assignName, Meteor.user().username)
-
+        Meteor.call('orders.update', this.state.selectedRow, 'status', 'assigned')
+        Meteor.call('orders.update', this.state.selectedRow, 'assignedTo', [Meteor.userId(), Meteor.user().username])
     }
 
-    ToolBar = props => {
+    ToolBar = () => {
         return (
             <div style={{margin: '15px'}}>
                 <Grid>
@@ -81,9 +79,13 @@ class PendingOrders extends Component {
                                         }}>
                             <TableHeaderColumn dataField='items'
                                                editable={false}
-                                               dataFormat={PendingOrders.showType}>Items</TableHeaderColumn>
+                                               dataFormat={PendingOrders.showType}
+                                               width={'50%'}
+                            >Items</TableHeaderColumn>
                             <TableHeaderColumn dataField='assignedTo'>Assigned To</TableHeaderColumn>
-                            <TableHeaderColumn dataField='bill'>bill</TableHeaderColumn>
+                            <TableHeaderColumn dataField='bill'
+                                               dataFormat={PendingOrders.formatMoney}
+                            >Cost</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>

@@ -25,7 +25,7 @@ const routes = (
                 <Route path="/signup" exact component={Signup}/>
                 <Route path="/login" exact component={Login}/>
                 <PrivateRoute path="/web-register" strict component={WebRegister}/>
-                <PrivateRoute path='/cookDashboard' strict component={CookDashboard}/>
+                <PrivateRoute path='/cook-dashboard' strict component={CookDashboard}/>
                 <Route path="/404" component={NotFound}/>
             </Switch>
         </div>
