@@ -1,11 +1,21 @@
-import React, {Component} from 'react'
 import {createContainer} from 'meteor/react-meteor-data'
+import React, {Component} from 'react'
 import {Accordion, Button, ButtonGroup, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 
 import {Orders} from '../../../imports/collections/orders'
 
 class OrderList extends Component {
+    static parseCook(cell){
+        return cell[1].charAt(0).toUpperCase() + cell[1].slice(1)
+    }
+
+    static parseList(cell) {
+        const items = cell.map((item) =>
+            <li key={item._id}>{item.name}</li>
+        )
+        return (<ol>{items}</ol>)
+    }
 
     handleDeleteButtonClick() {
         if (JSON.stringify(this.state.selectedRow) !== '{}') {
@@ -38,23 +48,11 @@ class OrderList extends Component {
         )
     }
 
+    static formatMoney(cell) {
+        return `₹ ${cell}`
+    }
+
     render() {
-        const orders = this.props.orders
-        const productNames = orders.map((order) => {
-            return (
-                order.items.map((item) => {
-                    return (
-                        <li>{item.name}</li>
-                    )
-                })
-            )
-        })
-        const deleteButton = orders.map((order) => {
-            return (
-                <Button bsStyle="danger"
-                        onClick={this.handleDeleteButtonClick.bind(this)}>Del</Button>
-            )
-        })
         return (
             <div>
                 <Accordion>
@@ -78,8 +76,23 @@ class OrderList extends Component {
                                                width='10%'
                                                editable={false}
                             >Order ID</TableHeaderColumn>
-                            <TableHeaderColumn dataField='createdBy'>User</TableHeaderColumn>
-                            <TableHeaderColumn dataField='bill'>Amount</TableHeaderColumn>
+                            <TableHeaderColumn dataField={'items'}
+                                               dataFormat={OrderList.parseList}
+                            >Items</TableHeaderColumn>
+                            <TableHeaderColumn dataField='bill'
+                                               dataFormat={OrderList.formatMoney}
+                                               width={'10%'}
+                            >Amount</TableHeaderColumn>
+                            <TableHeaderColumn dataField={'assignedTo'}
+                                               dataFormat={OrderList.parseCook}
+                                               width={'10%'}
+                            >Served By</TableHeaderColumn>
+                            <TableHeaderColumn dataField='createdBy'
+                                               width={'10%'}
+                            >Received By</TableHeaderColumn>
+                            <TableHeaderColumn dataField={'createdAt'}
+                                               width={'25%'}
+                            >Date Ordered</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>

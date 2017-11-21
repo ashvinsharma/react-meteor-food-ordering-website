@@ -2,6 +2,7 @@ import {createContainer} from 'meteor/react-meteor-data'
 import React, {Component} from 'react'
 import {Accordion, Button, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, ButtonGroup, TableHeaderColumn} from 'react-bootstrap-table'
+
 import {Orders} from '../../../../imports/collections/orders'
 
 class PendingOrders extends Component {
@@ -66,7 +67,8 @@ class PendingOrders extends Component {
                 <h1>Pending Orders</h1>
                 <Accordion>
                     <Panel>
-                        <BootstrapTable data={this.props.orders} keyField="items"
+                        <BootstrapTable data={this.props.orders}
+                                        keyField="items"
                                         selectRow={{
                                             mode: 'radio',
                                             hideSelectColumn: true,
