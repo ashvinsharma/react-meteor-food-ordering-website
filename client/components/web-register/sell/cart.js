@@ -7,6 +7,7 @@ export default class Cart extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            cart: this.props.cart,
             billPrice: 0,
             orderPlace: false
         }
@@ -29,7 +30,7 @@ export default class Cart extends Component {
 
         Meteor.call('orders.insert', {
             createdAt: new Date(),
-            items: this.props.cart,
+            items: this.state.cart,
             bill: this.state.billPrice,
             Status: 'pending',
             assignedTo: 'none',
@@ -61,6 +62,21 @@ export default class Cart extends Component {
         }
     }
 
+    Quantity(cell) {
+        let quantity = 1
+        return (
+            <div>
+                <Button onClick={() => {
+                    quantity--
+                }}>-</Button>
+                <div>{quantity}</div>
+                <Button onClick={() => {
+                    quantity++
+                }}>+</Button>
+            </div>
+        )
+    }
+
     render() {
         return (
             <div>
@@ -74,8 +90,8 @@ export default class Cart extends Component {
                             <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
                             <TableHeaderColumn dataField='price'
                                                dataSort={true}>Product Price</TableHeaderColumn>
-                            <TableHeaderColumn dataField='quantity'
-                                               dataSort={true}>Quantity</TableHeaderColumn>
+                            <TableHeaderColumn dataField='quantity' dataFormat={this.Quantity.bind(this)}
+                            >Quantity</TableHeaderColumn>
                             <TableHeaderColumn dataField='discount'>Discount</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>

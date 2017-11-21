@@ -1,7 +1,7 @@
 // noinspection NpmUsedModulesInstalled
 import {createContainer} from 'meteor/react-meteor-data'
 import React, {Component} from 'react'
-import {Accordion, Button, Col, Panel, Row} from 'react-bootstrap'
+import {Accordion, Button, Col, ControlLabel, FormControl, FormGroup, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 import {Products} from '../../../../imports/collections/products'
 import Cart from './cart'
@@ -37,23 +37,12 @@ class SellComponents extends Component {
         const Images = products.map(function (product) {
             return (
                 <li className="order-items" key={product._id}>
+                    <Button className="btn btn-default"
+                            onClick={() => this.addToCart(product)}>
                         <img src={product.image} alt={product.name}/>
                         <br/>{product.name}
                         <br/>{product.price}
-                    <br/>
-                    <span>
-                        <Button onClick={() => {
-                            if (product.quantity > 1) {
-                                product.quantity--
-                            }
-                        }}>-</Button>
-                        <div>{product.quantity}</div>
-                        <Button onClick={() => {
-                            product.quantity++
-                        }}>+</Button>
-                    </span>
-                    <br/><Button className="btn btn-primary" onClick={() => this.addToCart(product)}>Add to
-                    Cart</Button>
+                    </Button>
                 </li>
             )
         }, this)

@@ -14,7 +14,7 @@ class PendingOrders extends Component {
 
     static showType(cell) {
         const items = cell.map((item) =>
-            <li key={item._id}>{item.name}</li>
+            <li key={item._id}>{item.name}-{item.quantity}</li>
         )
         return (<ol>{items}</ol>)
     }
