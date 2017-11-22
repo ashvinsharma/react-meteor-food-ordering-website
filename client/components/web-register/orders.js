@@ -6,15 +6,17 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 import {Orders} from '../../../imports/collections/orders'
 
 class OrderList extends Component {
-    static parseCook(cell){
+    static parseCook(cell) {
         return cell[1].charAt(0).toUpperCase() + cell[1].slice(1)
     }
 
     static parseList(cell) {
-        const items = cell.map((item) =>
-            <li key={item._id}>{item.name}</li>
-        )
-        return (<ol>{items}</ol>)
+        if (typeof cell !== 'undefined') {
+            const items = cell.map((item) =>
+                <li key={item._id}>{item.name}</li>
+            )
+            return (<ol>{items}</ol>)
+        }
     }
 
     handleDeleteButtonClick() {

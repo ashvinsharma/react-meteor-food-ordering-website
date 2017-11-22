@@ -20,7 +20,7 @@ class Accounts extends Component {
         }
     }
 
-    static showType(cell) {
+    static formatType(cell) {
         if (typeof  cell !== 'undefined') {
             return `${cell[0].charAt(0).toUpperCase() + cell[0].slice(1)}`
         }
@@ -155,7 +155,7 @@ class Accounts extends Component {
                             <TableHeaderColumn dataField='roles'
                                                width='20%'
                                                editable={false}
-                                               dataFormat={Accounts.showType}>Type</TableHeaderColumn>
+                                               dataFormat={Accounts.formatType}>Type</TableHeaderColumn>
                             <TableHeaderColumn dataField='createdAt'
                                                searchable={false}
                                                editable={false}>CreatedAt</TableHeaderColumn>
