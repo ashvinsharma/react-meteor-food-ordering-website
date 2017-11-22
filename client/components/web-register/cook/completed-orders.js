@@ -4,22 +4,9 @@ import {Accordion, Panel} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 import {Orders} from '../../../../imports/collections/orders'
 
+import Utilities from '../../../../imports/utils/utilities'
+
 class CompletedOrders extends Component {
-    static showAssignee(cell) {
-        return cell[1].charAt(0).toUpperCase() + cell[1].slice(1)
-    }
-
-    static showType(cell) {
-        const items = cell.map((item) =>
-            <li key={item._id}>{item.name}-{item.quantity}</li>
-        )
-        return (<ol>{items}</ol>)
-    }
-
-    static showStatus(cell) {
-        return cell.charAt(0).toUpperCase() + cell.slice(1)
-    }
-
     render() {
         return (
             <div className="orders">
@@ -28,14 +15,14 @@ class CompletedOrders extends Component {
                     <Panel>
                         <BootstrapTable data={this.props.orders} keyField="items">
                             <TableHeaderColumn dataField='items'
-                                               dataFormat={CompletedOrders.showType}
+                                               dataFormat={Utilities.showType}
                                                width={'50%'}
                             >Items</TableHeaderColumn>
                             <TableHeaderColumn dataField='status'
-                                               dataFormat={CompletedOrders.showStatus}
+                                               dataFormat={Utilities.formatStatus}
                             >Status</TableHeaderColumn>
                             <TableHeaderColumn dataField='assignedTo'
-                                               dataFormat={CompletedOrders.showAssignee}
+                                               dataFormat={Utilities.showAssignee}
                             >Completed By</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>

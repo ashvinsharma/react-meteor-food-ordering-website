@@ -2,6 +2,8 @@ import {createContainer} from 'meteor/react-meteor-data'
 import React, {Component} from 'react'
 import {Accordion, Button, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, ButtonGroup, TableHeaderColumn} from 'react-bootstrap-table'
+
+import Utilities from '../../../../imports/utils/utilities'
 import {Orders} from '../../../../imports/collections/orders'
 
 
@@ -19,25 +21,6 @@ class MyOrders extends Component {
         } else {
             this.setState({selectedRow: {}})
         }
-    }
-
-    static showType(cell) {
-        const items = cell.map((item) =>
-            <li key={item._id}>{item.name}-{item.quantity}</li>
-        )
-        return (<ol>{items}</ol>)
-    }
-
-    static showAssignee(cell) {
-        return cell[1].charAt(0).toUpperCase() + cell[1].slice(1)
-    }
-
-    static formatStatus(cell){
-        return cell.charAt(0).toUpperCase() + cell.slice(1)
-    }
-
-    static formatMoney(cell){
-        return `₹ ${cell}`
     }
 
     handleAddButtonClick() {
@@ -84,16 +67,16 @@ class MyOrders extends Component {
                                             toolBar: this.ToolBar.bind(this),
                                         }}>
                             <TableHeaderColumn dataField='items'
-                                               dataFormat={MyOrders.showType}
+                                               dataFormat={Utilities.showType}
                                                width={'50%'}
                             >Items</TableHeaderColumn>
                             <TableHeaderColumn dataField='status'
-                                               dataFormat={MyOrders.formatStatus}>Status</TableHeaderColumn>
+                                               dataFormat={Utilities.formatStatus}>Status</TableHeaderColumn>
                             <TableHeaderColumn dataField='assignedTo'
-                                               dataFormat={MyOrders.showAssignee}
+                                               dataFormat={Utilities.showAssignee}
                             >Assigned To</TableHeaderColumn>
                             <TableHeaderColumn dataField='bill'
-                                               dataFormat={MyOrders.formatMoney}>Cost</TableHeaderColumn>
+                                               dataFormat={Utilities.formatMoney}>Cost</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>

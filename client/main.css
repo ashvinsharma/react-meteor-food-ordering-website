@@ -143,3 +143,10 @@ body {
     padding: 2% 4% 4% 4%;
     background-color: #F5F5F5 !important;
 }
+
+@media print {
+    .printable {
+        margin-top: 50% !important;
+        margin-left: 50% !important;
+    }
+}

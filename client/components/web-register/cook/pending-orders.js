@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import {Accordion, Button, Col, Grid, Panel, Row} from 'react-bootstrap'
 import {BootstrapTable, ButtonGroup, TableHeaderColumn} from 'react-bootstrap-table'
 
+import Utilities from '../../../../imports/utils/utilities'
 import {Orders} from '../../../../imports/collections/orders'
 
 class PendingOrders extends Component {
@@ -11,17 +12,6 @@ class PendingOrders extends Component {
         this.state = {
             selectedRow: null,
         }
-    }
-
-    static showType(cell) {
-        const items = cell.map((item) =>
-            <li key={item._id}>{item.name}-{item.quantity}</li>
-        )
-        return (<ol>{items}</ol>)
-    }
-
-    static formatMoney(cell) {
-        return `₹ ${cell}`
     }
 
     handleRowClick(row, isSelected) {
@@ -86,7 +76,7 @@ class PendingOrders extends Component {
                             >Items</TableHeaderColumn>
                             <TableHeaderColumn dataField='assignedTo'>Assigned To</TableHeaderColumn>
                             <TableHeaderColumn dataField='bill'
-                                               dataFormat={PendingOrders.formatMoney}
+                                               dataFormat={Utilities.formatMoney}
                             >Cost</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>

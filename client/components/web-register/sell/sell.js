@@ -22,7 +22,6 @@ class Sell extends Component {
             this.setState(() => {
                 this.state.cart.delete(product)
             })
-
         }
         else {
             this.setState(() => {
