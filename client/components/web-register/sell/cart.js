@@ -7,7 +7,10 @@ export default class Cart extends Component {
     constructor(props) {
         super(props)
         document.title = 'Foodlex'
-        this.state = {billPrice: 0}
+        this.state = {
+            time: new Date(),
+            billPrice: 0
+        }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -25,8 +28,9 @@ export default class Cart extends Component {
         event.preventDefault()
 
         Meteor.call('orders.insert', {
+            _id: `${this.state.time.getSeconds()}${this.state.time.getMinutes()}${this.state.time.getHours()}${this.state.time.getFullYear()}${this.state.time.getMonth()}${this.state.time.getDate()}`,
             createdAt: new Date(),
-            items: this.state.cart,
+            items: this.props.cart,
             bill: this.state.billPrice,
             status: 'pending',
             assignedTo: 'none',
@@ -39,7 +43,7 @@ export default class Cart extends Component {
                 this.close()
             }
         })
-        this.setState({billPrice: 0})
+        this.setState({time: new Date(), billPrice: 0})
         this.props.emptyCart()
     }
 
@@ -74,7 +78,7 @@ export default class Cart extends Component {
             {this.props.cart.map((item) => {
                 sum += parseInt(item.price)
                 return (
-                    <div className={'food-item'}
+                    <div key={item._id} className={'food-item'}
                          style={{width: '100%', float: 'left', padding: '10px 0 10px 0'}}>
                         <div style={{width: '75%', float: 'left', minWidth: '75%'}}>{item.name}</div>
                         <div style={{width: '25%', textAlign: 'right', float: 'left', minWidth: '25%'}}>
@@ -119,6 +123,30 @@ export default class Cart extends Component {
                 <Button onClick={Cart.printInvoice.bind(this)} bsStyle={'success'}>Print</Button>
 
                 <iframe id="ifmcontentstoprint" style={{height: 0, width: 0, position: 'absolute'}}/>
+
+                <div className={'print-mount'}>
+                    <div style={{fontFamily: 'sans-serif'}}>
+                        <div className={'printable'}>
+                            <img src={'/foodlex.png'} style={{width: 72}}/>
+                            <h1 style={{float: 'right'}}>Foodlex</h1>
+                        </div>
+                        <div className={'order-details'}>
+                            Order ID:
+                            #{this.state.time.getSeconds()}{this.state.time.getMinutes()}{this.state.time.getHours()}
+                            {this.state.time.getFullYear()}{this.state.time.getMonth()}{this.state.time.getDate()}
+                        </div>
+                        <hr/>
+                        <div>
+                            <div style={{width: '75%', float: 'left', minWidth: '75%'}}>Product</div>
+                            <div style={{width: '25%', textAlign: 'right', float: 'left', minWidth: '25%'}}>
+                                Amount
+                            </div>
+                        </div>
+                        <hr/>
+                        {this.renderFood()}
+                        <hr/>
+                    </div>
+                </div>
 
                 <PrintTemplate>
                     <div className={'print-mount'}>
