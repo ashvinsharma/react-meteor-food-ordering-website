@@ -25,7 +25,6 @@ export default class Cart extends Component {
 
         Meteor.call('orders.insert', {
             createdAt: new Date(),
-            //todo: WHAT THE FUCK IS THIS??!?!?!?
             items: this.state.cart,
             bill: this.state.billPrice,
             status: 'pending',
@@ -62,7 +61,16 @@ export default class Cart extends Component {
         const content = document.querySelector('.divcontents')
         const pri = document.getElementById('ifmcontentstoprint').contentWindow
         pri.document.open()
+        pri.document.write('<html>' +
+            '<head>' +
+            '<link rel="stylesheet" href="/stylesheets/print.css">' +
+            '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ' +
+            'integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" ' +
+            'crossorigin="anonymous">' +
+            '</head>' +
+            '<body>')
         pri.document.write(content.innerHTML)
+        pri.document.write('</body>')
         pri.document.close()
         pri.focus()
         pri.print()

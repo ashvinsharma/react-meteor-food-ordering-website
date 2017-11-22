@@ -71,7 +71,7 @@ class PendingOrders extends Component {
                                         }}>
                             <TableHeaderColumn dataField='items'
                                                editable={false}
-                                               dataFormat={PendingOrders.showType}
+                                               dataFormat={Utilities.showType}
                                                width={'50%'}
                             >Items</TableHeaderColumn>
                             <TableHeaderColumn dataField='assignedTo'>Assigned To</TableHeaderColumn>
