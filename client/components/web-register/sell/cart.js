@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Accordion, Button, Panel} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
+import PrintTemplate from 'react-print'
 
 export default class Cart extends Component {
     constructor(props) {
@@ -58,29 +59,37 @@ export default class Cart extends Component {
     }
 
     static printInvoice() {
-        const content = document.querySelector('.divcontents')
+        const content = document.querySelector('.print-mount')
         const pri = document.getElementById('ifmcontentstoprint').contentWindow
         pri.document.open()
-        pri.document.write('<html>' +
-            '<head>' +
-            '<link rel="stylesheet" href="/stylesheets/print.css">' +
-            '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ' +
-            'integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" ' +
-            'crossorigin="anonymous">' +
-            '</head>' +
-            '<body>')
         pri.document.write(content.innerHTML)
-        pri.document.write('</body>')
         pri.document.close()
         pri.focus()
         pri.print()
     }
 
     renderFood() {
-        return this.props.cart.map((item) => {
-            console.log(item)
-            return <li key={item._id}>{item.name}</li>
-        })
+        let sum = 0
+        return (<div>
+            {this.props.cart.map((item) => {
+                sum += parseInt(item.price)
+                return (
+                    <div className={'food-item'}
+                         style={{width: '100%', float: 'left', padding: '10px 0 10px 0'}}>
+                        <div style={{width: '75%', float: 'left', minWidth: '75%'}}>{item.name}</div>
+                        <div style={{width: '25%', textAlign: 'right', float: 'left', minWidth: '25%'}}>
+                            ₹{item.price}
+                        </div>
+                    </div>
+                )
+            })}
+            <hr/>
+            <div style={{width: '100%', height: '18.8889px'}}>
+                <div style={{width: '75%', float: 'left', minWidth: '75%'}}><strong>Total</strong></div>
+                <div style={{width: '25%', textAlign: 'right', float: 'left', minWidth: '25%'}}><strong>₹{sum}</strong>
+                </div>
+            </div>
+        </div>)
     }
 
     render() {
@@ -108,14 +117,29 @@ export default class Cart extends Component {
                 <h3>{this.state.billPrice}</h3>
                 <Button onClick={this.addOrders.bind(this)} bsStyle="success">Checkout</Button>
                 <Button onClick={Cart.printInvoice.bind(this)} bsStyle={'success'}>Print</Button>
+
                 <iframe id="ifmcontentstoprint" style={{height: 0, width: 0, position: 'absolute'}}/>
 
-                <div className={'divcontents'}>
-                    <div className={'printable'}>
-                        <img src={'/foodlex.png'} style={{width: 72}}/> <h1 className={'pull-right'}>Foodlex</h1>
+                <PrintTemplate>
+                    <div className={'print-mount'}>
+                        <div style={{fontFamily: 'sans-serif'}}>
+                            <div className={'printable'}>
+                                <img src={'/foodlex.png'} style={{width: 72}}/>
+                                <h1 style={{float: 'right'}}>Foodlex</h1>
+                            </div>
+                            <hr/>
+                            <div>
+                                <div style={{width: '75%', float: 'left', minWidth: '75%'}}>Product</div>
+                                <div style={{width: '25%', textAlign: 'right', float: 'left', minWidth: '25%'}}>
+                                    Amount
+                                </div>
+                            </div>
+                            <hr/>
+                            {this.renderFood()}
+                            <hr/>
+                        </div>
                     </div>
-                    {this.renderFood()}
-                </div>
+                </PrintTemplate>
             </div>
         )
     }
