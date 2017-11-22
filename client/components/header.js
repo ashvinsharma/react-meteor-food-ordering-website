@@ -43,6 +43,13 @@ class Header extends Component {
                         <LinkContainer to={'/cook-dashboard'}><NavItem
                             eventKey={4}>Cook</NavItem></LinkContainer>
                     </Nav>) : <div/>}
+                {this.props.user[0].roles[0] === 'customer' || this.props.user[0].roles[1] === 'admin' ?
+                    (<Nav>
+                        <LinkContainer to={'/customerDashboard'}><NavItem
+                            eventKey={5}>My DashBoard
+                        </NavItem></LinkContainer>
+                    </Nav>) : <div/>}
+
             </div>
         )
     }
