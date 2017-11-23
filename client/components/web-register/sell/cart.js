@@ -20,10 +20,17 @@ export default class Cart extends Component {
             let price = 0
             const items = nextProps.cart
             items.map((item) => {
-                price = price + Number.parseInt(item.price)
+                price += Cart.discountedPrice(item.price, item.discount)
             })
-            this.setState({billPrice: price})
+            this.setState({
+                billPrice: parseFloat(price),
+                cart: this.props.cart
+            })
         }
+    }
+
+    static discountedPrice(price, discount) {
+        return (parseFloat(price)- parseFloat(price) * parseFloat(discount)/100).toFixed(2)
     }
 
     addOrders(event) {
@@ -61,6 +68,10 @@ export default class Cart extends Component {
                 }}>+</Button>
             </div>
         )
+    }
+
+    addDiscount(cell, row) {
+        return `₹${Cart.discountedPrice(row.price, row.discount)}`
     }
 
     static printInvoice() {
@@ -123,14 +134,13 @@ export default class Cart extends Component {
                             <TableHeaderColumn dataField='name'
                                                dataSort={true}
                             >Product Name</TableHeaderColumn>
-                            <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
-                            <TableHeaderColumn dataField='price'
-                                               dataSort={true}
-                            >Product Price</TableHeaderColumn>
                             <TableHeaderColumn dataField='quantity'
                                                dataFormat={this.quantity.bind(this)}
                             >Quantity</TableHeaderColumn>
-                            <TableHeaderColumn dataField='discount'>Discount</TableHeaderColumn>
+                            <TableHeaderColumn dataField='price'
+                                               dataSort={true}
+                                               dataFormat={this.addDiscount.bind(this)}
+                            >Amount</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>

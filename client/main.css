@@ -143,3 +143,9 @@ body {
     padding: 2% 4% 4% 4%;
     background-color: #F5F5F5 !important;
 }
+
+.slanted {
+    -ms-transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}

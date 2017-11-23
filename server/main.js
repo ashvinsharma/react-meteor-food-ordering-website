@@ -1,7 +1,6 @@
 import {Meteor} from 'meteor/meteor'
 // noinspection ES6UnusedImports
 import {Orders} from '../imports/collections/orders'
-import {Feedbacks} from '../imports/collections/feedback'
 // noinspection ES6UnusedImports
 import {Products} from '../imports/collections/products'
 
@@ -11,6 +10,13 @@ Meteor.startup(() => {
     })
 
     Meteor.methods({
+        'account.create': function (username, password) {
+            return Accounts.createUser({
+                username,
+                password,
+            })
+        },
+
         'account.delete': function (_id) {
             if (Meteor.isServer) {
                 try {

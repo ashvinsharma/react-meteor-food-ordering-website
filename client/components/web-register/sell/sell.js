@@ -35,12 +35,21 @@ class Sell extends Component {
         const Images = products.map((product) => {
             return (
                 <li className="order-items" key={product._id}>
-                    <Button className="btn btn-default"
-                            onClick={() => this.addToCart(product)}>
+                    <div className="thumbnail">
                         <img src={product.image} alt={product.name}/>
-                        <br/>{product.name}
-                        <br/>{product.price}
-                    </Button>
+                        <div className="caption">
+                            <h3>
+                                {product.name}
+                            </h3>
+                            <div>{product.description}</div>
+                        </div>
+                        <Button className="btn btn-success slanted" style={{width: '50%'}}
+                                onClick={() => this.addToCart(product)}>
+                            ₹{product.price}</Button>
+                        <Button className="btn btn-success slanted" style={{width: '50%'}}
+                                onClick={() => this.addToCart(product)}>
+                            Add to Cart</Button>
+                    </div>
                 </li>
             )
         })
