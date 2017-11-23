@@ -35,7 +35,7 @@ class OrderList extends Component {
 
     ToolBar = () => {
         return (
-            <div style={{margin: '15px'}}>
+            <div calssName="orders">
                 <Grid>
                     <Row>
                         <Col md={12}>
@@ -46,7 +46,7 @@ class OrderList extends Component {
                         </Col>
                     </Row>
                 </Grid>
-            </div>
+            </div >
         )
     }
 
