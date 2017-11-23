@@ -1,0 +1,5 @@
+@media print{
+    *{
+        margin-top: 10%;
+    }
+}
