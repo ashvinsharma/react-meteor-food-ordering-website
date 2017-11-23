@@ -41,7 +41,7 @@ class Sell extends Component {
                             <h3>
                                 {product.name}
                             </h3>
-                            <div>{product.description}</div>
+                            {/*<div>{product.description}</div>*/}
                         </div>
                         <Button className="btn btn-success slanted" style={{width: '50%'}}
                                 onClick={() => this.addToCart(product)}>

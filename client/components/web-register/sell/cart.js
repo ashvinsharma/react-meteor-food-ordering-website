@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Accordion, Alert, Button, Panel} from 'react-bootstrap'
+import {Accordion, Button, Panel} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 import PrintTemplate from 'react-print'
 
@@ -10,8 +10,7 @@ export default class Cart extends Component {
         this.state = {
             cart: this.props.cart,
             time: new Date(),
-            billPrice: 0,
-            orderPlace: false
+            billPrice: 0
         }
     }
 
@@ -20,17 +19,10 @@ export default class Cart extends Component {
             let price = 0
             const items = nextProps.cart
             items.map((item) => {
-                price += Cart.discountedPrice(item.price, item.discount)
+                price = price + Number.parseInt(item.price)
             })
-            this.setState({
-                billPrice: parseFloat(price),
-                cart: this.props.cart
-            })
+            this.setState({billPrice: price})
         }
-    }
-
-    static discountedPrice(price, discount) {
-        return (parseFloat(price)- parseFloat(price) * parseFloat(discount)/100).toFixed(2)
     }
 
     addOrders(event) {
@@ -68,10 +60,6 @@ export default class Cart extends Component {
                 }}>+</Button>
             </div>
         )
-    }
-
-    addDiscount(cell, row) {
-        return `₹${Cart.discountedPrice(row.price, row.discount)}`
     }
 
     static printInvoice() {
@@ -134,13 +122,14 @@ export default class Cart extends Component {
                             <TableHeaderColumn dataField='name'
                                                dataSort={true}
                             >Product Name</TableHeaderColumn>
+                            <TableHeaderColumn dataField='description'>Description</TableHeaderColumn>
+                            <TableHeaderColumn dataField='price'
+                                               dataSort={true}
+                            >Product Price</TableHeaderColumn>
                             <TableHeaderColumn dataField='quantity'
                                                dataFormat={this.quantity.bind(this)}
                             >Quantity</TableHeaderColumn>
-                            <TableHeaderColumn dataField='price'
-                                               dataSort={true}
-                                               dataFormat={this.addDiscount.bind(this)}
-                            >Amount</TableHeaderColumn>
+                            <TableHeaderColumn dataField='discount'>Discount</TableHeaderColumn>
                         </BootstrapTable>
                     </Panel>
                 </Accordion>

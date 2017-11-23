@@ -3,7 +3,6 @@ import {createContainer} from 'meteor/react-meteor-data'
 import React, {Component} from 'react'
 import {ListGroup, ListGroupItem} from 'react-bootstrap'
 import FaSet from 'react-icons/lib/fa/cog'
-import FaHome from 'react-icons/lib/fa/home'
 import FaLine from 'react-icons/lib/fa/line-chart'
 import FaCom from 'react-icons/lib/fa/money'
 import FaShop from 'react-icons/lib/fa/shopping-cart'
@@ -17,14 +16,7 @@ class FirstSidebar extends Component {
 
     renderList() {
         return (
-            <ListGroup className>
-                <LinkContainer className="links" to="/web-register/home">
-                    <ListGroupItem href="#">
-                        <div className="icon1"><FaHome size={20}/></div>
-                        Home
-                    </ListGroupItem>
-                </LinkContainer>
-
+            <ListGroup>
                 <LinkContainer className="links" to="/web-register/sell">
                     <ListGroupItem href="#">
                         <div className="icon2"><FaShop size={20}/></div>
