@@ -8,15 +8,10 @@ export default class Cart extends Component {
         super(props)
         document.title = 'Foodlex'
         this.state = {
-<<<<<<< client/components/web-register/sell/cart.js
             cart: this.props.cart,
             time: new Date(),
             billPrice: 0,
             orderPlace: false
-=======
-            time: new Date(),
-            billPrice: 0
->>>>>>> client/components/web-register/sell/cart.js
         }
     }
 
