@@ -10,7 +10,7 @@ export default class Cart extends Component {
         this.state = {
 <<<<<<< client/components/web-register/sell/cart.js
             cart: this.props.cart,
-            time: newDate(),
+            time: new Date(),
             billPrice: 0,
             orderPlace: false
 =======
