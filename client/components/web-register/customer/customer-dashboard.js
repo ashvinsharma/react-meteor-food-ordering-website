@@ -12,10 +12,10 @@ class CustomerDashboard extends Component {
             <div>
                 <Grid bsClass="container-fluid">
                     <Row>
-                        <Col md={10}>
+                        <Col md={8}>
                             <Sell/>
                         </Col>
-                        <Col md={2}>
+                        <Col md={4}>
                             <Feedback/>
                         </Col>
                     </Row>

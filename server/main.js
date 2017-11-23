@@ -1,6 +1,7 @@
 import {Meteor} from 'meteor/meteor'
 // noinspection ES6UnusedImports
 import {Orders} from '../imports/collections/orders'
+import {Feedbacks} from '../imports/collections/feedback'
 // noinspection ES6UnusedImports
 import {Products} from '../imports/collections/products'
 

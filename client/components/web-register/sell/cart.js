@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Accordion, Button, Panel} from 'react-bootstrap'
+import {Accordion, Alert, Button, Panel} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table'
 import PrintTemplate from 'react-print'
 
@@ -8,8 +8,15 @@ export default class Cart extends Component {
         super(props)
         document.title = 'Foodlex'
         this.state = {
+<<<<<<< client/components/web-register/sell/cart.js
+            cart: this.props.cart,
+            time: new Date(),
+            billPrice: 0,
+            orderPlace: false
+=======
             time: new Date(),
             billPrice: 0
+>>>>>>> client/components/web-register/sell/cart.js
         }
     }
 
@@ -96,12 +103,29 @@ export default class Cart extends Component {
         </div>)
     }
 
+    handleAlertDismiss() {
+        this.setState({
+            billPrice: 0,
+            orderPlace: false
+        })
+    }
+
+    showAlert() {
+        if (this.state.orderPlace) {
+            return (
+                <Alert bsStyle={'success'} onDismiss={this.handleAlertDismiss.bind(this)}>Order Placed!</Alert>
+            )
+        }
+    }
+
+
     render() {
         return (
             <div>
                 <h1>Cart</h1>
                 <Accordion>
                     <Panel>
+                        {this.showAlert()}
                         <BootstrapTable data={this.props.cart} keyField="name">
                             <TableHeaderColumn dataField='name'
                                                dataSort={true}
