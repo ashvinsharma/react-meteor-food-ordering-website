@@ -42,7 +42,6 @@ export default class Cart extends Component {
                 console.log('Error Placing order')
             } else {
                 console.log('Order Placed')
-                this.close()
             }
         })
         this.setState({time: new Date(), billPrice: 0})
@@ -112,7 +111,6 @@ export default class Cart extends Component {
             )
         }
     }
-
 
     render() {
         return (

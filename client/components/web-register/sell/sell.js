@@ -9,7 +9,7 @@ import Cart from './cart'
 class Sell extends Component {
     constructor(props) {
         super(props)
-        this.state = {cart: {}}
+        this.state = {cart: new Set()}
     }
 
     componentDidMount() {
@@ -65,7 +65,7 @@ class Sell extends Component {
                                         </div>
                                         <Col md={5}>
                                             <Cart cart={Array.from(this.state.cart)}
-                                                  emptyCart={() => this.setState({cart: {}})}/>
+                                                  emptyCart={() => this.setState({cart: new Set()})}/>
                                         </Col>
                                     </Row>
                                 </div>
