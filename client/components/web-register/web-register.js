@@ -6,7 +6,6 @@ import {Redirect, Switch} from 'react-router-dom'
 
 import PrivateRoute from '../account/private-route'
 import FirstSidebar from './first-sidebar'
-import Home from './home'
 import OrderList from './orders'
 import ProductsList from './products/products'
 import Sell from './sell/sell'
@@ -31,10 +30,8 @@ class WebRegister extends Component {
                                     <PrivateRoute path={`${this.props.match.url}/sell`} component={Sell}/>
                                     <PrivateRoute path={`${this.props.match.url}/accounts`} strict
                                                   component={Accounts}/>
-                                    <PrivateRoute path={`${this.props.match.url}/home`} strict component={Home}/>
                                     <PrivateRoute parth={`${this.props.match.url}/reports`} strict
                                                   component={Report}/>
-                                    <PrivateRoute path={`${this.props.match.url}`} exact component={Home}/>
                                     <PrivateRoute parth={`${this.props.match.url}/orders`} strict
                                                   component={OrderList}/>
                                     <Redirect to="/404"/>
