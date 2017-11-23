@@ -124,43 +124,6 @@ export default class Cart extends Component {
 
                 <iframe id="ifmcontentstoprint" style={{height: 0, width: 0, position: 'absolute'}}/>
 
-                <div className={'print-mount'}>
-                    <div style={{fontFamily: 'sans-serif'}}>
-                        <div className={'header-line'}>
-                            <img src={'/foodlex.png'} style={{width: 72}}/>
-                            <div style={{float: 'right'}}>
-                                <h1>Foodlex</h1>
-                                <h6>Phone: 91 141 400 5858</h6>
-                            </div>
-                        </div>
-                        <div className={'order-details'} style={{textAlign: 'right'}}>
-                            <h6>
-                                <div>
-                                    Order ID:
-                                    #{this.state.time.getSeconds()}{this.state.time.getMinutes()}{this.state.time.getHours()}
-                                    {this.state.time.getFullYear()}{this.state.time.getMonth()}{this.state.time.getDate()}
-                                </div>
-                                <div>
-                                    Created
-                                    On: {this.state.time.getDate()}/{this.state.time.getMonth()}/{this.state.time.getFullYear()}
-                                    &nbsp;
-                                    {this.state.time.getHours()}:{this.state.time.getMinutes()}:{this.state.time.getSeconds()}
-                                </div>
-                            </h6>
-                        </div>
-                        <hr/>
-                        <div>
-                            <div style={{width: '75%', float: 'left', minWidth: '75%'}}><strong>Product</strong></div>
-                            <div style={{width: '25%', textAlign: 'right', float: 'left', minWidth: '25%'}}>
-                                <strong>Amount</strong>
-                            </div>
-                        </div>
-                        <hr/>
-                        {this.renderFood()}
-                        <hr/>
-                    </div>
-                </div>
-
                 <PrintTemplate>
                     <div className={'print-mount'}>
                         <div style={{fontFamily: 'sans-serif'}}>
