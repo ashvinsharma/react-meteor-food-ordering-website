@@ -150,3 +150,7 @@ body {
     -webkit-transform: skewX(-20deg);
     transform: skewX(-20deg);
 }
+
+.home-buttons-order h2 {
+    color: #263238 !important
+}
