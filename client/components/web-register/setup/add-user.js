@@ -26,23 +26,27 @@ export default class AddUser extends Component {
         const password = ReactDOM.findDOMNode(this.refs.password).value.trim()
         // noinspection JSCheckFunctionSignatures
         const confirmPassword = ReactDOM.findDOMNode(this.refs.confirmPassword).value.trim()
-        const role = this.state.role
+        let role = []
+        if(this.state.role === 'admin'){
+            role = ['staff', 'admin']
+        } else if (this.state.role === 'cook'){
+            role = ['staff', 'cook']
+        } else if (this.state.role === 'customer'){
+            role = ['staff', 'customer']
+        } else if (this.state.role === 'cashier'){
+            role = ['cashier']
+        }
 
         if (password.length >= 6 && password === confirmPassword) {
-            Accounts.createUser({
-                username,
-                password,
-            }, (err) => {
-                if (err) {
-                    console.log('Error ', err)
-                } else {
-                    Meteor.call('account.addRole', Meteor.userId(), role)
-                    console.log('user added successful')
-                    this.close('add-user:success')
+            Meteor.call('account.create', username, password, (err, res) => {
+                if (!err) {
+                    Meteor.call('account.addRole', res, role, (e) => {
+                        if (!e) {
+                            this.close()
+                        }
+                    })
                 }
             })
-        } else {
-            console.log('Passwords didn\'t match or character length is less than 6')
         }
     }
 
@@ -96,12 +100,12 @@ export default class AddUser extends Component {
                             <Row>
                                 <FormGroup onChange={this.radioChange.bind(this)}>
                                     <Col md={3}>
-                                        <Radio value={'Admin'} name="user-type">Admin</Radio>
-                                        <Radio value={'Cashier'} name="user-type">Cashier</Radio>
+                                        <Radio value={'admin'} name="user-type">Admin</Radio>
+                                        <Radio value={'cashier'} name="user-type">Cashier</Radio>
                                     </Col>
                                     <Col md={3}>
-                                        <Radio value={'Cook'} name="user-type">Cook</Radio>
-                                        <Radio value={'Customer'} name="user-type">Customer</Radio>
+                                        <Radio value={'cook'} name="user-type">Cook</Radio>
+                                        <Radio value={'customer'} name="user-type">Customer</Radio>
                                     </Col>
                                 </FormGroup>
                             </Row>

@@ -55,9 +55,8 @@ class AddProduct extends Component {
                 name: this.state.name,
                 description: this.state.description,
                 image: this.state.image,
-                price: this.state.price,
-                discount: this.state.discount,
-                type: this.state.type,
+                price: parseFloat(this.state.price),
+                discount: parseFloat(this.state.discount),
                 createdBy: Meteor.userId
             }, (err) => {
                 if (err) {
