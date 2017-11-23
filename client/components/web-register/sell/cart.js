@@ -126,20 +126,33 @@ export default class Cart extends Component {
 
                 <div className={'print-mount'}>
                     <div style={{fontFamily: 'sans-serif'}}>
-                        <div className={'printable'}>
+                        <div className={'header-line'}>
                             <img src={'/foodlex.png'} style={{width: 72}}/>
-                            <h1 style={{float: 'right'}}>Foodlex</h1>
+                            <div style={{float: 'right'}}>
+                                <h1>Foodlex</h1>
+                                <h6>Phone: 91 141 400 5858</h6>
+                            </div>
                         </div>
-                        <div className={'order-details'}>
-                            Order ID:
-                            #{this.state.time.getSeconds()}{this.state.time.getMinutes()}{this.state.time.getHours()}
-                            {this.state.time.getFullYear()}{this.state.time.getMonth()}{this.state.time.getDate()}
+                        <div className={'order-details'} style={{textAlign: 'right'}}>
+                            <h6>
+                                <div>
+                                    Order ID:
+                                    #{this.state.time.getSeconds()}{this.state.time.getMinutes()}{this.state.time.getHours()}
+                                    {this.state.time.getFullYear()}{this.state.time.getMonth()}{this.state.time.getDate()}
+                                </div>
+                                <div>
+                                    Created
+                                    On: {this.state.time.getDate()}/{this.state.time.getMonth()}/{this.state.time.getFullYear()}
+                                    &nbsp;
+                                    {this.state.time.getHours()}:{this.state.time.getMinutes()}:{this.state.time.getSeconds()}
+                                </div>
+                            </h6>
                         </div>
                         <hr/>
                         <div>
-                            <div style={{width: '75%', float: 'left', minWidth: '75%'}}>Product</div>
+                            <div style={{width: '75%', float: 'left', minWidth: '75%'}}><strong>Product</strong></div>
                             <div style={{width: '25%', textAlign: 'right', float: 'left', minWidth: '25%'}}>
-                                Amount
+                                <strong>Amount</strong>
                             </div>
                         </div>
                         <hr/>
@@ -151,15 +164,34 @@ export default class Cart extends Component {
                 <PrintTemplate>
                     <div className={'print-mount'}>
                         <div style={{fontFamily: 'sans-serif'}}>
-                            <div className={'printable'}>
+                            <div className={'header-line'}>
                                 <img src={'/foodlex.png'} style={{width: 72}}/>
-                                <h1 style={{float: 'right'}}>Foodlex</h1>
+                                <div style={{float: 'right'}}>
+                                    <h1>Foodlex</h1>
+                                    <h6>Phone: 91 141 400 5858</h6>
+                                </div>
+                            </div>
+                            <div className={'order-details'} style={{textAlign: 'right'}}>
+                                <h6>
+                                    <div>
+                                        Order ID:
+                                        #{this.state.time.getSeconds()}{this.state.time.getMinutes()}{this.state.time.getHours()}
+                                        {this.state.time.getFullYear()}{this.state.time.getMonth()}{this.state.time.getDate()}
+                                    </div>
+                                    <div>
+                                        Created
+                                        On: {this.state.time.getDate()}/{this.state.time.getMonth()}/{this.state.time.getFullYear()}
+                                        &nbsp;
+                                        {this.state.time.getHours()}:{this.state.time.getMinutes()}:{this.state.time.getSeconds()}
+                                    </div>
+                                </h6>
                             </div>
                             <hr/>
                             <div>
-                                <div style={{width: '75%', float: 'left', minWidth: '75%'}}>Product</div>
+                                <div style={{width: '75%', float: 'left', minWidth: '75%'}}><strong>Product</strong>
+                                </div>
                                 <div style={{width: '25%', textAlign: 'right', float: 'left', minWidth: '25%'}}>
-                                    Amount
+                                    <strong>Amount</strong>
                                 </div>
                             </div>
                             <hr/>
