@@ -35,7 +35,7 @@ class OrderList extends Component {
 
     ToolBar = () => {
         return (
-            <div style={{margin: '15px'}}>
+            <div>
                 <Grid>
                     <Row>
                         <Col md={12}>

@@ -64,10 +64,10 @@ class ProductsList extends Component {
 
     ToolBar = props => {
         return (
-            <div style={{margin: '15px'}}>
+            <div>
                 <Grid>
                     <Row>
-                        <Col md={12}>
+                        <Col md={11}>
                             <ButtonGroup>
                                 <Button bsStyle="success" onClick={this.handleAddNewButtonClick.bind(this)}>Add
                                     New</Button>
@@ -90,7 +90,7 @@ class ProductsList extends Component {
 
     render() {
         return (
-            <div className="food-item-add">
+            <div className="add_food">
                 <Accordion>
                     <Panel>
                         <BootstrapTable data={this.props.products}

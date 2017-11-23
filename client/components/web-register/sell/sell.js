@@ -53,7 +53,7 @@ class Sell extends Component {
                             <Col md={12}>
                                 <div className="home">
                                     <Row>
-                                        <div className="place-order">
+                                        <div className="product_list">
                                             <Col md={7}>
                                                 <h1>Product List</h1>
                                                 <form>

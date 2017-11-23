@@ -17,7 +17,7 @@ class FirstSidebar extends Component {
 
     renderList() {
         return (
-            <ListGroup className>
+            <ListGroup >
                 <LinkContainer className="links" to="/web-register/home">
                     <ListGroupItem href="#">
                         <div className="icon1"><FaHome size={20}/></div>

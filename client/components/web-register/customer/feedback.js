@@ -52,7 +52,7 @@ class Feedback extends Component {
 
     render() {
         return (
-            <div>
+            <div className="orders">
                 <Accordion>
                     <Panel>
                         {this.showAlert()}

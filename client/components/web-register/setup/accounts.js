@@ -92,10 +92,10 @@ class Accounts extends Component {
 
     ToolBar = props => {
         return (
-            <div style={{margin: '15px'}}>
+            <div >
                 <Grid>
                     <Row>
-                        <Col md={12}>
+                        <Col md={11}>
                             <ButtonGroup>
                                 <Button bsStyle="success"
                                         onClick={() => {
