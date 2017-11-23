@@ -11,6 +11,7 @@ import OrderList from './orders'
 import ProductsList from './products/products'
 import Sell from './sell/sell'
 import Accounts from './setup/accounts'
+import Report from './report/reports'
 
 
 class WebRegister extends Component {
@@ -31,6 +32,8 @@ class WebRegister extends Component {
                                     <PrivateRoute path={`${this.props.match.url}/accounts`} strict
                                                   component={Accounts}/>
                                     <PrivateRoute path={`${this.props.match.url}/home`} strict component={Home}/>
+                                    <PrivateRoute parth={`${this.props.match.url}/reports`} strict
+                                                  component={Report}/>
                                     <PrivateRoute path={`${this.props.match.url}`} exact component={Home}/>
                                     <PrivateRoute parth={`${this.props.match.url}/orders`} strict
                                                   component={OrderList}/>

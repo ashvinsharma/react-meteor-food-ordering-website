@@ -39,10 +39,14 @@ class FirstSidebar extends Component {
                     </ListGroupItem>
                 </LinkContainer>
 
-                <ListGroupItem>
-                    <div className="icon5"><FaLine size={20}/></div>
-                    Reporting(TBD)
-                </ListGroupItem>
+                {this.props.user[0].roles[1] === 'admin' ? (
+                    <LinkContainer className="links" to="/web-register/reports">
+                        <ListGroupItem href="#">
+                            <div className="icon5"><FaLine size={20}/></div>
+                            Reports
+                        </ListGroupItem>
+                    </LinkContainer>
+                ) : <div/>}
 
                 {this.props.user[0].roles[1] === 'admin' ? (
                     <LinkContainer className="links" to="/web-register/products">

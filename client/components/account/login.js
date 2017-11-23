@@ -31,6 +31,9 @@ class Login extends Component {
                 console.log('userId is: ', Meteor.userId())
                 if(Meteor.user().roles[1] === 'cook')
                     this.props.history.push(`/cook-dashboard`)
+                else if (Meteor.user().roles[0] === 'customer') {
+                    this.props.history.push('/customer-dashboard')
+                }
                 else
                     this.props.history.push(`/web-register`)
             }

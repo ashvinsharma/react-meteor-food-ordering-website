@@ -1,4 +1,5 @@
 /* CSS declarations go here */
+@import "../node_modules/react-vis/dist/style";
 html, body {
     overflow-x: hidden;
 }
