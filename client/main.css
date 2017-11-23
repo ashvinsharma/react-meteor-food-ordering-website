@@ -1,12 +1,14 @@
 /* CSS declarations go here */
+/*noinspection CssUnknownTarget*/
 @import "../node_modules/react-vis/dist/style";
+
 html, body {
     overflow-x: hidden;
 }
 
 /*noinspection CssOptimizeSimilarProperties*/
 body {
-    background: url("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/2815532/680/453/m1/fpnw/wm0/1-6031-.jpg?1496845260&s=11ef584534bab88c73849ceddf31fd7a") no-repeat;
+    background: url("https://lifesrealjourney.com/wp-content/uploads/2017/08/Design-8.jpg") no-repeat;
     background-size: 100%;
     background-attachment: fixed;
 }
@@ -80,9 +82,12 @@ body {
 }
 
 .sell {
-    background-color: white;
-    padding: 0 0;
-
+    width: auto;
+    height: 100%;
+    margin-right: 5%;
+    background-color: #F5F5F5;
+    font-family: "Century Gothic";
+    padding: 0px 10px 15px 10px;
 }
 
 .sell-buttons {
@@ -130,18 +135,45 @@ body {
     height: 75px !important;
 }
 
+.place-oreders h1 {
+
+    vertical-align: middle !important;
+    text-align: center !important;
+    font-family: "Century Gothic";
+    background-color: #F5F5F5 !important;
+    padding: 5% 5% 5% 5%;
+    border-radius: 5px 5px 5px 5px !important;
+}
+
+.orders h1 {
+    vertical-align: middle !important;
+    text-align: center;
+    font-family: "Century Gothic";
+    background-color: #F5F5F5 !important;
+    padding: 5% 5% 5% 5%;
+    border-radius: 5px 5px 5px 5px !important;
+}
+
 .order-items .btn {
     margin-left: 1%;
 }
 
 .orders {
-    background-color: whitesmoke;
+    position: relative !important;
+    padding: 5px 10px !important;
+
+    border-radius: 2% !important;
 }
 
 .home-buttons-order {
-    margin-top: 50% !important;
+    text-align: center;
+
+    wdth:auto !important;
+    font-family:"Century Gothic";
+    position: relative !important;
+    border-radius: 3% !important;
+    vertical-align: middle !important;
     margin-right: 5%;
-    padding: 2% 4% 4% 4%;
     background-color: #F5F5F5 !important;
 }
 

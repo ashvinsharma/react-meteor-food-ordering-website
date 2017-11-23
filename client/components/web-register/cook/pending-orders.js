@@ -36,7 +36,7 @@ class PendingOrders extends Component {
 
     ToolBar = () => {
         return (
-            <div style={{margin: '15px'}}>
+            <div calssName="orders">
                 <Grid>
                     <Row>
                         <Col md={12}>
